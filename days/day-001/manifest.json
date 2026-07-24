@@ -1,0 +1,3124 @@
+{
+  "campaign": "SCS-2026",
+  "day": 1,
+  "database": "DB3K_515.db3",
+  "units": [
+    {
+      "campaign_id": "BLU-PH-FA50-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "e82c84ac-cd4d-5360-b0bc-6a08056da8f3"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "008cc51f-27b8-5b29-af9e-95fba3dc8255"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "d43a3eba-f303-5727-8fe1-39b2002218a1"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "c63419e2-ac3a-54b7-b221-e0194dae4147"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "3b63415e-8a6a-5001-8d90-f29bddd09963"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "8c1d02ef-fe19-599a-b18b-e69b152a46c9"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-07",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "256fafab-f628-57cf-8a7a-dc46a2072742"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-08",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "afcf56a6-ade4-5374-bb6d-f0fcc7a112b8"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-09",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "4521df53-e459-5a34-8fca-c49cad45506a"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-10",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 21785,
+      "base": "Basa Air Base",
+      "planned_guid": "50bcc211-c716-591e-b716-86bd15dd7ded"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-11",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 4,
+      "base": "Basa Air Base",
+      "planned_guid": "978f1b55-b4c6-5dce-97f5-57f451d4f9df"
+    },
+    {
+      "campaign_id": "BLU-PH-FA50-12",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6905,
+      "loadout_id": 4,
+      "base": "Basa Air Base",
+      "planned_guid": "60d5827a-1ce0-52a8-9d73-a4c8e9fd7144"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 11128,
+      "base": "Basa Air Base",
+      "planned_guid": "88e9522e-2507-5061-b52c-fceffc9c617d"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 11128,
+      "base": "Basa Air Base",
+      "planned_guid": "6d0cd68f-7d8b-55df-b066-3f1c7e0caad0"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 11128,
+      "base": "Basa Air Base",
+      "planned_guid": "b9eb4639-1735-53a1-8b6e-c9075bba2e35"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 11128,
+      "base": "Basa Air Base",
+      "planned_guid": "e4d5b6c2-2f5e-5585-a5f1-b5ce45b29832"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 11128,
+      "base": "Basa Air Base",
+      "planned_guid": "86bcadb6-5c2d-5268-a333-55d873e2480f"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 11128,
+      "base": "Basa Air Base",
+      "planned_guid": "94a2de02-3e72-5cf5-8301-176f852680b1"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-07",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 12075,
+      "base": "Basa Air Base",
+      "planned_guid": "733cecc5-6f44-522f-ada2-deddfa1c0df1"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-08",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 12075,
+      "base": "Basa Air Base",
+      "planned_guid": "67025bc6-b11a-59dd-bc31-dc2a24154318"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-09",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 30385,
+      "base": "Basa Air Base",
+      "planned_guid": "8aa35b81-2431-5e12-8e7d-4b32dd11b84b"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-10",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 30385,
+      "base": "Basa Air Base",
+      "planned_guid": "f9b5131d-96fb-5a8a-9544-ed7d8231bd0b"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-11",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 4,
+      "base": "Basa Air Base",
+      "planned_guid": "04f42023-4f68-589b-8e66-06ca3dcba1f3"
+    },
+    {
+      "campaign_id": "BLU-USAF-F16-12",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5639,
+      "loadout_id": 4,
+      "base": "Basa Air Base",
+      "planned_guid": "e7dc222c-ce46-50d1-bdd7-58eac8191f43"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "fcd577ea-060b-52c9-8fdd-c4a1b60f7c38"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "40ca9e11-85a4-58d1-8041-519e7f712951"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "e51409bd-8c7b-577c-915c-81ab1260919d"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "aab8e365-558d-55f6-8297-7e31300d2b1e"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "df01bc8c-165b-5381-bc52-29016ab961b7"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "f00013d3-616f-55e5-abca-9d9177b14100"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-07",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 18064,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "692f400f-3d1f-5664-9f97-c704babb3a8a"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-08",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 18064,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "4f7d8126-a5e2-5376-8add-56144b63e950"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-09",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 4,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "7d5301d4-8f29-52da-95e1-7144855f1846"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-AB-10",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 4,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "9979bf7b-5a39-5327-bca9-9c1e5010f2f9"
+    },
+    {
+      "campaign_id": "BLU-USN-P8-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5759,
+      "loadout_id": 30778,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "42e40d6b-2c7a-5ea1-8d99-bf16f4b754ed"
+    },
+    {
+      "campaign_id": "BLU-USN-P8-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5759,
+      "loadout_id": 30778,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "af8d2fe5-43cc-556d-9d57-d37e39adc096"
+    },
+    {
+      "campaign_id": "BLU-USN-P8-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5759,
+      "loadout_id": 30778,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "d52519a3-7adb-558c-9c3f-888006628231"
+    },
+    {
+      "campaign_id": "BLU-USN-P8-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5759,
+      "loadout_id": 4,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "e224d99a-87bd-56ff-b050-fe370fe505ec"
+    },
+    {
+      "campaign_id": "BLU-USMC-MQ9-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7473,
+      "loadout_id": 8600,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "c397a7b8-3c16-5c3e-a837-be9c569e66d2"
+    },
+    {
+      "campaign_id": "BLU-USMC-MQ9-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7473,
+      "loadout_id": 8600,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "d9edc620-d9be-57a7-9ef4-85c09d1e8c79"
+    },
+    {
+      "campaign_id": "BLU-USMC-MQ9-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7473,
+      "loadout_id": 8600,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "8e060a87-0b88-52fc-9dba-90508d8a2407"
+    },
+    {
+      "campaign_id": "BLU-USMC-MQ9-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7473,
+      "loadout_id": 4,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "ae833709-e947-5b83-9146-77d1c62d09e2"
+    },
+    {
+      "campaign_id": "BLU-USMC-KC130-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6631,
+      "loadout_id": 8408,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "c5ab070e-25d4-51eb-8d44-b6a56a1e8c21"
+    },
+    {
+      "campaign_id": "BLU-USMC-KC130-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6631,
+      "loadout_id": 4,
+      "base": "Puerto Princesa International Airport/Antonio Bautista AB",
+      "planned_guid": "38f0d33b-ee9c-5aaa-be24-9c138ba5dcb9"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 1836,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "acc39025-9a11-524e-8749-f71dd74216d4"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 1836,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "71f41a49-08b7-5c31-a5d2-7da1cdf84e40"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 1836,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "8cc6ae4d-6ced-57b2-bd91-0d9d6556ecb0"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 1836,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "69cb6810-b3cc-5362-8d7f-0c440e144635"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 1836,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "505a977b-27bf-5d40-b34c-756787dfa95c"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 1836,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "47fac597-507b-5156-9a98-b0e0b7f1eb2d"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-07",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 1836,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "59cb37d8-2921-5ffb-af14-5114cce1a52e"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-08",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 1836,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "94954954-6a6a-59c7-b510-fc4958d6e408"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-09",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 35085,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "1857ad67-d325-5a49-83a1-6c3c64f77390"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-10",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 35085,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "7ba9a1c9-ac5a-5fea-b308-62edad52ae1c"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-11",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 4,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "00af6aa4-152f-5e0b-ad81-647d62e843c4"
+    },
+    {
+      "campaign_id": "BLU-USAF-F35A-12",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3835,
+      "loadout_id": 4,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "e0a6116e-8aba-5063-bcf6-5042e642cd95"
+    },
+    {
+      "campaign_id": "BLU-USAF-KC135-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6621,
+      "loadout_id": 8835,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "64d7cd59-091b-5994-9661-f122988627dd"
+    },
+    {
+      "campaign_id": "BLU-USAF-KC135-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6621,
+      "loadout_id": 8835,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "2eae80fd-3131-5edc-b49a-f253cbbf1a27"
+    },
+    {
+      "campaign_id": "BLU-USAF-KC135-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6621,
+      "loadout_id": 8835,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "92d9e2c8-bfa8-5124-954c-ad341845c535"
+    },
+    {
+      "campaign_id": "BLU-USAF-KC135-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 6621,
+      "loadout_id": 4,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "d20e36e9-adac-506c-a92d-80cbd4d1b3e6"
+    },
+    {
+      "campaign_id": "BLU-USAF-E3-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3853,
+      "loadout_id": 8076,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "6aabf5f6-fe93-53ce-a6b5-6d4d809e6337"
+    },
+    {
+      "campaign_id": "BLU-USAF-E3-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3853,
+      "loadout_id": 4,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "fddd862f-def5-5dab-a4ce-5b6c2e6a90e6"
+    },
+    {
+      "campaign_id": "BLU-USAF-RC135-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5832,
+      "loadout_id": 8824,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "930d990c-1fac-54a3-9769-23177ca4fe40"
+    },
+    {
+      "campaign_id": "BLU-USAF-C130J-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7008,
+      "loadout_id": 30209,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "5f43ea26-6595-5843-ae23-48c16e351c6f"
+    },
+    {
+      "campaign_id": "BLU-USAF-C130J-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7008,
+      "loadout_id": 30209,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "ba68446c-906c-5aa1-a02f-189f31ce6b67"
+    },
+    {
+      "campaign_id": "BLU-USAF-C130J-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7008,
+      "loadout_id": 30209,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "a77505e2-95b6-561e-ad6b-48b0aab0c946"
+    },
+    {
+      "campaign_id": "BLU-USAF-C130J-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7008,
+      "loadout_id": 4,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "c7f83164-5a47-5b8e-8f5e-da54a251e240"
+    },
+    {
+      "campaign_id": "BLU-USAF-HH60W-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4366,
+      "loadout_id": 29536,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "ec464d18-9aa7-5278-863c-908834d36aac"
+    },
+    {
+      "campaign_id": "BLU-USAF-HH60W-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4366,
+      "loadout_id": 29536,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "5ad1f9fa-35d9-54c8-9e87-dcf8980bf241"
+    },
+    {
+      "campaign_id": "BLU-USAF-HH60W-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4366,
+      "loadout_id": 29536,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "13fe0349-a2c6-545a-a16e-3909f5962ee5"
+    },
+    {
+      "campaign_id": "BLU-USAF-HH60W-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4366,
+      "loadout_id": 4,
+      "base": "Benito Ebeun (Mactan) AB/Mactan-Cebu International Airport",
+      "planned_guid": "7597c56f-0ef7-5f7e-84f3-9607d74b9097"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "450a196e-468e-52c7-b1e4-7cd72fc786f9"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "13d472e4-a4bf-5f8b-9306-1c9ec96d01da"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "160a94d7-5848-542a-898c-0890c64f8e3d"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "4bc88ea9-f21d-5a1d-8bbc-4be01f9f9b51"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-05",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "f2b4f7d2-68d3-5158-ab7a-297f336243ff"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-06",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "d651a739-7656-517c-a499-d672a360b8d3"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-07",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "66b1f4ec-616c-5ab2-869e-d835d4d4e4ef"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-08",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "9a1e86ae-6829-59f0-8706-dd52d12a5c71"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-09",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "8de621e7-7f4a-5582-a632-12357b88916b"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-10",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 26234,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "e210399e-e759-5ebc-a332-13f2ade314c8"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-11",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "cd095824-108d-54bb-bc93-35db5eea8d6b"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-12",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "4b632d7f-0b7b-51e3-9c64-1dc4c1e1fa64"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-13",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "84b70981-1cbe-5c39-bef1-a28f39a93117"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-14",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "aa2e3923-c6ec-5ddc-af13-114f023389c4"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-15",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "aee86d6f-30d7-5de5-bde7-1a49780dbe83"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-16",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "370ca4d3-3aba-574f-89b2-040adae1800f"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-17",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "a581b52a-969a-5ee7-b737-ee2389ff4c41"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-18",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "a87902cf-0f04-5e71-ad36-365bace176b3"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-19",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "18b9797c-2bc4-5d7d-aa16-5f88c256cc1f"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-20",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 21743,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "813ae390-549d-54cb-8baf-d2f0b41510cf"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-21",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 4,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "794c157e-1c43-5d30-af39-384bfdb3ad7a"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-22",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 4,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "9e6dd183-4669-5e80-bee0-74b47e41f901"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-23",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 4,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "c2849f3a-f4e2-55e2-9f91-9b8b3bc6cf42"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J16-24",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 2853,
+      "loadout_id": 4,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "07b5c613-20d8-55fb-b0cc-cfa60d7319ee"
+    },
+    {
+      "campaign_id": "RED-PLANAF-H6J-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7184,
+      "loadout_id": 26241,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "7e17aacc-01a4-5682-8ae6-ebebd0ac758c"
+    },
+    {
+      "campaign_id": "RED-PLANAF-H6J-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7184,
+      "loadout_id": 26241,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "fc0a8420-f078-5f07-8d04-2cb54f60198c"
+    },
+    {
+      "campaign_id": "RED-PLANAF-H6J-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7184,
+      "loadout_id": 26241,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "c830fe55-cd0a-535f-a24b-fa67118e4240"
+    },
+    {
+      "campaign_id": "RED-PLANAF-H6J-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7184,
+      "loadout_id": 26241,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "b772f4c0-9605-50c9-b5e4-1120147aefbc"
+    },
+    {
+      "campaign_id": "RED-PLANAF-H6J-05",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7184,
+      "loadout_id": 4,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "cbdae078-f8f4-52bb-9f0e-b17244b7a82f"
+    },
+    {
+      "campaign_id": "RED-PLANAF-H6J-06",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7184,
+      "loadout_id": 4,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "d890ef7d-6aff-53f2-9a35-062502bd1aa6"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Y8Q-LS-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7418,
+      "loadout_id": 27636,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "7e7cb323-af97-50a6-ba66-ccb3c76f2ebc"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Y8Q-LS-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7418,
+      "loadout_id": 27636,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "52a8124b-799a-5b81-9609-8f030a26bef9"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Y8Q-LS-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7418,
+      "loadout_id": 27636,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "f17f7f8e-9ec7-5243-9d72-cf912b1d35db"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Y8Q-LS-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7418,
+      "loadout_id": 4,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "d7407838-dec2-5614-bc6e-45eb39fb6a7e"
+    },
+    {
+      "campaign_id": "RED-PLANAF-KJ500H-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7176,
+      "loadout_id": 18300,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "f0720716-a8e8-5206-ac9b-9e91b6109187"
+    },
+    {
+      "campaign_id": "RED-PLANAF-KJ500H-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7176,
+      "loadout_id": 4,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "08cc5809-fb49-57ed-958d-a389597bd672"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-LS-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 25718,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "a9c4ace5-c486-5a2a-b871-baf0c12da7f2"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-LS-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 25718,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "673a5c60-7134-58f4-82a7-4e58a0335f57"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-LS-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 25718,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "afaa2bff-27bf-5021-9fbb-b532c5a38408"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-LS-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 4,
+      "base": "Lingshui AB (PLAN)",
+      "planned_guid": "0b4977ce-9382-57b1-bd75-06de68b69c1e"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "0bf2a877-a565-5351-b2c4-dc425d488aec"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "d123fb75-7f86-5228-8de9-4263d60f8f71"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "e96fbd1f-fba7-5c5e-bdc2-387fa856e451"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "8afcea8b-8319-562c-a537-0eb42dac2a89"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-05",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "8947fbd5-a5b1-58fb-8f10-a2b8b6c287eb"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-06",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "5412beb5-c995-515b-a2e2-a5808bd67456"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-07",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "7024a741-feb8-5fa2-be55-b418ec5b94df"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-08",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "705e83d6-c604-57cd-a3ff-b1a769d9d1a6"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-09",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "743755eb-227f-5697-aa34-db565a51273c"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-10",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "fa0aaa72-4437-5b3b-9179-574185f688c4"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-11",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "002d94a0-1c60-5f48-baae-6ab7dcfbde9b"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-12",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "b9826518-3d5e-5878-b96b-c92ddc82363e"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-13",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "fb6cfe3e-f19a-5953-9d1a-c439060b4f08"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-14",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "38e59ca0-33d3-586c-818c-87a7cab6ccc9"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-15",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "ff8d08e5-86d7-554c-a0c9-1f55de76b3d3"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-16",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "33b3b33b-a8d0-5f96-a0e9-f873b1eeab83"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-17",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "95a97b85-53ea-54a6-a183-2eb11b18acb7"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-18",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "5bb03ca6-9211-56e7-8625-78dd3177efa8"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-19",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "31516d27-eb08-5fe1-be9d-cdaa402f3b84"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-20",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25177,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "25bcd7eb-23a2-521a-947c-56caadf601db"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-21",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 4,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "b94b1a64-9af2-5ccf-bdbb-812c8d8e7d47"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-22",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 4,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "8220dcf3-4999-5f0b-8e69-e896ebc24470"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-23",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 4,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "318ddf29-a844-5ecd-912c-0dec25888331"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-SX-24",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 4,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "d42b5956-64d1-529f-bf2b-2a8ea69b1c82"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "0fc27d4d-dbee-5114-8689-35565a93e94f"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "b49321e7-e2ba-52fe-baed-c5696ffeda13"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "efec0604-ea6a-5c61-8562-6c8e1b90eb23"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "2a125de8-7764-5272-b66e-6ac66880c66f"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-05",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "43b5c520-f24f-5936-a2ad-e0a5f5c6ef33"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-06",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "44bd478d-53d9-5bdf-84c8-4cdd5dfdc6df"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-07",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "074f3071-4f81-590c-83f2-0ffd4a5b6895"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-08",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "7e7fdb48-d097-5e6c-86d9-ab3fe0cbcd41"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-09",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "eb583d2d-c9b9-56e6-8455-dfbd7cf96dd2"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-10",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 28028,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "e0769b08-32be-523f-b522-d937d6a4d08e"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-11",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 4,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "17faf9d9-1b26-51fb-b5cf-067252b10fd6"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J20-12",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 5014,
+      "loadout_id": 4,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "d8debbcb-3e77-5139-aba9-0f699cb13314"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J16D-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4632,
+      "loadout_id": 25212,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "dc4c412a-5fc7-5ce8-b3c5-2daabeaf75e7"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J16D-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4632,
+      "loadout_id": 25212,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "7ccd922a-47dc-5479-bc61-fed69504aca1"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J16D-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4632,
+      "loadout_id": 25212,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "f810cd3d-50ed-5516-a14d-6b1234d9f945"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J16D-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4632,
+      "loadout_id": 4,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "d26f8386-e847-5be7-900e-49e375268bd0"
+    },
+    {
+      "campaign_id": "RED-PLAAF-KJ500-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 6004,
+      "loadout_id": 18300,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "b1aada83-137e-5e6b-b646-7a7eb4752bab"
+    },
+    {
+      "campaign_id": "RED-PLAAF-KJ500-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 6004,
+      "loadout_id": 4,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "9f5dba7f-c734-595a-80b8-0abcb44fa9d7"
+    },
+    {
+      "campaign_id": "RED-PLAAF-YY20-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4975,
+      "loadout_id": 27886,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "5abba49c-fe31-5382-8efd-cd941988b6f6"
+    },
+    {
+      "campaign_id": "RED-PLAAF-YY20-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4975,
+      "loadout_id": 27886,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "8440dc04-6849-55da-8166-7fa493a7c61e"
+    },
+    {
+      "campaign_id": "RED-PLAAF-YY20-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4975,
+      "loadout_id": 4,
+      "base": "Suixi AB  (PLAAF)",
+      "planned_guid": "1c3e9dbb-9ae9-58f1-8813-7e5aadff59d2"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-WI-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Woody Island",
+      "planned_guid": "9a4703d3-7fed-57ff-9c00-5d362c179289"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-WI-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Woody Island",
+      "planned_guid": "2b83acff-3f62-5317-ac1a-91873bb05ed0"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-WI-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Woody Island",
+      "planned_guid": "a173a8fc-127e-5bc7-b923-a23ac2070a5c"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-WI-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Woody Island",
+      "planned_guid": "6d0dafbc-c14e-5689-9c0b-c698c3bc0595"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-WI-05",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Woody Island",
+      "planned_guid": "bccc1ec3-b66b-5237-83bd-394ac8a188d2"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-WI-06",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Woody Island",
+      "planned_guid": "d36c4b53-9004-58ec-b15c-6360cb9d1057"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-WI-07",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 4,
+      "base": "Woody Island",
+      "planned_guid": "d5cdc78a-2c20-51ae-839c-1ad8e389c8c3"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-WI-08",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 4,
+      "base": "Woody Island",
+      "planned_guid": "0cab6390-23bd-53ca-84ac-7472f788e169"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Y8Q-WI-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7418,
+      "loadout_id": 27636,
+      "base": "Woody Island",
+      "planned_guid": "c9517233-2d0e-5a4f-b97b-7214e6d9d478"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Y8Q-WI-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7418,
+      "loadout_id": 4,
+      "base": "Woody Island",
+      "planned_guid": "8c169d35-0aa9-5202-8ed5-19cf98aa16e6"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-WI-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 25718,
+      "base": "Woody Island",
+      "planned_guid": "7d2bb7bb-525c-52ef-9ce9-2654637bb8ce"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-WI-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 4,
+      "base": "Woody Island",
+      "planned_guid": "1f834b02-9e7a-58d8-b9f4-bf1e00341f22"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-FC-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "b52f6376-5c97-51fe-8180-e2b174e04110"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-FC-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "3a392285-3a62-5d51-ada2-18f92cc6883b"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-FC-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "f99e694a-be6c-56f0-b019-b6d13b9f5eef"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-FC-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "9735e059-90a5-52d6-9346-a3aafa653a7b"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-FC-05",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "27a55ad9-cac9-5ad6-825c-65d0bbd071ef"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-FC-06",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 25178,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "a20decca-61d5-5eb0-a959-98f62814ca23"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-FC-07",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 4,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "918a44fe-4136-5a8b-aaaa-96189c197b87"
+    },
+    {
+      "campaign_id": "RED-PLAAF-J10-FC-08",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7658,
+      "loadout_id": 4,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "812d0fca-c6d3-52f4-a362-e5b8b05af649"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-FC-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 25718,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "af5d0542-28d2-51c0-b2fc-6e052e2035fa"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-FC-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 25718,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "1c95c867-57de-52e5-a811-ae00b0e9f7f7"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-FC-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 25718,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "57a325d2-4d24-505f-9c78-fc5c13ddaa6f"
+    },
+    {
+      "campaign_id": "RED-PLAAF-GJ2-FC-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4725,
+      "loadout_id": 4,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "3fffeb9a-7e97-5cd3-9ae4-e5e06999e0ad"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Y9JB-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 3692,
+      "loadout_id": 21676,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "30de9d9d-54cb-56d4-ad8d-c1a65429be5d"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Y9JB-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 3692,
+      "loadout_id": 4,
+      "base": "Fiery Cross Reef",
+      "planned_guid": "3d2cb73f-9534-5803-acba-4a0b0b9ea235"
+    },
+    {
+      "campaign_id": "BLU-USN-CVN-0001",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 5167,
+      "group": "TG B-1 George Washington CSG",
+      "planned_guid": "dfabc5c9-044c-56f9-8de8-ceb10064be41"
+    },
+    {
+      "campaign_id": "BLU-USN-DDG-0001",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 2718,
+      "group": "TG B-1 George Washington CSG",
+      "planned_guid": "60af27ba-206a-566d-ab05-a39f223b80ea"
+    },
+    {
+      "campaign_id": "BLU-USN-DDG-0002",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 5110,
+      "group": "TG B-1 George Washington CSG",
+      "planned_guid": "4e43d3a7-1794-57f1-9dff-51e07f68acd8"
+    },
+    {
+      "campaign_id": "BLU-USN-DDG-0003",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 5122,
+      "group": "TG B-1 George Washington CSG",
+      "planned_guid": "b91ebbbf-1f65-5516-9b65-25991d4e87df"
+    },
+    {
+      "campaign_id": "BLU-USN-AOE-0001",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 5036,
+      "group": "TG B-1 George Washington CSG",
+      "planned_guid": "2cfa881a-1439-5a39-ad31-b5c9e5ea9eb3"
+    },
+    {
+      "campaign_id": "BLU-PHN-FFG-0001",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 3545,
+      "group": "TG B-2 Philippine West Sea SAG",
+      "planned_guid": "0a160f8e-0d1a-5eb9-94d0-941543bfab6b"
+    },
+    {
+      "campaign_id": "BLU-PHN-FFG-0002",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 3545,
+      "group": "TG B-2 Philippine West Sea SAG",
+      "planned_guid": "2c5b00a7-8ed3-5926-a54b-851aa2df6957"
+    },
+    {
+      "campaign_id": "BLU-PHN-COR-0001",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 3325,
+      "group": "TG B-2 Philippine West Sea SAG",
+      "planned_guid": "fddd5d84-7c51-57d9-b25a-d6295b361e69"
+    },
+    {
+      "campaign_id": "BLU-USN-LHA-0001",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 3563,
+      "group": "TG B-3 America ARG",
+      "planned_guid": "d4f26f3e-071a-562f-a028-f1236981fb01"
+    },
+    {
+      "campaign_id": "BLU-USN-LPD-0001",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 4300,
+      "group": "TG B-3 America ARG",
+      "planned_guid": "51e09edb-2d5c-5e18-ac1f-fc7efe3fc277"
+    },
+    {
+      "campaign_id": "BLU-USN-DDG-0004",
+      "side": "BLUE",
+      "kind": "ship",
+      "dbid": 5169,
+      "group": "TG B-3 America ARG",
+      "planned_guid": "75333807-114b-5dff-bfa9-520d167a41f7"
+    },
+    {
+      "campaign_id": "RED-PLAN-CV-0001",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 3187,
+      "group": "TG R-1 Shandong CSG",
+      "planned_guid": "96e9cc19-c3af-5b7d-afc5-d2bea8d6d9f8"
+    },
+    {
+      "campaign_id": "RED-PLAN-DDG-0001",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 3883,
+      "group": "TG R-1 Shandong CSG",
+      "planned_guid": "4da62242-68f2-594a-bc53-654c04ace076"
+    },
+    {
+      "campaign_id": "RED-PLAN-DDG-0002",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 4719,
+      "group": "TG R-1 Shandong CSG",
+      "planned_guid": "7ee75d14-9ede-5710-9ae3-579a914a8547"
+    },
+    {
+      "campaign_id": "RED-PLAN-DDG-0003",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 4937,
+      "group": "TG R-1 Shandong CSG",
+      "planned_guid": "69fd558a-feee-5157-a191-e049b8baee7d"
+    },
+    {
+      "campaign_id": "RED-PLAN-FFG-0001",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 4725,
+      "group": "TG R-1 Shandong CSG",
+      "planned_guid": "a1b91711-b029-554c-bb17-23e81b00b839"
+    },
+    {
+      "campaign_id": "RED-PLAN-AOE-0001",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 2980,
+      "group": "TG R-1 Shandong CSG",
+      "planned_guid": "969bb8d1-cffd-5483-b0e4-39f2df8c38b3"
+    },
+    {
+      "campaign_id": "RED-PLAN-DDG-0004",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 3883,
+      "group": "TG R-2 Southern Theater SAG",
+      "planned_guid": "91844031-f4c4-548c-8c87-b33de225e77b"
+    },
+    {
+      "campaign_id": "RED-PLAN-DDG-0005",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 4719,
+      "group": "TG R-2 Southern Theater SAG",
+      "planned_guid": "f8d42fc6-58fe-5355-84b3-e04916429440"
+    },
+    {
+      "campaign_id": "RED-PLAN-DDG-0006",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 4937,
+      "group": "TG R-2 Southern Theater SAG",
+      "planned_guid": "eb2c16ba-76e4-502f-9fa4-925bd3bc1106"
+    },
+    {
+      "campaign_id": "RED-PLAN-FFG-0002",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 4725,
+      "group": "TG R-2 Southern Theater SAG",
+      "planned_guid": "1cbfed59-3416-5b37-bb4a-8af70a816bf8"
+    },
+    {
+      "campaign_id": "RED-PLAN-AOR-0001",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 2927,
+      "group": "TG R-2 Southern Theater SAG",
+      "planned_guid": "1624043c-ac85-55af-be3c-f9ca1ae60b8b"
+    },
+    {
+      "campaign_id": "RED-PLAN-LHD-0001",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 3153,
+      "group": "TG R-3 Hainan Amphibious Group",
+      "planned_guid": "8a76918a-3ae1-5fd9-adc2-d656f0e12526"
+    },
+    {
+      "campaign_id": "RED-PLAN-LPD-0001",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 4922,
+      "group": "TG R-3 Hainan Amphibious Group",
+      "planned_guid": "2f3541b1-656f-556f-8b5f-ce01e6dd97f0"
+    },
+    {
+      "campaign_id": "RED-PLAN-LPD-0002",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 2006,
+      "group": "TG R-3 Hainan Amphibious Group",
+      "planned_guid": "002fd68f-c893-5d72-94d6-ad4e020b8270"
+    },
+    {
+      "campaign_id": "RED-PLAN-DDG-0007",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 4719,
+      "group": "TG R-3 Hainan Amphibious Group",
+      "planned_guid": "56931fd3-3fdb-57f7-8cd4-56e408eb5d24"
+    },
+    {
+      "campaign_id": "RED-PLAN-FFG-0003",
+      "side": "RED",
+      "kind": "ship",
+      "dbid": 4725,
+      "group": "TG R-3 Hainan Amphibious Group",
+      "planned_guid": "73559928-56c5-5f60-8a72-2f0c81fd1b27"
+    },
+    {
+      "campaign_id": "BLU-USN-SSN-0001",
+      "side": "BLUE",
+      "kind": "submarine",
+      "dbid": 828,
+      "planned_guid": "0f6b8ec8-bd18-5349-ba68-232597529cac",
+      "start": [
+        16.2,
+        118.4
+      ],
+      "course": [
+        [
+          15.4,
+          117.8
+        ],
+        [
+          14.5,
+          117.6
+        ]
+      ]
+    },
+    {
+      "campaign_id": "BLU-USN-SSN-0002",
+      "side": "BLUE",
+      "kind": "submarine",
+      "dbid": 827,
+      "planned_guid": "7481bdd6-c84b-5c3d-bf85-ee3bb2c54c98",
+      "start": [
+        12.7,
+        115.7
+      ],
+      "course": [
+        [
+          11.8,
+          115.2
+        ],
+        [
+          11.0,
+          115.8
+        ]
+      ]
+    },
+    {
+      "campaign_id": "BLU-USN-SSN-0003",
+      "side": "BLUE",
+      "kind": "submarine",
+      "dbid": 830,
+      "planned_guid": "bd8c4f24-7e6e-5419-8a57-cf8395ef18d3",
+      "start": [
+        10.6,
+        116.7
+      ],
+      "course": [
+        [
+          9.8,
+          116.2
+        ],
+        [
+          9.2,
+          115.7
+        ]
+      ]
+    },
+    {
+      "campaign_id": "BLU-USN-SSN-0004",
+      "side": "BLUE",
+      "kind": "submarine",
+      "dbid": 837,
+      "planned_guid": "597b8460-065f-5a27-8400-c21075e69e4d",
+      "start": [
+        9.5,
+        117.4
+      ],
+      "course": [
+        [
+          10.2,
+          117.1
+        ],
+        [
+          11.0,
+          117.2
+        ]
+      ]
+    },
+    {
+      "campaign_id": "RED-PLAN-SSN-0001",
+      "side": "RED",
+      "kind": "submarine",
+      "dbid": 665,
+      "planned_guid": "14e36c1d-872a-5884-85d0-c74e52182295",
+      "start": [
+        17.0,
+        116.0
+      ],
+      "course": [
+        [
+          16.0,
+          116.4
+        ],
+        [
+          15.0,
+          116.0
+        ]
+      ]
+    },
+    {
+      "campaign_id": "RED-PLAN-SSN-0002",
+      "side": "RED",
+      "kind": "submarine",
+      "dbid": 665,
+      "planned_guid": "263232e1-252a-57ca-bb65-aed0e62441fa",
+      "start": [
+        13.5,
+        117.3
+      ],
+      "course": [
+        [
+          12.8,
+          117.0
+        ],
+        [
+          12.0,
+          117.5
+        ]
+      ]
+    },
+    {
+      "campaign_id": "RED-PLAN-SSK-0001",
+      "side": "RED",
+      "kind": "submarine",
+      "dbid": 695,
+      "planned_guid": "af85e503-e5de-5982-923d-d155d6f0ba61",
+      "start": [
+        11.2,
+        114.8
+      ],
+      "course": [
+        [
+          10.5,
+          115.0
+        ],
+        [
+          9.8,
+          114.7
+        ]
+      ]
+    },
+    {
+      "campaign_id": "RED-PLAN-SSK-0002",
+      "side": "RED",
+      "kind": "submarine",
+      "dbid": 695,
+      "planned_guid": "938ccbfb-7424-5e09-a28e-f1a4b3b51f4b",
+      "start": [
+        9.6,
+        115.5
+      ],
+      "course": [
+        [
+          9.0,
+          115.1
+        ],
+        [
+          8.5,
+          115.7
+        ]
+      ]
+    },
+    {
+      "campaign_id": "RED-PLAN-SSK-0003",
+      "side": "RED",
+      "kind": "submarine",
+      "dbid": 580,
+      "planned_guid": "62733c20-6e12-5222-b937-63f17b4fe04f",
+      "start": [
+        15.0,
+        119.0
+      ],
+      "course": [
+        [
+          14.3,
+          118.5
+        ],
+        [
+          13.5,
+          118.8
+        ]
+      ]
+    },
+    {
+      "campaign_id": "RED-PLAN-SSBN-0001",
+      "side": "RED",
+      "kind": "submarine",
+      "dbid": 773,
+      "planned_guid": "7ac5873a-80b5-57be-a2e1-6d1439a61886",
+      "start": [
+        18.1,
+        111.0
+      ],
+      "course": [
+        [
+          17.6,
+          110.7
+        ],
+        [
+          18.0,
+          110.3
+        ]
+      ]
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 10098,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "3c9d2270-045b-54cc-9a47-7954e541888b"
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 10098,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "c4cc203c-6810-535b-b6e6-d252dcb01376"
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 10098,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "d6df3b2d-8b67-5516-8bf6-c2037dde319c"
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 10098,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "8f9c15fb-caa9-5c05-ba47-2d68c48ecc40"
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 10098,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "c7e220e1-2fff-56e6-a2b2-40a9092168d1"
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 10098,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "0179b884-7d08-579e-b893-1a0ea3b556c1"
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-07",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 33864,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "ae279990-1acc-588f-9c39-86dbf86a037a"
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-08",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 33864,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "6fed252c-1315-51de-b28e-2b5f29dd7f0e"
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-09",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 33864,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "fa98ebf5-afa3-51cc-8e5a-500523fdcd45"
+    },
+    {
+      "campaign_id": "BLU-USN-F35C-10",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4874,
+      "loadout_id": 33864,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "63bf3ed0-749d-540f-9866-99781f315357"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "db018446-e060-5d79-9468-59a35b7eec01"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "26605fa8-5567-5127-893f-ff349349b1fc"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "e18a8fb9-d3a3-5f0a-adba-c1b461b60a77"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "a2b1bc22-8ec7-5abb-9c4f-590d13ae70b8"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "80a4d6ac-511a-591a-88b6-8394011f4db2"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "f3a771fb-f413-5bb6-9d5c-d68bdfb21837"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-07",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "5709ad66-a370-5bad-92f3-e13e6511ee71"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-08",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "1703be7b-f90a-5deb-a8c5-551c13a66014"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-09",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "15c23856-c260-59f7-b9b1-982bc1e36164"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-10",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "982e6344-d2f1-59ee-a360-51b53c46f3fd"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-11",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "3655440c-2bf4-5971-be2e-53381fe6bc1f"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-12",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 15483,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "ce00dafd-afc3-5464-b629-90c7aded3a2c"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-13",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 22742,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "156a44c1-b610-5a6b-b639-bbd1c5fb8482"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-14",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 22742,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "9596f453-77c4-5496-a020-ea1e64ae07e9"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-15",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 22742,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "9576cfd7-5f0a-5b03-82fc-dfd855172c49"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18E-16",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3483,
+      "loadout_id": 22742,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "f6716eec-98b5-5389-a4e1-8a4cdf90a1ca"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18F-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3482,
+      "loadout_id": 15485,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "fccb4b4c-9cce-5d14-8f25-9227fb07ae88"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18F-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3482,
+      "loadout_id": 15485,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "0d84dc43-b4ac-5db9-9e7b-bfa452419918"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18F-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3482,
+      "loadout_id": 15485,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "7f671aac-6877-5d68-953f-febc36b4dc4c"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18F-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3482,
+      "loadout_id": 15485,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "4fd59d4c-a69c-52cc-9275-a046161575f4"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18F-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3482,
+      "loadout_id": 22742,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "7a97d553-3906-5a6f-9cf0-e8cea5c01c85"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18F-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3482,
+      "loadout_id": 22742,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "f9efb77e-19eb-5824-9c4a-3538eaed8567"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18F-07",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3482,
+      "loadout_id": 22742,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "5c250e96-0d56-5faf-a1ef-e004c821d784"
+    },
+    {
+      "campaign_id": "BLU-USN-FA18F-08",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 3482,
+      "loadout_id": 22742,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "c931ead5-e7aa-5af8-a607-a0e213bc06c9"
+    },
+    {
+      "campaign_id": "BLU-USN-EA18G-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4518,
+      "loadout_id": 22929,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "a3c7f98b-a4d2-54af-9bd0-480f59a8eba0"
+    },
+    {
+      "campaign_id": "BLU-USN-EA18G-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4518,
+      "loadout_id": 22929,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "c56cbeb6-506b-5580-b310-53b5cda67408"
+    },
+    {
+      "campaign_id": "BLU-USN-EA18G-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4518,
+      "loadout_id": 22929,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "53bccc47-a88a-5393-a9f3-5732107c12d4"
+    },
+    {
+      "campaign_id": "BLU-USN-EA18G-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4518,
+      "loadout_id": 27345,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "fa5df5c4-9ee5-59a6-be47-4a84a3323cb2"
+    },
+    {
+      "campaign_id": "BLU-USN-EA18G-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4518,
+      "loadout_id": 27345,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "36f86706-bd75-5d17-8548-c9108e8e2fc1"
+    },
+    {
+      "campaign_id": "BLU-USN-E2D-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7114,
+      "loadout_id": 14629,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "d5bb3774-1fb5-5854-859e-54e1839bb7e5"
+    },
+    {
+      "campaign_id": "BLU-USN-E2D-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7114,
+      "loadout_id": 14629,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "2667ec60-00f5-5ed3-8b16-39dd6498e311"
+    },
+    {
+      "campaign_id": "BLU-USN-E2D-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7114,
+      "loadout_id": 14629,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "a54aa358-1092-5762-8dc4-df83fbad6b67"
+    },
+    {
+      "campaign_id": "BLU-USN-E2D-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7114,
+      "loadout_id": 14629,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "f6d18b90-269d-5009-8d30-48a3d3266c55"
+    },
+    {
+      "campaign_id": "BLU-USN-E2D-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7114,
+      "loadout_id": 14629,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "25564e22-0374-5fa1-9c76-72ded599381d"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60R-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5338,
+      "loadout_id": 1101,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "91a69889-fc90-53c4-93c7-571ac8403c24"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60R-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5338,
+      "loadout_id": 1101,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "79f64817-e4c6-521a-82f7-9dbd5815fd6c"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60R-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5338,
+      "loadout_id": 1101,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "d6148ca0-ca9c-5936-b2e9-49753c4d0d95"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60R-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5338,
+      "loadout_id": 1101,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "1f162ee1-6b1e-5277-a014-412c4e2a1043"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60R-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5338,
+      "loadout_id": 1101,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "f662e1f9-f3f4-596b-8c5c-030577cbaf9f"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60R-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5338,
+      "loadout_id": 1101,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "ea78f1e5-126d-5957-a3f1-6e0533be0868"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60S-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5337,
+      "loadout_id": 25707,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "c21f477d-1968-5cd2-9135-43c509a8d4fb"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60S-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5337,
+      "loadout_id": 25707,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "efdacc54-d1cf-5abf-a51b-c578032499cc"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60S-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5337,
+      "loadout_id": 25707,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "f542ad1e-0e78-5aa3-8cd8-3e17afa80366"
+    },
+    {
+      "campaign_id": "BLU-USN-MH60S-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 5337,
+      "loadout_id": 25707,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "5b60242d-eeb0-5145-842f-7deb9af7c7c4"
+    },
+    {
+      "campaign_id": "BLU-USN-CMV22-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4558,
+      "loadout_id": 23143,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "8b611216-c875-5025-a256-2786d982b23a"
+    },
+    {
+      "campaign_id": "BLU-USN-CMV22-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4558,
+      "loadout_id": 23143,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "75b3bfea-35af-5ffa-b58e-6e3ad790d83c"
+    },
+    {
+      "campaign_id": "BLU-USN-CMV22-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4558,
+      "loadout_id": 23143,
+      "base": "TG B-1 George Washington CSG",
+      "planned_guid": "1f8e6e92-d031-5191-bfd4-f8f8d176996f"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "b7288646-3e1d-5614-af2a-1b6963c73e3b"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "30efdfbc-869b-50e1-8fe8-af60f310a84e"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "4aab3449-6e5c-5925-ae6f-b79c18f2cf7e"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "52aa6c27-2cb1-5e8b-8e4d-4f682b5f7f25"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "a6c45d71-9a1b-5a74-a887-7e6c7fa58354"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 10064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "a8432e00-720e-5a24-be38-dc20903ace5c"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-07",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 18064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "39c331c2-ba16-588c-96cd-fc63e1233ffa"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-08",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 18064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "654cc590-f823-566f-9dd8-8871d49752ad"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-09",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 18064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "cd158d43-3330-5dc8-98dc-ff824c842859"
+    },
+    {
+      "campaign_id": "BLU-USMC-F35B-ARG-10",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4701,
+      "loadout_id": 18064,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "4927b993-53d1-5f31-a24c-4b56ea1450c5"
+    },
+    {
+      "campaign_id": "BLU-USMC-MV22-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7516,
+      "loadout_id": 3557,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "03449c94-cb6a-5ab5-b55c-7c523fcbfbcb"
+    },
+    {
+      "campaign_id": "BLU-USMC-MV22-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7516,
+      "loadout_id": 3557,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "50423d4f-ea2a-539c-89c2-28a77eea1387"
+    },
+    {
+      "campaign_id": "BLU-USMC-MV22-03",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7516,
+      "loadout_id": 3557,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "73fe6ef2-2064-50b7-bca3-1ca21f43ac0b"
+    },
+    {
+      "campaign_id": "BLU-USMC-MV22-04",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7516,
+      "loadout_id": 3557,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "ad57eae5-7194-5cae-a103-5645ec18221a"
+    },
+    {
+      "campaign_id": "BLU-USMC-MV22-05",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7516,
+      "loadout_id": 3557,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "377e3778-fc37-53af-b500-c395a6540e4c"
+    },
+    {
+      "campaign_id": "BLU-USMC-MV22-06",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7516,
+      "loadout_id": 3557,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "1b4caee2-e2b5-52a7-bac3-26a827e36dec"
+    },
+    {
+      "campaign_id": "BLU-USMC-CH53K-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4029,
+      "loadout_id": 20057,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "1e1de2e4-ddfb-51d8-86fa-796053672247"
+    },
+    {
+      "campaign_id": "BLU-USMC-CH53K-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 4029,
+      "loadout_id": 20057,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "8311faa7-9e99-5e9e-8e39-73fe9cfccde1"
+    },
+    {
+      "campaign_id": "BLU-USMC-AH1Z-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7514,
+      "loadout_id": 26107,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "fa7aa956-1750-5c71-be65-e822a5c6942f"
+    },
+    {
+      "campaign_id": "BLU-USMC-AH1Z-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7514,
+      "loadout_id": 26107,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "384a416b-1413-52f7-9ab7-a050722970fc"
+    },
+    {
+      "campaign_id": "BLU-USMC-UH1Y-01",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7515,
+      "loadout_id": 13983,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "8713b218-a24a-5796-bdb6-f4594a54b66b"
+    },
+    {
+      "campaign_id": "BLU-USMC-UH1Y-02",
+      "side": "BLUE",
+      "kind": "aircraft",
+      "dbid": 7515,
+      "loadout_id": 13983,
+      "base": "TG B-3 America ARG",
+      "planned_guid": "827f0f0c-8a33-5279-bce9-00590eafa7a3"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "4a903a1b-6104-5ac7-bca0-a92c9c4c7d88"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "0ac12b53-6640-5f8b-841a-8ac640f9cd2d"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "7372c705-c56c-55b3-8238-c7fa55ab7050"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "69370d43-42a6-5baf-850e-f9b83d10a882"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-05",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "259b1560-4689-574d-b7d6-b3bac0c6c678"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-06",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "ddda3fc0-da24-52fa-9700-bc1c80ca91cf"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-07",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "dd2cd14a-0d67-5c1d-b903-a11eaec89cd2"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-08",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "11b4f0fc-72ac-58e0-b309-0a4250fa860a"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-09",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "aeefedc1-a545-5684-8956-f6549c01865a"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-10",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "31846fcb-4b94-5690-b53d-d91ae58f7007"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-11",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "652bcf94-fa00-5ebb-8ae1-96bb044e0904"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-12",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "6b5e5674-8e92-5d9c-bce7-eaf8ebd537ed"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-13",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "4f2bff0e-2517-512a-a55b-d81989169735"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-14",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "9cb4e1c5-a584-534e-95f5-2a604b6129a0"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-15",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "f1bbfe1e-cf5a-5c8f-b0b3-72e361b963f1"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-16",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 30185,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "9557c439-5972-5212-8c0c-94a7e8b2a04e"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-17",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 34295,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "0542553e-cfd4-54d6-a9f4-2cac802580f8"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-18",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 34295,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "1151e13c-f081-5f83-9087-59ef4a5bf80e"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-19",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 34295,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "206a4d38-4fd5-583d-865e-b2dc71616b9e"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-20",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 34295,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "ce3954da-6220-57a1-86a6-7eeed0b4cc80"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-21",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 34295,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "ffc196d6-af18-5161-b70b-6aaf8068b954"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-22",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 34295,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "f562d444-688d-530f-9d89-050f56813f5d"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-23",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 34295,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "19bd81d0-dc4c-5e91-ac16-66661ed4938f"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15-24",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7139,
+      "loadout_id": 34295,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "71832e10-bd42-53e6-bfad-6b1bd0fb7fbf"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15D-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4817,
+      "loadout_id": 25212,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "de9442cb-6e7f-5f93-8782-72a2d8c98e54"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15D-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4817,
+      "loadout_id": 25212,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "80fb2c94-b492-5f1d-9f0d-7b693bd10c45"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15D-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4817,
+      "loadout_id": 25212,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "cf05410c-410a-54d5-af4a-da1744e8047c"
+    },
+    {
+      "campaign_id": "RED-PLANAF-J15D-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 4817,
+      "loadout_id": 25212,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "65e9f46d-6c2b-51da-936c-e708497d44dc"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z18J-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7357,
+      "loadout_id": 17471,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "76a8c8e8-cf82-5e76-9a52-a078c0cebbe2"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z18J-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7357,
+      "loadout_id": 17471,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "d97ffe73-820c-56f2-907c-ca330b00c3c7"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z18F-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7359,
+      "loadout_id": 18368,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "54ecb8b0-8df2-5c42-8490-05614450a0ec"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z18F-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7359,
+      "loadout_id": 18368,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "6626facf-0edf-5144-9a7b-600562f0059a"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z18F-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7359,
+      "loadout_id": 18368,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "b636dca4-25cd-55b1-8aba-e5ddb3fd808a"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z18F-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7359,
+      "loadout_id": 18368,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "f4846d6d-38f2-587e-ad96-c01804c6c357"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z9D-01",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7349,
+      "loadout_id": 11837,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "f5bd87d0-8fa2-5090-afe4-b7809bb3aa95"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z9D-02",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7349,
+      "loadout_id": 11837,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "e2ffb93c-92ea-53b0-acd8-2b11a5dbd23a"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z9D-03",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7349,
+      "loadout_id": 11837,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "e7e2377f-5beb-5f0d-8a0c-4564fad5b63b"
+    },
+    {
+      "campaign_id": "RED-PLANAF-Z9D-04",
+      "side": "RED",
+      "kind": "aircraft",
+      "dbid": 7349,
+      "loadout_id": 11837,
+      "base": "TG R-1 Shandong CSG",
+      "planned_guid": "6eaac250-ecce-5c9c-b70a-d8b595890213"
+    }
+  ]
+}

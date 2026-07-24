@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+
+# CMO playthrough saves can become large and are transient campaign checkpoints.
+# Curated .scen baselines remain tracked for reproducibility and posterity.
+days/*/*.save

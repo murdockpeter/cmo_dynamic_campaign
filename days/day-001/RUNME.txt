@@ -1,0 +1,11 @@
+CMO Scenario Editor instructions
+
+1. Open CMO and enter Scenario Editor mode.
+2. Open Editor > Lua Script Console.
+3. Run:
+   ScenEdit_RunScript('DynamicCampaign/SCS_Day1/build.lua')
+4. Wait for the Day 1 build-complete message.
+5. Run validation:
+   ScenEdit_RunScript('DynamicCampaign/SCS_Day1/validate.lua')
+6. Use Editor > Save As Scenario and save to:
+   C:\Users\Peter G. Robbins\Documents\claudeprojects\cmo_dynamic_campaign\days\day-001\Day1.scen

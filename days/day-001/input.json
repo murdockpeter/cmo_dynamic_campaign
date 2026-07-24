@@ -1,0 +1,44 @@
+{
+  "campaign": "SCS-2026",
+  "day": 1,
+  "title": "Fault Line - South China Sea Day 1",
+  "start": "2026-08-15T00:00:00Z",
+  "operational_pause": "2026-08-16T00:00:00Z",
+  "database": "DB3K_515.db3",
+  "player_side": "BLUE",
+  "rules": {
+    "mainland_strikes": false,
+    "guam_strikes": false
+  },
+  "templates": [
+    {
+      "side": "BLUE",
+      "file": "Philippines/Basa Air Base 2011.inst"
+    },
+    {
+      "side": "BLUE",
+      "file": "Philippines/Puerto Princesa International Airport-Antonio Bautista AB.inst"
+    },
+    {
+      "side": "BLUE",
+      "file": "Philippines/Benito Ebeun (Mactan) AB Mactan-Cebu International Airport 2011.inst"
+    },
+    {
+      "side": "RED",
+      "file": "China/Hainan Island/PLAN Lingshui AB 2011.inst"
+    },
+    {
+      "side": "RED",
+      "file": "China/Guangzhou/PLAAF Suixi AB 2011.inst"
+    },
+    {
+      "side": "RED",
+      "file": "China/South China Sea Islands and Reefs/Woody Island 2022.inst"
+    },
+    {
+      "side": "RED",
+      "file": "China/South China Sea Islands and Reefs/Fiery Cross Reef 2022.inst"
+    }
+  ],
+  "tracked_unit_count": 336
+}
