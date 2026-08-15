@@ -12,9 +12,10 @@ npm install
 npm start
 ```
 
-The app reuses the GCBH mission map's OS-encrypted Google Maps key when present.
-Otherwise choose **Google Maps key** and enter a key restricted to the Maps
-JavaScript API and `http://127.0.0.1:43127/*`.
+The app first checks its own OS-encrypted settings, then the existing ignored
+local campaign reports that already hold the demo key. Otherwise choose
+**Google Maps key** and enter a key restricted to the Maps JavaScript API and
+`http://127.0.0.1:43117/*`.
 
 ## Displayed layers
 

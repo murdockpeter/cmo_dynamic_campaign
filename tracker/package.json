@@ -6,8 +6,8 @@
   "description": "Google Maps operational picture for the SCS-2026 CMO dynamic campaign",
   "main": "src/main.cjs",
   "scripts": {
-    "start": "electron .",
-    "check": "node --check src/main.cjs && node --check src/preload.cjs && node --check src/situation.cjs && node --check renderer/app.js"
+    "start": "node src/launch.cjs",
+    "check": "node --check src/launch.cjs && node --check src/main.cjs && node --check src/preload.cjs && node --check src/situation.cjs && node --check renderer/app.js"
   },
   "devDependencies": {
     "electron": "^43.3.0"

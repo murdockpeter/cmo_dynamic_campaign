@@ -1,10 +1,10 @@
 const $ = (id) => document.getElementById(id);
 const elements = Object.fromEntries([
   'game-day','start-time','pause-time','live-status','reload-button','settings-button','scenario-title','campaign-meta',
-  'blue-total','red-total','blue-breakdown','red-breakdown','node-count','search','side-filter','node-list','map','map-placeholder',
-  'placeholder-key-button','toggle-forces','toggle-routes','toggle-missions','toggle-restrictions','toggle-satellite','detail-empty',
+  'blue-total','red-total','blue-breakdown','red-breakdown','blue-balance','red-balance','force-balance','node-count','search','side-filter','node-list','map','map-placeholder',
+  'placeholder-key-button','reset-view-button','toggle-forces','toggle-routes','toggle-missions','toggle-restrictions','toggle-satellite','detail-empty',
   'detail','detail-side','detail-kind','detail-name','detail-position','detail-stats','package-list','element-count','element-list',
-  'mission-list','settings-dialog','settings-form','api-key','settings-message','save-key-button'
+  'mission-list','mission-count','settings-dialog','settings-form','api-key','settings-message','save-key-button'
 ].map((id) => [id.replaceAll('-', '_'), $(id)]));
 
 const COLORS = { BLUE: '#3ba8ff', RED: '#f0525a' };
@@ -53,7 +53,14 @@ function renderOverview() {
   elements.red_total.textContent = totals.RED;
   elements.blue_breakdown.textContent = '150 AIR • 11 SURFACE • 4 SUB';
   elements.red_breakdown.textContent = '149 AIR • 16 SURFACE • 6 SUB';
+  renderForceBalance(elements.side_filter.value);
   renderNodeList(); renderMissionList();
+}
+
+function renderForceBalance(side) {
+  elements.blue_balance.hidden = side === 'RED';
+  elements.red_balance.hidden = side === 'BLUE';
+  elements.force_balance.classList.toggle('single', side !== 'all');
 }
 
 function renderNodeList() {
@@ -68,7 +75,11 @@ function renderNodeList() {
 }
 
 function renderMissionList() {
-  elements.mission_list.innerHTML = state.data.missions.map((mission, index) => `
+  const side = elements.side_filter.value;
+  const missions = state.data.missions.map((mission, index) => ({ mission, index }))
+    .filter(({ mission }) => side === 'all' || mission.side === side);
+  elements.mission_count.textContent = missions.length;
+  elements.mission_list.innerHTML = missions.map(({ mission, index }) => `
     <article class="mission" data-mission="${index}" style="--side-color:${COLORS[mission.side]}"><strong>${mission.side} / ${escapeHtml(mission.type)}</strong><span>${escapeHtml(mission.name)}</span></article>`).join('');
   elements.mission_list.querySelectorAll('[data-mission]').forEach((card) => card.addEventListener('click', () => focusMission(Number(card.dataset.mission))));
 }
@@ -157,6 +168,34 @@ function applyVisibility() {
   state.restrictions.forEach((area)=>area.setMap(elements.toggle_restrictions.checked ? state.map:null));
 }
 
+function setSideFilter(side) {
+  elements.side_filter.value = side;
+  document.querySelectorAll('[data-side]').forEach((button) => button.classList.toggle('active', button.dataset.side === side));
+  renderForceBalance(side);
+  renderNodeList();
+  renderMissionList();
+  applyVisibility();
+}
+
+function resetView() {
+  elements.search.value = '';
+  elements.side_filter.value = 'BLUE';
+  document.querySelectorAll('[data-side]').forEach((button) => button.classList.toggle('active', button.dataset.side === 'BLUE'));
+  renderForceBalance('BLUE');
+  for (const key of ['toggle_forces','toggle_routes','toggle_missions','toggle_restrictions']) elements[key].checked = true;
+  elements.toggle_satellite.checked = false;
+  state.selected = null;
+  state.info?.close();
+  elements.detail.hidden = true;
+  elements.detail_empty.hidden = false;
+  renderNodeList();
+  renderMissionList();
+  if (state.map) {
+    state.map.setMapTypeId('terrain');
+    drawMap();
+  }
+}
+
 async function loadGoogleMaps(key) {
   if (!key || state.mapsReady) return;
   await new Promise((resolve,reject) => {
@@ -177,7 +216,9 @@ async function loadData() {
 function showSettings() { elements.settings_message.textContent='';elements.api_key.value='';elements.settings_dialog.showModal(); }
 elements.settings_button.addEventListener('click',showSettings);elements.placeholder_key_button.addEventListener('click',showSettings);
 elements.settings_form.addEventListener('submit',async(event)=>{if(event.submitter!==elements.save_key_button)return;event.preventDefault();const result=await window.campaignTracker.setMapsKey(elements.api_key.value);if(!result.saved){elements.settings_message.textContent=result.error;return;}elements.settings_message.textContent='Saved with OS-backed encryption. Loading map…';try{await loadGoogleMaps(elements.api_key.value);elements.settings_dialog.close();}catch(error){elements.settings_message.textContent=error.message;}});
-elements.reload_button.addEventListener('click',loadData);elements.search.addEventListener('input',renderNodeList);elements.side_filter.addEventListener('change',()=>{renderNodeList();applyVisibility();});
+elements.reload_button.addEventListener('click',loadData);elements.search.addEventListener('input',renderNodeList);elements.side_filter.addEventListener('change',()=>setSideFilter(elements.side_filter.value));
+document.querySelectorAll('[data-side]').forEach((button)=>button.addEventListener('click',()=>setSideFilter(button.dataset.side)));
+elements.reset_view_button.addEventListener('click',resetView);
 for(const key of ['toggle_forces','toggle_routes','toggle_missions','toggle_restrictions'])elements[key].addEventListener('change',applyVisibility);
 elements.toggle_satellite.addEventListener('change',()=>state.map?.setMapTypeId(elements.toggle_satellite.checked?'hybrid':'terrain'));
 window.campaignTracker.onSituationChanged(()=>{elements.live_status.textContent='SOURCE CHANGED';loadData();});

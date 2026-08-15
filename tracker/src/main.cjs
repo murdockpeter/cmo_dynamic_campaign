@@ -8,7 +8,7 @@ const path = require('node:path');
 const { loadSituation } = require('./situation.cjs');
 
 const APP_HOST = '127.0.0.1';
-const APP_PORT = 43127;
+const APP_PORT = 43117;
 const PROJECT_ROOT = path.resolve(__dirname, '..', '..');
 const RENDERER_ROOT = path.resolve(__dirname, '..', 'renderer');
 const MANIFEST_PATH = path.join(PROJECT_ROOT, 'days', 'day-001', 'manifest.json');
@@ -42,8 +42,18 @@ async function getMapsKey() {
       encrypted = JSON.parse(await fsp.readFile(legacyPath, 'utf8')).mapsKey;
     } catch { encrypted = ''; }
   }
-  if (!encrypted) return '';
-  try { return safeStorage.decryptString(Buffer.from(encrypted, 'base64')); } catch { return ''; }
+  if (encrypted) {
+    try { return safeStorage.decryptString(Buffer.from(encrypted, 'base64')); } catch { /* app-bound ciphertext; try local reports */ }
+  }
+  const reportRoot = path.resolve(PROJECT_ROOT, '..', 'il2korea_dynamic_campaign', 'reports');
+  for (const filename of ['campaign-tracker.html', 'current-situation.html', 'historical-frontline.html']) {
+    try {
+      const html = await fsp.readFile(path.join(reportRoot, filename), 'utf8');
+      const match = html.match(/const GOOGLE_MAPS_API_KEY="([A-Za-z0-9_-]+)";/);
+      if (match) return match[1];
+    } catch { /* local fallback is optional */ }
+  }
+  return '';
 }
 
 async function setMapsKey(key) {
@@ -113,6 +123,13 @@ async function createWindow() {
     if (!url.startsWith(`http://${APP_HOST}:${APP_PORT}/`)) event.preventDefault();
   });
   await mainWindow.loadURL(`http://${APP_HOST}:${APP_PORT}/`);
+  if (process.env.CMO_TRACKER_SMOKE_TEST === '1') {
+    setTimeout(async () => {
+      const result = await mainWindow.webContents.executeJavaScript(`(() => { const snapshot = (side) => { document.querySelector('[data-side="' + side + '"]').click(); return { nodes: document.querySelectorAll('.node-card').length, missions: document.querySelectorAll('.mission').length, missionBadge: document.querySelector('#mission-count').textContent, blueSummary: !document.querySelector('#blue-balance').hidden, redSummary: !document.querySelector('#red-balance').hidden }; }; const blueView = snapshot('BLUE'); const redView = snapshot('RED'); const allView = snapshot('all'); document.querySelector('#search').value = 'SSN'; document.querySelector('#search').dispatchEvent(new Event('input')); document.querySelector('#toggle-missions').click(); document.querySelector('#toggle-satellite').click(); document.querySelector('.node-card')?.click(); document.querySelector('#reset-view-button').click(); const reset = { nodes: document.querySelectorAll('.node-card').length, missions: document.querySelectorAll('.mission').length, missionBadge: document.querySelector('#mission-count').textContent, selectedSide: document.querySelector('.side-segment.active').dataset.side, blueSummary: !document.querySelector('#blue-balance').hidden, redSummary: !document.querySelector('#red-balance').hidden, search: document.querySelector('#search').value, layersOn: [...document.querySelectorAll('.map-tools input')].filter((input) => input.id !== 'toggle-satellite').every((input) => input.checked), satellite: document.querySelector('#toggle-satellite').checked, detailsCleared: !document.querySelector('#detail-empty').hidden }; return { title: document.title, blueView, redView, allView, reset, blue: document.querySelector('#blue-total').textContent, red: document.querySelector('#red-total').textContent, mapOnline: document.querySelector('#map-placeholder').hidden, mapMessage: document.querySelector('#settings-message').textContent }; })()`);
+      console.log(`TRACKER_SMOKE|${JSON.stringify(result)}`);
+      app.quit();
+    }, 8000);
+  }
 }
 
 ipcMain.handle('situation:load', () => loadSituation(PROJECT_ROOT));
