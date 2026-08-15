@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCS-2026 Common Operational Picture</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">CM</span><div><strong>COMMON OPERATIONAL PICTURE</strong><small>SCS-2026 / C:MO dynamic campaign</small></div></div>
+    <div class="clock"><span>GAME-DAY</span><strong id="game-day">DAY 001</strong><i></i><span>START</span><strong id="start-time">—</strong><i></i><span>OPERATIONAL PAUSE</span><strong id="pause-time">—</strong></div>
+    <div class="top-actions"><span id="live-status" class="live">LIVE DATA</span><button id="reload-button" class="button secondary">Reload</button><button id="settings-button" class="button">Google Maps key</button></div>
+  </header>
+
+  <main class="workspace">
+    <aside class="sidebar left-panel">
+      <div class="eyebrow">THEATER STATUS</div>
+      <h1 id="scenario-title">Fault Line</h1>
+      <div id="campaign-meta" class="meta-line"></div>
+      <div class="force-balance">
+        <article class="balance blue"><span>BLUE TRACKED</span><strong id="blue-total">0</strong><small id="blue-breakdown"></small></article>
+        <article class="balance red"><span>RED TRACKED</span><strong id="red-total">0</strong><small id="red-breakdown"></small></article>
+      </div>
+      <div class="section-heading"><span>FORMATION / SITE</span><span id="node-count" class="count-pill">0</span></div>
+      <div class="search-row"><input id="search" type="search" placeholder="Search ID, site, DBID…"><select id="side-filter"><option value="all">ALL</option><option value="BLUE">BLUE</option><option value="RED">RED</option></select></div>
+      <div id="node-list" class="node-list"></div>
+    </aside>
+
+    <section class="map-shell">
+      <div id="map"></div>
+      <div id="map-placeholder" class="map-placeholder">
+        <div class="radar-grid"></div>
+        <div class="placeholder-copy"><div class="eyebrow">BASEMAP OFFLINE</div><h2>Connect Google Maps</h2><p>The campaign data is loaded. Add the restricted demo key to display the geographic layer.</p><button id="placeholder-key-button" class="button">Configure encrypted key</button></div>
+      </div>
+      <div class="map-tools">
+        <label><input id="toggle-forces" type="checkbox" checked> Forces</label>
+        <label><input id="toggle-routes" type="checkbox" checked> Routes</label>
+        <label><input id="toggle-missions" type="checkbox" checked> Mission areas</label>
+        <label><input id="toggle-restrictions" type="checkbox" checked> Restrictions</label>
+        <label><input id="toggle-satellite" type="checkbox"> Satellite</label>
+      </div>
+      <div class="map-legend"><span><i class="dot blue"></i>BLUE</span><span><i class="dot red"></i>RED</span><span><i class="diamond"></i>Air/site</span><span><i class="route"></i>Course</span><span><i class="zone"></i>Mission area</span></div>
+      <div class="classification">FICTIONAL PLANNING BASELINE • NOT REAL-WORLD DEPLOYMENT DATA</div>
+    </section>
+
+    <aside class="sidebar right-panel">
+      <div class="eyebrow">SELECTED ELEMENT</div>
+      <div id="detail-empty" class="empty-detail"><div class="reticle">+</div><strong>Select a formation</strong><span>Click a map symbol or order-of-battle entry.</span></div>
+      <div id="detail" hidden>
+        <div class="detail-title"><span id="detail-side" class="side-tag"></span><span id="detail-kind"></span></div>
+        <h2 id="detail-name"></h2>
+        <div id="detail-position" class="position"></div>
+        <div id="detail-stats" class="detail-stats"></div>
+        <div class="section-heading"><span>PACKAGE SUMMARY</span></div>
+        <div id="package-list" class="package-list"></div>
+        <div class="section-heading"><span>CAMPAIGN ELEMENTS</span><span id="element-count" class="count-pill"></span></div>
+        <div id="element-list" class="element-list"></div>
+      </div>
+      <div class="section-heading mission-heading"><span>ACTIVE MISSION LAYERS</span><span class="count-pill">10</span></div>
+      <div id="mission-list" class="mission-list"></div>
+      <div class="rules-card"><div class="eyebrow">ESCALATION STATE</div><p><span class="rule-light"></span>Mainland strikes: <strong>NOT AUTHORIZED</strong></p><p><span class="rule-light"></span>Guam strikes: <strong>NOT AUTHORIZED</strong></p></div>
+    </aside>
+  </main>
+
+  <dialog id="settings-dialog">
+    <form method="dialog" id="settings-form">
+      <div class="eyebrow">LOCAL CONFIGURATION</div><h2>Google Maps API key</h2>
+      <p>Use a key restricted to Maps JavaScript API and <code>http://127.0.0.1:43127/*</code>. It is stored with operating-system encryption, never in this repository.</p>
+      <label for="api-key">API key</label><input id="api-key" type="password" autocomplete="off" placeholder="Paste restricted key">
+      <div id="settings-message" class="settings-message"></div>
+      <div class="dialog-actions"><button value="cancel" class="button secondary">Cancel</button><button id="save-key-button" value="default" class="button">Save encrypted key</button></div>
+    </form>
+  </dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -47,3 +47,18 @@ meaningful in the context of that database revision.
 - Preserve every end-of-day `.save`; reconciliation should be repeatable.
 - Give every tracked element a stable campaign ID independent of CMO's runtime
   GUID. Runtime GUIDs are mappings, not campaign identity.
+
+## Situation tracker
+
+`tracker/` contains a Google Maps desktop common operational picture for the
+current Day 1 baseline. It renders all 336 tracked elements as air/site
+concentrations, naval groups, and individual submarines, with mission areas,
+routes, escalation restrictions, filters, and campaign-ID drill-down.
+
+```powershell
+cd tracker
+npm install
+npm start
+```
+
+See [tracker/README.md](tracker/README.md) for key handling and displayed layers.
