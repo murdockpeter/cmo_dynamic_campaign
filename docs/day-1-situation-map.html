@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Fault Line — Day 1 Static Situation Map</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #040b0f;
+      --panel: #08151b;
+      --panel-2: #0b1b22;
+      --line: #1e3740;
+      --line-soft: #142a32;
+      --text: #eaf2f4;
+      --muted: #8ca0a6;
+      --faint: #597077;
+      --cyan: #45d7dc;
+      --blue: #5baaff;
+      --amber: #efb25c;
+      --green: #72d79d;
+      --water: #06131a;
+      --land: #15272c;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); }
+    body {
+      background:
+        radial-gradient(circle at 72% -8%, rgba(69,215,220,.08), transparent 36rem),
+        var(--bg);
+    }
+    button { font: inherit; }
+    .shell { width: min(1580px, calc(100% - 32px)); margin: 0 auto; }
+    .mono, .eyebrow, .tag, .meta span, .legend, .map-label, .layer-button { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+
+    header { border-bottom: 1px solid var(--line); background: rgba(5,13,17,.88); }
+    .topline { display: flex; justify-content: space-between; align-items: center; min-height: 68px; border-bottom: 1px solid var(--line-soft); }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .mark { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--cyan); color: var(--cyan); font: 800 10px ui-monospace, monospace; transform: rotate(45deg); }
+    .mark span { transform: rotate(-45deg); }
+    .brand strong { display: block; font-size: 11px; letter-spacing: .15em; }
+    .brand small { display: block; margin-top: 2px; color: var(--muted); font-size: 9px; }
+    .classification { color: var(--green); font: 800 9px ui-monospace, monospace; letter-spacing: .1em; }
+    .classification::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 8px currentColor; }
+
+    .title-row { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px; padding: 32px 0 30px; }
+    .eyebrow { color: var(--cyan); font-size: 9px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { margin: 10px 0 0; font-size: clamp(30px, 4vw, 51px); line-height: 1; letter-spacing: -.04em; }
+    .meta { display: grid; grid-template-columns: repeat(4, auto); border: 1px solid var(--line); background: var(--panel); }
+    .meta div { min-width: 126px; padding: 14px 16px; border-right: 1px solid var(--line); }
+    .meta div:last-child { border-right: 0; }
+    .meta span { display: block; color: var(--faint); font-size: 7px; font-weight: 800; letter-spacing: .11em; }
+    .meta strong { display: block; margin-top: 5px; font-size: 11px; }
+
+    .board { display: grid; grid-template-columns: 260px minmax(650px, 1fr) 285px; gap: 12px; padding: 14px 0 18px; }
+    .rail { display: grid; align-content: start; gap: 10px; }
+    .panel { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(11,27,34,.94), rgba(7,18,23,.96)); }
+    .panel-head { padding: 13px 15px; border-bottom: 1px solid var(--line); color: var(--cyan); font: 800 8px ui-monospace, monospace; letter-spacing: .13em; }
+    .panel-body { padding: 14px; }
+    .balance { display: grid; grid-template-columns: 1fr; gap: 7px; }
+    .balance-card { padding: 12px; border: 1px solid var(--line-soft); background: #07141a; }
+    .balance-card span { display: block; color: var(--faint); font: 800 7px ui-monospace, monospace; letter-spacing: .08em; }
+    .balance-card strong { display: block; margin: 3px 0; font: 800 24px ui-monospace, monospace; }
+    .balance-card small { color: var(--muted); font-size: 8px; }
+    .balance-card.blue { border-top: 2px solid var(--blue); }
+    .balance-card.blue strong { color: var(--blue); }
+    .oob-list { display: grid; gap: 8px; }
+    .oob { position: relative; padding: 10px 10px 10px 13px; border: 1px solid var(--line-soft); background: #08161c; }
+    .oob::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 2px; background: var(--side); }
+    .oob b, .oob span { display: block; }
+    .oob b { font-size: 10px; }
+    .oob span { margin-top: 3px; color: var(--muted); font-size: 8px; }
+    .oob em { position: absolute; right: 9px; top: 9px; color: var(--side); font: normal 800 11px ui-monospace, monospace; }
+    .sub-count { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--line-soft); color: var(--muted); font-size: 9px; }
+    .sub-count:last-child { border-bottom: 0; }
+    .sub-count b { color: var(--text); }
+
+    .map-shell { position: relative; overflow: hidden; min-height: 780px; border: 1px solid var(--line); background: var(--water); box-shadow: 0 24px 80px rgba(0,0,0,.28); }
+    #map { display: block; width: 100%; height: auto; min-height: 780px; }
+    .map-tools { position: absolute; z-index: 4; top: 12px; left: 12px; display: flex; flex-wrap: wrap; gap: 5px; max-width: calc(100% - 24px); padding: 7px; border: 1px solid rgba(30,55,64,.92); background: rgba(4,13,18,.88); backdrop-filter: blur(6px); }
+    .layer-button { padding: 6px 8px; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); background: #09181e; cursor: pointer; font-size: 7px; font-weight: 800; letter-spacing: .06em; }
+    .layer-button.active { border-color: var(--cyan); color: var(--cyan); background: rgba(69,215,220,.1); }
+    .layer-button.print { border-color: var(--amber); color: var(--amber); }
+    .map-stamp { position: absolute; z-index: 3; left: 50%; bottom: 10px; transform: translateX(-50%); padding: 5px 9px; border: 1px solid var(--line); color: var(--faint); background: rgba(4,13,18,.9); font: 7px ui-monospace, monospace; letter-spacing: .08em; white-space: nowrap; }
+
+    .legend { display: grid; gap: 9px; color: var(--muted); font-size: 8px; }
+    .legend-row { display: grid; grid-template-columns: 28px 1fr; align-items: center; gap: 8px; }
+    .symbol { position: relative; display: inline-block; justify-self: center; width: 12px; height: 12px; color: var(--cyan); }
+    .symbol.air { border: 2px solid currentColor; transform: rotate(45deg); }
+    .symbol.naval { border: 2px solid currentColor; border-radius: 50%; }
+    .symbol.naval::after { content: ""; position: absolute; left: 2px; right: 2px; top: 4px; border-top: 2px solid currentColor; }
+    .symbol.sub { width: 17px; height: 8px; border-bottom: 2px solid currentColor; border-radius: 50%; }
+    .symbol.zone { width: 18px; height: 11px; border: 1px dashed currentColor; background: rgba(69,215,220,.1); }
+    .symbol.route { width: 20px; height: 0; border-top: 2px solid currentColor; }
+    .symbol.route::after { content: ""; position: absolute; right: 0; top: -4px; width: 5px; height: 5px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); }
+    .symbol.restricted { width: 18px; height: 11px; border: 1px solid var(--amber); background: repeating-linear-gradient(135deg, transparent 0 3px, rgba(239,178,92,.35) 3px 4px); }
+    .note { padding: 11px 0; border-bottom: 1px solid var(--line-soft); }
+    .note:last-child { border-bottom: 0; }
+    .tag { display: inline-block; margin-bottom: 5px; color: var(--amber); font-size: 7px; font-weight: 800; letter-spacing: .1em; }
+    .note strong { display: block; font-size: 10px; }
+    .note p { margin: 4px 0 0; color: var(--muted); font-size: 9px; }
+    .restriction { border-color: rgba(239,178,92,.38); background: rgba(239,178,92,.06); }
+    .restriction .panel-head { color: var(--amber); border-color: rgba(239,178,92,.25); }
+    .restriction p { margin: 0; color: #bdc7ca; font-size: 9px; }
+    .restriction strong { color: var(--amber); }
+    .source-note { color: var(--faint); font-size: 8px; line-height: 1.55; }
+
+    footer { padding: 22px 0 36px; border-top: 1px solid var(--line); color: var(--faint); font: 8px ui-monospace, monospace; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; }
+
+    /* SVG cartography */
+    .ocean { fill: var(--water); }
+    .graticule { stroke: #173039; stroke-width: 1; }
+    .graticule.major { stroke: #23424c; }
+    .coord { fill: #4f6971; font: 10px ui-monospace, monospace; }
+    .land { fill: var(--land); stroke: #38515a; stroke-width: 1.2; }
+    .coast-glow { fill: none; stroke: rgba(69,215,220,.13); stroke-width: 5; }
+    .place { fill: #768d94; font: 600 11px ui-sans-serif, sans-serif; letter-spacing: .08em; }
+    .sea-name { fill: #17343e; font: 700 22px ui-sans-serif, sans-serif; letter-spacing: .27em; }
+    .mission-blue { fill: rgba(91,170,255,.07); stroke: rgba(91,170,255,.48); stroke-width: 1.2; stroke-dasharray: 6 5; }
+    .restricted-zone { fill: url(#hatch); stroke: var(--amber); stroke-width: 1.4; stroke-dasharray: 5 4; }
+    .route-blue { fill: none; stroke: var(--blue); stroke-width: 2; stroke-dasharray: 7 4; marker-end: url(#arrow-blue); }
+    .sub-route { fill: none; stroke-width: 1; stroke-dasharray: 3 4; opacity: .55; }
+    .unit-halo { fill: rgba(4,11,15,.84); stroke-width: 1; }
+    .unit-blue .unit-halo { stroke: rgba(91,170,255,.55); }
+    .unit-blue .unit-shape, .unit-blue .leader { color: var(--blue); stroke: var(--blue); }
+    .unit-shape { fill: #061319; stroke-width: 2.2; }
+    .unit-label { fill: var(--text); font: 700 9px ui-monospace, monospace; paint-order: stroke; stroke: #061319; stroke-width: 3px; stroke-linejoin: round; }
+    .unit-sub { fill: var(--muted); font: 7px ui-monospace, monospace; paint-order: stroke; stroke: #061319; stroke-width: 3px; }
+    .leader { fill: none; stroke-width: 1; opacity: .72; }
+    .mission-label { font: 700 8px ui-monospace, monospace; letter-spacing: .05em; paint-order: stroke; stroke: #061319; stroke-width: 3px; }
+    .blue-text { fill: var(--blue); }
+
+    @media (max-width: 1200px) {
+      .board { grid-template-columns: 220px minmax(600px,1fr); }
+      .rail.right { grid-column: 1 / -1; grid-template-columns: repeat(3, 1fr); }
+      .map-shell { min-height: 720px; }
+      #map { min-height: 720px; }
+    }
+    @media (max-width: 850px) {
+      .title-row { grid-template-columns: 1fr; }
+      .meta { grid-template-columns: 1fr 1fr; }
+      .meta div:nth-child(2) { border-right: 0; }
+      .meta div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .board { grid-template-columns: 1fr; }
+      .rail.left, .rail.right { grid-column: auto; grid-template-columns: 1fr; }
+      .map-shell { grid-row: 1; min-height: 650px; }
+      #map { width: 1000px; max-width: none; height: 780px; }
+      .map-shell { overflow-x: auto; }
+    }
+    @media (max-width: 600px) {
+      .shell { width: calc(100% - 20px); }
+      .classification { display: none; }
+      .title-row { padding: 24px 0; }
+      .meta div { min-width: 0; padding: 11px; }
+      .map-tools { position: sticky; width: max-content; }
+      .footer-inner { display: block; }
+    }
+
+    @media print {
+      :root { color-scheme: light; --bg:#fff; --panel:#fff; --panel-2:#f4f7f7; --line:#91a4a9; --line-soft:#d2dcde; --text:#142328; --muted:#40555b; --faint:#63777c; --water:#f1f7f8; --land:#d2dcda; }
+      body { background: white; }
+      .shell { width: 100%; }
+      header { background: white; }
+      .topline { min-height: 44px; }
+      .title-row { padding: 16px 0; }
+      h1 { font-size: 28pt; }
+      .board { grid-template-columns: 205px 1fr 215px; gap: 7px; padding: 7px 0; }
+      .panel, .map-shell { box-shadow: none; background: white; }
+      .panel-head { padding: 8px; }
+      .panel-body { padding: 8px; }
+      .oob { padding: 6px 7px 6px 10px; }
+      .map-shell, #map { min-height: 0; }
+      .map-tools, .map-stamp { display: none; }
+      .rail.right { grid-column: auto; grid-template-columns: 1fr; }
+      footer { padding-bottom: 0; }
+      @page { size: A3 landscape; margin: 8mm; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell">
+      <div class="topline">
+        <div class="brand"><span class="mark"><span>FL</span></span><div><strong>OPERATION FAULT LINE</strong><small>Combined maritime component · Static situation display</small></div></div>
+        <div class="classification">FICTIONAL / EXERCISE USE</div>
+      </div>
+      <div class="title-row">
+        <div><div class="eyebrow">South China Sea · Game-day 001</div><h1>BLUE Initial Disposition · 0000Z</h1></div>
+        <div class="meta"><div><span>VALID</span><strong>15 AUG 2026</strong></div><div><span>WINDOW</span><strong>24 HOURS</strong></div><div><span>PLAYER</span><strong>BLUE</strong></div><div><span>AREA</span><strong>07–23°N</strong></div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell board">
+    <aside class="rail left">
+      <section class="panel"><div class="panel-head">BLUE FORCE · TRACKED</div><div class="panel-body"><div class="balance"><div class="balance-card blue"><span>BLUE TOTAL</span><strong>165</strong><small>71 land-based · 90 afloat · 4 SSN*</small></div></div><p class="source-note">*Submarines are included in the total. “Afloat” includes embarked aviation.</p></div></section>
+      <section class="panel"><div class="panel-head">BLUE MAJOR FORMATIONS</div><div class="panel-body oob-list">
+        <div class="oob" style="--side:var(--blue)"><b>TG B-1 · GW CSG</b><span>5 ships · 57 aircraft</span><em>62</em></div>
+        <div class="oob" style="--side:var(--blue)"><b>TG B-2 · PWS SAG</b><span>3 surface combatants</span><em>03</em></div>
+        <div class="oob" style="--side:var(--blue)"><b>TG B-3 · AMERICA ARG</b><span>3 ships · 22 aircraft</span><em>25</em></div>
+        <div class="oob" style="--side:var(--blue)"><b>PHILIPPINE BASES</b><span>Basa · Palawan · Mactan</span><em>71</em></div>
+      </div></section>
+      <section class="panel"><div class="panel-head">BLUE UNDERSEA POSTURE</div><div class="panel-body"><div class="sub-count"><span>WESTERN LUZON BARRIER</span><b>01</b></div><div class="sub-count"><span>CENTRAL-BASIN TRAIL</span><b>01</b></div><div class="sub-count"><span>SPRATLY APPROACH</span><b>01</b></div><div class="sub-count"><span>PALAWAN PASSAGE</span><b>01</b></div></div></section>
+      <section class="panel"><div class="panel-head">MAP READING</div><div class="panel-body legend">
+        <div class="legend-row"><i class="symbol air" style="color:var(--cyan)"></i><span>Airfield / fixed site</span></div>
+        <div class="legend-row"><i class="symbol naval" style="color:var(--cyan)"></i><span>Naval task group</span></div>
+        <div class="legend-row"><i class="symbol sub" style="color:var(--cyan)"></i><span>Submarine start</span></div>
+        <div class="legend-row"><i class="symbol route" style="color:var(--cyan)"></i><span>Planned movement</span></div>
+        <div class="legend-row"><i class="symbol zone" style="color:var(--cyan)"></i><span>Mission area / orbit</span></div>
+        <div class="legend-row"><i class="symbol restricted"></i><span>Restricted strike area</span></div>
+      </div></section>
+    </aside>
+
+    <section class="map-shell" aria-label="South China Sea Day 1 situation map">
+      <div class="map-tools" aria-label="Map layers">
+        <button class="layer-button active" type="button" data-layer="forces">FORCES</button>
+        <button class="layer-button active" type="button" data-layer="routes">ROUTES</button>
+        <button class="layer-button active" type="button" data-layer="missions">MISSIONS</button>
+        <button class="layer-button active" type="button" data-layer="submarines">SUBMARINES</button>
+        <button class="layer-button active" type="button" data-layer="restrictions">RESTRICTIONS</button>
+        <button class="layer-button print" type="button" id="print">PRINT / PDF</button>
+      </div>
+      <svg id="map" viewBox="0 0 1000 820" role="img" aria-labelledby="map-title map-desc">
+        <title id="map-title">Operation Fault Line Day 1 initial situation</title>
+        <desc id="map-desc">Static BLUE operational map of the South China Sea showing friendly air bases, naval groups, submarines, routes, mission zones, and the mainland strike restriction. Adversary information is deliberately omitted.</desc>
+        <defs>
+          <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#efb25c" stroke-opacity=".22" stroke-width="2"/></pattern>
+          <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5baaff"/></marker>
+          <filter id="glow-blue"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <rect class="ocean" width="1000" height="820"/>
+        <g id="grid"></g>
+        <g id="coastlines"></g>
+        <g id="restrictions"></g>
+        <g id="missions"></g>
+        <g id="routes"></g>
+        <g id="submarines"></g>
+        <g id="forces"></g>
+      </svg>
+      <div class="map-stamp">BLUE PLANNING BASELINE · ADVERSARY INFORMATION NOT DISPLAYED</div>
+    </section>
+
+    <aside class="rail right">
+      <section class="panel"><div class="panel-head">BLUE MISSION LAYERS</div><div class="panel-body oob-list">
+        <div class="oob" style="--side:var(--blue)"><b>WEST LUZON CAP</b><span>Air defense · western approach</span><em>AAW</em></div>
+        <div class="oob" style="--side:var(--blue)"><b>PALAWAN CAP / ASW</b><span>Resupply corridor protection</span><em>2×</em></div>
+        <div class="oob" style="--side:var(--blue)"><b>AEW CENTRAL</b><span>Central Philippines orbit</span><em>AEW</em></div>
+        <div class="oob" style="--side:var(--blue)"><b>TANKER CENTRAL</b><span>Protected support track</span><em>AR</em></div>
+      </div></section>
+      <section class="panel"><div class="panel-head">COMMANDER'S READOUT</div><div class="panel-body">
+        <div class="note"><span class="tag">MAIN EFFORT</span><strong>West of Palawan</strong><p>Keep the resupply corridor viable and preserve maneuver space for the covering force.</p></div>
+        <div class="note"><span class="tag">DECISIVE GEOMETRY</span><strong>Central basin</strong><p>Use distributed collection to understand the approaches while avoiding an unnecessary concentration of BLUE forces.</p></div>
+        <div class="note"><span class="tag">FORCE PRESERVATION</span><strong>East of the archipelago</strong><p>TG B-1 and B-3 retain maneuver depth while land-based sensing and combat air establish the picture.</p></div>
+        <div class="note"><span class="tag">PRIMARY UNCERTAINTY</span><strong>Undersea approaches</strong><p>Coverage and datum age remain limiting factors around western Luzon, Palawan passages, and Spratly chokepoints.</p></div>
+      </div></section>
+      <section class="panel restriction"><div class="panel-head">ESCALATION CONTROL</div><div class="panel-body"><p><strong>Mainland strikes:</strong> not authorized.<br><strong>Guam strikes:</strong> not authorized.<br>Attacks require the scenario’s explicit release event.</p></div></section>
+      <section class="panel"><div class="panel-head">DISPLAY POLICY</div><div class="panel-body source-note">This commander’s map intentionally depicts <strong>BLUE information only</strong>. Adversary forces, patrol areas, routes, bases, and scenario-start locations are omitted. Use C:MO’s in-game contact picture for all opposing-force information.</div></section>
+    </aside>
+  </main>
+
+  <footer><div class="shell footer-inner"><span>FAULT LINE · SCS-2026 · DAY 001 · DB3K_515</span><span>VALID 15 AUG 2026 0000Z · OPERATIONAL PAUSE 16 AUG 2026 0000Z</span></div></footer>
+
+  <script>
+    const NS = 'http://www.w3.org/2000/svg';
+    const bounds = { west: 108, east: 127, south: 7, north: 23 };
+    const frame = { x: 46, y: 38, w: 914, h: 736 };
+    const xy = ([lat, lon]) => [frame.x + (lon - bounds.west) / (bounds.east - bounds.west) * frame.w, frame.y + (bounds.north - lat) / (bounds.north - bounds.south) * frame.h];
+    const el = (name, attrs = {}, text = '') => { const node = document.createElementNS(NS, name); Object.entries(attrs).forEach(([key,value]) => node.setAttribute(key,value)); if (text) node.textContent = text; return node; };
+    const points = coords => coords.map(coord => xy(coord).join(',')).join(' ');
+
+    const grid = document.getElementById('grid');
+    for (let lon = 108; lon <= 127; lon += 2) {
+      const [x] = xy([7, lon]);
+      grid.append(el('line', { x1:x, y1:frame.y, x2:x, y2:frame.y+frame.h, class:`graticule ${lon % 4 === 0 ? 'major' : ''}` }));
+      grid.append(el('text', { x:x+4, y:frame.y+frame.h-7, class:'coord' }, `${lon}°E`));
+    }
+    for (let lat = 8; lat <= 22; lat += 2) {
+      const [,y] = xy([lat,108]);
+      grid.append(el('line', { x1:frame.x, y1:y, x2:frame.x+frame.w, y2:y, class:`graticule ${lat % 4 === 0 ? 'major' : ''}` }));
+      grid.append(el('text', { x:frame.x+5, y:y-5, class:'coord' }, `${lat}°N`));
+    }
+
+    const landShapes = [
+      [[23,108],[23,117.7],[22.3,117.2],[21.5,116],[21.1,114.6],[20.7,113.4],[20.3,111.8],[20.6,110.6],[21.4,109.2],[22.4,108]],
+      [[23,108],[22.4,108],[21.4,109.2],[20.6,110.6],[19.6,109.8],[18.4,108.9],[17.2,108.3],[16,108],[7,108]],
+      [[20.1,109.1],[20.0,110.2],[19.5,111],[18.7,110.8],[18.1,110.1],[18.4,109.3]],
+      [[23,120.4],[23,122.1],[22.4,121.8],[21.9,120.9]],
+      [[18.7,120.0],[18.3,121.2],[17.7,122.0],[16.8,122.1],[15.8,121.5],[14.6,121.1],[13.8,120.5],[14.2,119.8],[15.5,119.5],[17.0,119.8]],
+      [[13.6,120.3],[13.2,121.0],[12.3,121.1],[12.0,120.5],[12.6,120.1]],
+      [[12.3,121.8],[11.9,122.4],[11.4,122.0],[11.5,121.4]],
+      [[12.6,123.2],[12.2,124.1],[11.4,124.6],[10.6,124.1],[10.0,123.4],[10.7,123.0],[11.7,123.1]],
+      [[11.7,124.7],[11.4,125.2],[10.8,125.0],[10.9,124.5]],
+      [[10.5,122.0],[10.2,122.8],[9.3,123.1],[8.7,122.5],[9.3,121.8]],
+      [[11.9,119.1],[11.1,119.3],[10.0,119.0],[9.0,118.5],[8.0,117.8],[7.5,117.2],[8.5,117.4],[9.5,118.0],[10.6,118.4]],
+      [[7.8,112.2],[7.4,114.5],[7,115],[7,108],[7.3,110.4]],
+    ];
+    const coast = document.getElementById('coastlines');
+    landShapes.forEach(shape => coast.append(el('polygon', { points:points(shape), class:'land' })));
+    const placeLabels = [
+      ['HAINAN',19.35,110.1],['LUZON',16.2,120.45],['PALAWAN',9.55,118.15],['VIETNAM',15.1,108.35],['TAIWAN',22.45,120.7],['VISAYAS',10.7,122.6]
+    ];
+    placeLabels.forEach(([name,lat,lon]) => { const [x,y] = xy([lat,lon]); coast.append(el('text',{x,y,class:'place'},name)); });
+    [['SOUTH CHINA SEA',14.2,111.1],['PHILIPPINE SEA',13.2,123.6]].forEach(([name,lat,lon]) => { const [x,y]=xy([lat,lon]); coast.append(el('text',{x,y,class:'sea-name','text-anchor':'middle',transform:`rotate(-90 ${x} ${y})`},name)); });
+
+    const missions = [
+      {side:'BLUE',type:'AAW',name:'WEST LUZON CAP',coords:[[14,117.5],[18,117.5],[18,120],[14,120]]},
+      {side:'BLUE',type:'AAW',name:'PALAWAN CAP',coords:[[8,116.8],[12.5,116.8],[12.5,119.3],[8,119.3]]},
+      {side:'BLUE',type:'ASW',name:'PALAWAN ASW',coords:[[8,115],[12.5,115],[12.5,117.5],[8,117.5]]},
+      {side:'BLUE',type:'AEW',name:'AEW CENTRAL',coords:[[12.3,122],[14,122]]},
+      {side:'BLUE',type:'TANKER',name:'TANKER CENTRAL',coords:[[11.5,122.5],[14.5,122.5]]},
+    ];
+    const missionLayer = document.getElementById('missions');
+    missions.forEach(m => {
+      const group = el('g');
+      if (m.coords.length > 2) group.append(el('polygon',{points:points(m.coords),class:'mission-blue'}));
+      else { const [a,b]=m.coords.map(xy); group.append(el('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],class:'route-blue','stroke-width':'5','stroke-opacity':'.42'})); }
+      const avg = m.coords.reduce((o,c)=>[o[0]+c[0]/m.coords.length,o[1]+c[1]/m.coords.length],[0,0]);
+      const [x,y]=xy(avg); group.append(el('text',{x,y,class:'mission-label blue-text','text-anchor':'middle'},m.name));
+      missionLayer.append(group);
+    });
+
+    const restrictionLayer = document.getElementById('restrictions');
+    restrictionLayer.append(el('polygon',{points:points([[18,108.2],[23,108.2],[23,117.5],[18,117.5]]),class:'restricted-zone'}));
+    { const [x,y]=xy([22.55,114.6]); restrictionLayer.append(el('text',{x,y,class:'mission-label','text-anchor':'middle',fill:'#efb25c'},'MAINLAND STRIKE RESTRICTION')); }
+
+    const routes = [
+      {side:'BLUE',coords:[[15,125.1],[14.5,124.9],[13.8,124.5]]},{side:'BLUE',coords:[[10.8,117.8],[11.4,117.3],[12,116.9]]},{side:'BLUE',coords:[[10.2,121.1],[10.6,120.3],[11.2,119.7]]}
+    ];
+    const routeLayer = document.getElementById('routes');
+    routes.forEach(r => routeLayer.append(el('polyline',{points:points(r.coords),class:'route-blue'})));
+
+    const submarines = [
+      ['BLUE','B-SSN 01',[16.2,118.4],[[15.4,117.8],[14.5,117.6]]],['BLUE','B-SSN 02',[12.7,115.7],[[11.8,115.2],[11,115.8]]],['BLUE','B-SSN 03',[10.6,116.7],[[9.8,116.2],[9.2,115.7]]],['BLUE','B-SSN 04',[9.5,117.4],[[10.2,117.1],[11,117.2]]]
+    ];
+    const subLayer = document.getElementById('submarines');
+    submarines.forEach(([side,name,pos,course]) => {
+      const [x,y]=xy(pos); const color='#5baaff';
+      subLayer.append(el('polyline',{points:points([pos,...course]),class:'sub-route',stroke:color}));
+      subLayer.append(el('path',{d:`M ${x-9} ${y} Q ${x} ${y+9} ${x+9} ${y} M ${x} ${y} L ${x} ${y-6}`,fill:'none',stroke:color,'stroke-width':'2'}));
+      subLayer.append(el('text',{x:x+12,y:y+4,class:'unit-sub blue-text'},name));
+    });
+
+    const units = [
+      ['BLUE','air','BASA AB','24 AC',[14.986,120.493],16,-14],['BLUE','air','ANTONIO BAUTISTA AB','20 AC',[9.742,118.759],18,20],['BLUE','air','MACTAN AB','27 AC',[10.307,123.979],16,18],
+      ['BLUE','naval','TG B-1 · GW CSG','5 SHIPS / 57 AC',[15,125.1],-20,-18],['BLUE','naval','TG B-2 · PWS SAG','3 SHIPS',[10.8,117.8],-18,-19],['BLUE','naval','TG B-3 · AMERICA ARG','3 SHIPS / 22 AC',[10.2,121.1],18,22]
+    ];
+    const forceLayer = document.getElementById('forces');
+    units.forEach(([side,type,name,detail,pos,dx,dy]) => {
+      const [x,y]=xy(pos); const group=el('g',{class:`unit-${side.toLowerCase()}`});
+      group.append(el('circle',{cx:x,cy:y,r:15,class:'unit-halo'}));
+      if(type==='air') group.append(el('rect',{x:x-6,y:y-6,width:12,height:12,class:'unit-shape',transform:`rotate(45 ${x} ${y})`}));
+      else { group.append(el('circle',{cx:x,cy:y,r:7,class:'unit-shape'})); group.append(el('line',{x1:x-4,y1:y,x2:x+4,y2:y,class:'leader','stroke-width':'2'})); }
+      const lx=x+dx, ly=y+dy; group.append(el('path',{d:`M ${x} ${y} L ${lx} ${ly}`,class:'leader'}));
+      const anchor=dx<0?'end':'start'; group.append(el('text',{x:lx+(dx<0?-4:4),y:ly,class:'unit-label','text-anchor':anchor},name));
+      group.append(el('text',{x:lx+(dx<0?-4:4),y:ly+10,class:'unit-sub','text-anchor':anchor},detail));
+      forceLayer.append(group);
+    });
+
+    document.querySelectorAll('[data-layer]').forEach(button => button.addEventListener('click', () => {
+      button.classList.toggle('active');
+      document.getElementById(button.dataset.layer).style.display = button.classList.contains('active') ? '' : 'none';
+    }));
+    document.getElementById('print').addEventListener('click', () => window.print());
+  </script>
+</body>
+</html>
