@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Fault Line — Commander's Intent &amp; Synchronization Matrix</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #e8f0f2;
+      --muted: #8da0a6;
+      --faint: #586b72;
+      --paper: #071015;
+      --panel: #0b171d;
+      --panel-2: #0e1d24;
+      --line: #223840;
+      --line-soft: #172a31;
+      --cyan: #42d7dc;
+      --cyan-soft: rgba(66, 215, 220, .11);
+      --amber: #efb35d;
+      --amber-soft: rgba(239, 179, 93, .1);
+      --green: #70d39a;
+      --red: #ef6d72;
+      --blue: #60adff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .32);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% -10%, rgba(66, 215, 220, .1), transparent 32rem),
+        linear-gradient(180deg, #050b0f 0, var(--paper) 38rem);
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .16;
+      background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to bottom, black, transparent 60%);
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+    .shell { width: min(1480px, calc(100% - 40px)); margin: 0 auto; }
+    .mono, .kicker, .chip, .doc-id, th, .time, .phase-tag { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+
+    .masthead {
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+      border-bottom: 1px solid var(--line);
+      background-color: #061017;
+      background-image:
+        linear-gradient(90deg, rgba(4,11,15,.99) 0%, rgba(5,15,20,.94) 43%, rgba(5,16,22,.72) 72%, rgba(5,14,19,.5) 100%),
+        linear-gradient(0deg, rgba(5,12,16,.9), rgba(6,18,24,.2) 48%, rgba(5,12,16,.48)),
+        url("cmo_header_image.jpg");
+      background-position: center, center, right center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%, 100% 100%, auto 100%;
+    }
+
+    .masthead::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -80px;
+      top: -170px;
+      border: 1px solid rgba(66, 215, 220, .18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 78px rgba(66,215,220,.025), 0 0 0 156px rgba(66,215,220,.018);
+    }
+
+    .topline {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      min-height: 72px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      font: 800 11px ui-monospace, monospace;
+      transform: rotate(45deg);
+    }
+    .brand-mark span { transform: rotate(-45deg); }
+    .brand strong { display: block; font-size: 12px; letter-spacing: .14em; }
+    .brand small { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; }
+    .doc-id { color: var(--muted); font-size: 10px; letter-spacing: .08em; text-align: right; }
+    .doc-id strong { color: var(--green); }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(320px, .55fr);
+      align-items: end;
+      gap: 72px;
+      padding: 78px 0 68px;
+    }
+    .kicker { color: var(--cyan); font-size: 11px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 900px; margin: 18px 0 20px; font-size: clamp(44px, 6vw, 82px); line-height: .96; letter-spacing: -.052em; }
+    .deck { max-width: 760px; margin: 0; color: #a9babf; font-size: clamp(16px, 2vw, 20px); line-height: 1.55; }
+    .hero-meta { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); background: rgba(9,23,29,.72); box-shadow: var(--shadow); }
+    .hero-meta div { min-height: 86px; padding: 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .hero-meta div:nth-child(2n) { border-right: 0; }
+    .hero-meta div:nth-last-child(-n+2) { border-bottom: 0; }
+    .hero-meta span, .stat span { display: block; color: var(--faint); font: 800 9px ui-monospace, monospace; letter-spacing: .15em; text-transform: uppercase; }
+    .hero-meta strong { display: block; margin-top: 7px; color: var(--ink); font-size: 13px; }
+
+    .sticky-nav {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 12, 16, .91);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner { display: flex; align-items: center; gap: 3px; min-height: 57px; overflow-x: auto; scrollbar-width: none; }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-link { padding: 9px 13px; border: 1px solid transparent; border-radius: 3px; color: var(--muted); text-decoration: none; font: 800 10px ui-monospace, monospace; letter-spacing: .08em; white-space: nowrap; }
+    .nav-link:hover, .nav-link.active { border-color: var(--line); color: var(--cyan); background: var(--cyan-soft); }
+    .print-button { margin-left: auto; padding: 8px 12px; border: 1px solid var(--amber); border-radius: 3px; color: var(--amber); background: var(--amber-soft); cursor: pointer; font: 800 10px ui-monospace, monospace; letter-spacing: .08em; white-space: nowrap; }
+
+    main { padding: 76px 0 100px; }
+    .section { scroll-margin-top: 82px; margin-bottom: 92px; }
+    .section-head { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 36px; align-items: start; margin-bottom: 30px; }
+    .section-no { padding-top: 7px; color: var(--cyan); font: 800 11px ui-monospace, monospace; letter-spacing: .16em; }
+    .section h2 { margin: 0; font-size: clamp(30px, 4vw, 50px); line-height: 1.05; letter-spacing: -.035em; }
+    .section-intro { max-width: 820px; margin: 13px 0 0; color: var(--muted); font-size: 15px; }
+
+    .intent-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
+    .card { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(14,29,36,.92), rgba(8,19,24,.94)); box-shadow: 0 16px 45px rgba(0,0,0,.13); }
+    .card-pad { padding: 28px; }
+    .card-label { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; color: var(--cyan); font: 800 10px ui-monospace, monospace; letter-spacing: .15em; text-transform: uppercase; }
+    .card-label::before { content: ""; width: 18px; border-top: 2px solid currentColor; }
+    .purpose { grid-row: span 2; min-height: 300px; }
+    .purpose blockquote { margin: 32px 0 0; font-size: clamp(22px, 3vw, 36px); font-weight: 680; line-height: 1.26; letter-spacing: -.025em; }
+    .purpose blockquote em { color: var(--amber); font-style: normal; }
+    .card p { margin: 0; color: #b4c2c6; }
+    .card ul { margin: 13px 0 0; padding-left: 19px; color: #b4c2c6; }
+    .card li + li { margin-top: 8px; }
+    .end-state { border-top: 2px solid var(--green); }
+    .end-state .card-label { color: var(--green); }
+    .risk { border-top: 2px solid var(--amber); }
+    .risk .card-label { color: var(--amber); }
+
+    .effort-strip { display: grid; grid-template-columns: .85fr 1.15fr 1fr; margin-top: 16px; border: 1px solid var(--line); }
+    .effort { position: relative; padding: 25px; background: rgba(9,21,27,.74); }
+    .effort + .effort { border-left: 1px solid var(--line); }
+    .effort b { display: block; margin-bottom: 9px; color: var(--cyan); font: 800 10px ui-monospace, monospace; letter-spacing: .12em; }
+    .effort strong { display: block; margin-bottom: 8px; font-size: 17px; }
+    .effort p { color: var(--muted); font-size: 13px; }
+
+    .assessment-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .assessment { min-height: 260px; padding: 23px; border: 1px solid var(--line); background: rgba(10,23,29,.76); }
+    .assessment.wide { grid-column: span 2; }
+    .assessment-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+    .letter { color: var(--cyan); font: 800 40px/1 ui-monospace, monospace; opacity: .7; }
+    .chip { padding: 4px 7px; border: 1px solid var(--line); border-radius: 10rem; color: var(--muted); font-size: 8px; letter-spacing: .08em; text-transform: uppercase; }
+    .assessment h3 { margin: 28px 0 9px; font-size: 19px; }
+    .assessment p { margin: 0; color: var(--muted); font-size: 13px; }
+    .assessment .callout { margin-top: 17px; padding: 12px 13px; border-left: 2px solid var(--amber); color: #c8d3d6; background: var(--amber-soft); font-size: 12px; }
+
+    .ocoka-list { display: grid; gap: 10px; }
+    .ocoka-row { display: grid; grid-template-columns: 58px 240px minmax(0, 1fr) 260px; align-items: stretch; border: 1px solid var(--line); background: rgba(9,22,28,.76); }
+    .ocoka-letter { display: grid; place-items: center; border-right: 1px solid var(--line); color: var(--cyan); font: 800 29px ui-monospace, monospace; background: var(--cyan-soft); }
+    .ocoka-title, .ocoka-body, .ocoka-use { padding: 20px; }
+    .ocoka-title { border-right: 1px solid var(--line); }
+    .ocoka-title strong { display: block; font-size: 14px; }
+    .ocoka-title small { display: block; margin-top: 5px; color: var(--faint); font: 9px ui-monospace, monospace; text-transform: uppercase; }
+    .ocoka-body { color: var(--muted); font-size: 13px; }
+    .ocoka-use { border-left: 1px solid var(--line); color: #b8c7ca; background: rgba(255,255,255,.018); font-size: 12px; }
+    .ocoka-use b { display: block; margin-bottom: 5px; color: var(--amber); font: 800 9px ui-monospace, monospace; letter-spacing: .1em; }
+
+    .timeline { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-bottom: 17px; border: 1px solid var(--line); background: var(--line); }
+    .phase { min-height: 116px; padding: 18px; background: var(--panel); }
+    .phase-tag { color: var(--cyan); font-size: 9px; letter-spacing: .12em; }
+    .phase h3 { margin: 9px 0 4px; font-size: 15px; }
+    .phase p { margin: 0; color: var(--muted); font-size: 11px; }
+    .matrix-wrap { overflow-x: auto; border: 1px solid var(--line); box-shadow: var(--shadow); }
+    table { width: 100%; min-width: 1220px; border-collapse: collapse; background: #081319; }
+    th, td { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); vertical-align: top; }
+    tr:last-child td { border-bottom: 0; }
+    th:last-child, td:last-child { border-right: 0; }
+    thead th { position: sticky; top: 56px; z-index: 3; padding: 14px 13px; color: var(--cyan); background: #0e2027; font-size: 9px; letter-spacing: .08em; text-align: left; }
+    thead th:first-child { left: 0; z-index: 4; min-width: 150px; }
+    tbody th { position: sticky; left: 0; z-index: 2; width: 150px; padding: 15px 13px; color: #dbe6e8; background: #0c1b21; font-size: 9px; letter-spacing: .06em; text-align: left; }
+    td { width: 267px; padding: 14px 13px; color: #a9b9bd; font: 11px/1.5 ui-monospace, monospace; }
+    td strong { display: block; margin-bottom: 4px; color: var(--ink); font-size: 11px; }
+    td .decision { color: var(--amber); }
+    .matrix-note { display: flex; justify-content: space-between; gap: 24px; margin-top: 12px; color: var(--faint); font: 9px ui-monospace, monospace; }
+
+    .control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .control-card { padding: 24px; border: 1px solid var(--line); background: rgba(10,23,29,.76); }
+    .control-card h3 { margin: 0 0 14px; font-size: 17px; }
+    .control-card dl { display: grid; grid-template-columns: 120px 1fr; gap: 10px 16px; margin: 0; font-size: 12px; }
+    .control-card dt { color: var(--cyan); font: 800 9px ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; }
+    .control-card dd { margin: 0; color: var(--muted); }
+    .control-card.full { grid-column: 1 / -1; }
+    .criteria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+    .stat { padding: 16px; border: 1px solid var(--line-soft); background: #08161c; }
+    .stat strong { display: block; margin-top: 8px; color: var(--green); font-size: 14px; }
+
+    footer { padding: 34px 0 50px; border-top: 1px solid var(--line); color: var(--faint); font: 9px ui-monospace, monospace; letter-spacing: .06em; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; }
+
+    @media (max-width: 1000px) {
+      .hero { grid-template-columns: 1fr; gap: 38px; }
+      .hero-meta { max-width: 640px; }
+      .intent-grid, .control-grid { grid-template-columns: 1fr; }
+      .purpose { grid-row: auto; }
+      .effort-strip, .assessment-grid { grid-template-columns: 1fr 1fr; }
+      .effort:last-child { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); }
+      .assessment.wide { grid-column: auto; }
+      .ocoka-row { grid-template-columns: 54px 200px 1fr; }
+      .ocoka-use { grid-column: 2 / -1; border-left: 0; border-top: 1px solid var(--line); }
+      .timeline { grid-template-columns: 1fr 1fr; }
+      .criteria { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 24px, 1480px); }
+      .topline { align-items: flex-start; padding: 18px 0; }
+      .doc-id { display: none; }
+      .hero { padding: 58px 0 52px; }
+      .masthead {
+        background-image:
+          linear-gradient(90deg, rgba(4,11,15,.96), rgba(5,15,20,.83)),
+          linear-gradient(0deg, rgba(5,12,16,.92), rgba(6,18,24,.25) 48%, rgba(5,12,16,.55)),
+          url("cmo_header_image.jpg");
+        background-position: center, center, center;
+      }
+      .hero-meta { grid-template-columns: 1fr; }
+      .hero-meta div { border-right: 0; }
+      .hero-meta div:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+      .print-button { display: none; }
+      main { padding-top: 55px; }
+      .section { margin-bottom: 68px; }
+      .section-head { grid-template-columns: 1fr; gap: 8px; }
+      .effort-strip, .assessment-grid, .timeline, .criteria { grid-template-columns: 1fr; }
+      .effort + .effort { border-left: 0; border-top: 1px solid var(--line); }
+      .effort:last-child { grid-column: auto; }
+      .ocoka-row { grid-template-columns: 48px 1fr; }
+      .ocoka-title { border-right: 0; }
+      .ocoka-body, .ocoka-use { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); }
+      .control-card.full { grid-column: auto; }
+      .control-card dl { grid-template-columns: 1fr; gap: 4px; }
+      .control-card dd + dt { margin-top: 9px; }
+      .footer-inner { display: block; }
+    }
+
+    @media print {
+      :root { color-scheme: light; --ink: #132126; --muted: #40545a; --faint: #64767b; --paper: #fff; --panel: #f4f7f7; --panel-2: #edf3f4; --line: #aebdc0; --line-soft: #d6dfe1; --cyan: #087f84; --cyan-soft: #e8f5f5; --amber: #9b5e00; --amber-soft: #fff4df; --green: #176e40; --shadow: none; }
+      body { background: white; font-size: 10pt; }
+      body::before, .sticky-nav, .masthead::after { display: none; }
+      .shell { width: 100%; }
+      .masthead { min-height: 0; color: var(--ink); background: white; }
+      .topline { min-height: 50px; }
+      .hero { grid-template-columns: 1fr .58fr; gap: 24px; padding: 34px 0; }
+      h1 { font-size: 38pt; }
+      .deck { font-size: 11pt; }
+      .hero-meta, .card, .assessment, .ocoka-row, .control-card, .matrix-wrap { box-shadow: none; background: white; }
+      main { padding: 38px 0; }
+      .section { margin-bottom: 48px; page-break-inside: avoid; }
+      .section-head { grid-template-columns: 110px 1fr; }
+      .section h2 { font-size: 25pt; }
+      .card, .assessment, .ocoka-row, .effort-strip, .control-card { break-inside: avoid; }
+      .matrix-section { page-break-before: always; page-break-inside: auto; }
+      .timeline { break-inside: avoid; }
+      .matrix-wrap { overflow: visible; }
+      table { min-width: 0; font-size: 7pt; }
+      thead th, tbody th { position: static; }
+      th, td { padding: 7px; }
+      td { font-size: 7pt; }
+      footer { padding-bottom: 0; }
+      @page { size: landscape; margin: 12mm; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell">
+      <div class="topline">
+        <div class="brand"><span class="brand-mark"><span>FL</span></span><div><strong>OPERATION FAULT LINE</strong><small>Combined maritime component planning brief</small></div></div>
+        <div class="doc-id"><strong>FICTIONAL / EXERCISE USE</strong><br>SCS-2026 · DAY 001 · REV 1</div>
+      </div>
+      <div class="hero">
+        <div>
+          <div class="kicker">Commander's Intent · Maritime Estimate · Synchronization</div>
+          <h1>Hold the line.<br>Control the tempo.</h1>
+          <p class="deck">A concise operational frame for the first 24 hours of the South China Sea campaign—designed to preserve freedom of action, protect the joint force, and prevent a local crisis from becoming an uncontrolled regional war.</p>
+        </div>
+        <div class="hero-meta" aria-label="Document metadata">
+          <div><span>Game-day</span><strong>Day 001 / 24 hours</strong></div>
+          <div><span>Start</span><strong>15 Aug 2026 · 0000Z</strong></div>
+          <div><span>Player</span><strong>BLUE coalition</strong></div>
+          <div><span>Database</span><strong>DB3K_515</strong></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sticky-nav" aria-label="Document sections">
+    <div class="shell nav-inner">
+      <a class="nav-link active" href="#intent">01 · Intent</a>
+      <a class="nav-link" href="#metttc">02 · M-METT-TC</a>
+      <a class="nav-link" href="#ocoka">03 · M-OCOKA</a>
+      <a class="nav-link" href="#matrix">04 · Sync Matrix</a>
+      <a class="nav-link" href="#control">05 · Control</a>
+      <button class="print-button" type="button" onclick="window.print()">PRINT / PDF</button>
+    </div>
+  </nav>
+
+  <main class="shell">
+    <section class="section" id="intent">
+      <div class="section-head">
+        <div class="section-no">SECTION 01</div>
+        <div><h2>Commander's Intent</h2><p class="section-intro">The intent states the purpose, the essential conditions that must be created, and the acceptable shape of the force at the end of Day 1. It remains authoritative when the detailed plan no longer fits the situation.</p></div>
+      </div>
+
+      <div class="intent-grid">
+        <article class="card card-pad purpose">
+          <div class="card-label">Purpose</div>
+          <blockquote>Preserve coalition freedom of action in the Philippine approaches, protect the force and the resupply mission, and impose a <em>reversible operational dilemma</em> on RED without widening the conflict.</blockquote>
+        </article>
+        <article class="card card-pad">
+          <div class="card-label">Key tasks</div>
+          <ul>
+            <li>Maintain a continuous, resilient recognized maritime and air picture.</li>
+            <li>Protect TG B-1, TG B-3, Palawan, and the Philippine resupply corridor.</li>
+            <li>Locate and hold RED’s principal naval striking forces at risk.</li>
+            <li>Deny RED a favorable first salvo through dispersal, deception, CAP, and ASW.</li>
+            <li>Preserve scarce long-range weapons, tankers, AEW, and submarines for decisive windows.</li>
+          </ul>
+        </article>
+        <article class="card card-pad end-state">
+          <div class="card-label">Desired end state · 2400Z</div>
+          <p>The resupply force remains viable; BLUE’s carrier and amphibious forces retain maneuver room east of the archipelago; RED has not achieved local sea control or a coercive fait accompli; BLUE maintains credible strike and undersea capacity; escalation boundaries remain intact unless deliberately released; and the force is postured to continue, disengage, or escalate on order.</p>
+        </article>
+        <article class="card card-pad risk">
+          <div class="card-label">Risk accepted / risk refused</div>
+          <p><strong>Accept:</strong> temporary gaps in broad-area surveillance and limited tactical disadvantage to preserve high-value enablers. <strong>Refuse:</strong> an unprotected concentration of high-value units, uncontrolled weapons release, loss of the resupply force through inattention, or exposing submarines merely to improve the common picture.</p>
+        </article>
+      </div>
+
+      <div class="effort-strip" aria-label="Operational efforts">
+        <div class="effort"><b>MAIN EFFORT</b><strong>Sea denial west of Palawan</strong><p>Protect the resupply corridor and prevent RED surface or submarine forces from establishing a blocking position.</p></div>
+        <div class="effort"><b>SUPPORTING EFFORT 01</b><strong>Fleet preservation east of Luzon</strong><p>Keep TG B-1 combat credible under disciplined EMCON while building the contact picture required for later offensive action.</p></div>
+        <div class="effort"><b>SUPPORTING EFFORT 02</b><strong>Counter-reconnaissance</strong><p>Disrupt RED’s kill chain with deception, selective emissions, fighter interception, and movement—without trading scarce aircraft for low-value contacts.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="metttc">
+      <div class="section-head">
+        <div class="section-no">SECTION 02</div>
+        <div><h2>Navalized METT-TC</h2><p class="section-intro">M-METT-TC translates the familiar estimate into maritime terms: forces move in three dimensions, information is intermittent, magazines are finite, and reach depends on bases, tankers, sensors, and political access.</p></div>
+      </div>
+
+      <div class="assessment-grid">
+        <article class="assessment wide"><div class="assessment-top"><span class="letter">M</span><span class="chip">Mission</span></div><h3>Protect, reveal, and preserve options</h3><p>During Day 1, maintain coalition access to the western Philippine approaches, shield the Palawan resupply effort, and prevent RED from converting peacetime presence into local sea control. Gain enough contact quality to hold hostile strike forces at risk while keeping offensive action bounded by political release.</p><div class="callout">Essential task: the convoy and covering group survive with a viable onward route; the force is not required to destroy the RED fleet on Day 1.</div></article>
+        <article class="assessment"><div class="assessment-top"><span class="letter">E</span><span class="chip">Enemy</span></div><h3>Layered reconnaissance-strike complex</h3><p>RED combines land-based fighters and bombers, island and mainland sensors, a carrier group, central-basin SAG, amphibious group, diesel submarines near chokepoints, and SSNs on wider approaches. Its likely preference is to localize BLUE, compress reaction time, and present an ambiguous coercive action under dense air-defense cover.</p><div class="callout">Most dangerous: coordinated missile attack enabled by persistent multi-axis ISR while a submarine exploits force displacement.</div></article>
+        <article class="assessment"><div class="assessment-top"><span class="letter">M</span><span class="chip">Maritime environment</span></div><h3>Archipelagic, cluttered, sensor-dependent</h3><p>Luzon, Palawan, the Spratlys, and the Paracels divide the battlespace into constrained approaches. Islands extend radar and SAM coverage; coastal clutter complicates classification; deep water favors nuclear submarines while shelves and straits can favor quiet diesel boats. Weather and sea state may close sensor windows without closing weapon envelopes.</p></article>
+        <article class="assessment"><div class="assessment-top"><span class="letter">T</span><span class="chip">Troops / forces</span></div><h3>Capable, distributed, enabler-limited</h3><p>BLUE brings TG B-1, the Philippine SAG, TG B-3, four SSNs, 46 land-based fighters, P-8/MQ-9 coverage, AEW, tankers, coastal-defense forces, and geographically useful bases. The force’s practical limits are sortie generation, tanker/AEW survivability, long-range weapon inventories, uncertain undersea contacts, and command coherence across dispersed units.</p></article>
+        <article class="assessment"><div class="assessment-top"><span class="letter">T</span><span class="chip">Time</span></div><h3>Twenty-four hours; four decision windows</h3><p>The first six hours favor posture, search, and deception. Hours 06–12 should improve classification and expose RED intent. Hours 12–18 are the likely decisive commitment window. Hours 18–24 must consolidate, re-arm, rescue, and establish the next day’s geometry. Aircraft cycle in minutes; submarines and surface formations shape tomorrow’s fight over hours.</p></article>
+        <article class="assessment"><div class="assessment-top"><span class="letter">C</span><span class="chip">Civil considerations</span></div><h3>Legitimacy is operational freedom</h3><p>Neutral states, civilian air and maritime traffic, Philippine sovereignty, and the visibility of encounters constrain identification and weapons release. Mainland China, Guam, and civilian infrastructure are protected from attack absent explicit escalation. Every ambiguous contact demands disciplined classification; every engagement will influence coalition access and political endurance.</p><div class="callout">Default: positive identification, proportional response, and immediate reporting of actions near neutral or civilian traffic.</div></article>
+      </div>
+    </section>
+
+    <section class="section" id="ocoka">
+      <div class="section-head">
+        <div class="section-no">SECTION 03</div>
+        <div><h2>Navalized OCOKA</h2><p class="section-intro">M-OCOKA treats geography, spectrum, water column, and basing as one maneuver environment. Its question is not simply “where can forces go?” but “where can they detect, classify, engage, hide, and sustain?”</p></div>
+      </div>
+
+      <div class="ocoka-list">
+        <article class="ocoka-row"><div class="ocoka-letter">O</div><div class="ocoka-title"><strong>Observation &amp; engagement geometry</strong><small>Sensor-to-shooter fields</small></div><div class="ocoka-body">Airborne early warning, space-based cueing, island radars, P-8 patrols, carrier aviation, and surface sensors create overlapping but fragile detection zones. Radar horizon, emission control, contact latency, and identification quality matter more than nominal sensor range.</div><div class="ocoka-use"><b>COMMAND USE</b>Keep at least two dissimilar sensing paths on each priority axis. Do not treat a stale contact as targeting-quality data.</div></article>
+        <article class="ocoka-row"><div class="ocoka-letter">C</div><div class="ocoka-title"><strong>Cover &amp; concealment</strong><small>EMCON · clutter · depth</small></div><div class="ocoka-body">The Philippine landmass masks some low-altitude movement; commercial traffic and littoral clutter complicate classification; weather can conceal or blind; the water column and ambient noise offer undersea concealment. EMCON reduces signature but also degrades coordination and local awareness.</div><div class="ocoka-use"><b>COMMAND USE</b>Use selective emissions, off-axis datalinks, decoys, and movement. Expose a sensor only for a defined information gain.</div></article>
+        <article class="ocoka-row"><div class="ocoka-letter">O</div><div class="ocoka-title"><strong>Obstacles &amp; constraints</strong><small>Physical · threat · political</small></div><div class="ocoka-body">Luzon and Palawan passages, reef systems, shallow shelves, RED SAM/anti-ship envelopes, tanker dependence, neutral traffic, and restricted strike areas all channel action. An obstacle may stop one domain while leaving another open; a political boundary can be as decisive as a reef or missile battery.</div><div class="ocoka-use"><b>COMMAND USE</b>Plot threat and policy boundaries together. Preserve an exit route and an alternate recovery base for every committed package.</div></article>
+        <article class="ocoka-row"><div class="ocoka-letter">K</div><div class="ocoka-title"><strong>Key maritime terrain</strong><small>Control disproportionate effect</small></div><div class="ocoka-body">The Palawan resupply corridor, western Luzon air approaches, Luzon Strait, central-basin maneuver space, and the airfields at Basa, Antonio Bautista, and Mactan shape reach and endurance. Fiery Cross and Woody Island act as sensor, air-defense, and sortie-generation nodes rather than mere land features.</div><div class="ocoka-use"><b>COMMAND USE</b>Prioritize function over possession: deny surveillance, launch capacity, or passage at the time it matters.</div></article>
+        <article class="ocoka-row"><div class="ocoka-letter">A</div><div class="ocoka-title"><strong>Avenues of approach</strong><small>Surface · air · subsurface</small></div><div class="ocoka-body">Primary surface axes run from Hainan through the Paracels into the central basin and from the Spratlys toward Palawan. Air avenues converge from Hainan, the reefs, and carrier launch areas. Subsurface approaches exploit the western Luzon barrier, Palawan passages, Spratly chokepoints, and deeper Philippine Sea routes.</div><div class="ocoka-use"><b>COMMAND USE</b>Build cross-domain barriers, not single lines. Force RED to reveal or reroute, then shift the mobile reserve against the exposed axis.</div></article>
+      </div>
+    </section>
+
+    <section class="section matrix-section" id="matrix">
+      <div class="section-head">
+        <div class="section-no">SECTION 04</div>
+        <div><h2>Day 1 Synchronization Matrix</h2><p class="section-intro">The matrix aligns effects and decision points; it is not a rigid schedule. Commanders may move a condition left or right in time while preserving the sequencing logic and escalation controls.</p></div>
+      </div>
+
+      <div class="timeline" aria-label="Operational phases">
+        <div class="phase"><span class="phase-tag">PHASE I · 0000–0600Z</span><h3>Mask &amp; Establish</h3><p>Disperse, establish the picture, validate communications, and deny easy targeting.</p></div>
+        <div class="phase"><span class="phase-tag">PHASE II · 0600–1200Z</span><h3>Find &amp; Fix</h3><p>Improve classification, screen the convoy axis, and make RED spend ISR capacity.</p></div>
+        <div class="phase"><span class="phase-tag">PHASE III · 1200–1800Z</span><h3>Deter or Defeat</h3><p>Exploit the best contact window; defeat hostile action at minimum necessary scope.</p></div>
+        <div class="phase"><span class="phase-tag">PHASE IV · 1800–2400Z</span><h3>Consolidate &amp; Reset</h3><p>Recover, re-arm, reassess the undersea picture, and shape Day 2 options.</p></div>
+      </div>
+
+      <div class="matrix-wrap" role="region" aria-label="Scrollable synchronization matrix" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">FUNCTION</th><th scope="col">0000–0600Z · MASK</th><th scope="col">0600–1200Z · FIND</th><th scope="col">1200–1800Z · DECIDE</th><th scope="col">1800–2400Z · RESET</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">MANEUVER</th><td><strong>TG B-1 / B-3</strong>Continue southwest movement east of the archipelago; vary course and speed; maintain separation. TG B-2 screens the resupply route west of Palawan.</td><td><strong>Build favorable geometry</strong>B-2 avoids offensive approach to the principal RED groups. B-1 holds beyond easy localization. SSNs occupy barrier and trail positions independently.</td><td><strong>Commit only for purpose</strong>Shift the nearest capable force to protect the resupply axis or exploit a high-confidence fleet contact. Keep one mobile element uncommitted.</td><td><strong>Restore depth</strong>Reopen spacing, establish next-day patrol sectors, detach damaged or fuel-limited units, and retain an eastward recovery option.</td></tr>
+            <tr><th scope="row">INTELLIGENCE / ISR</th><td><strong>Baseline the theater</strong>E-3/E-2D establish air picture; P-8s search west of Luzon and Palawan; MQ-9s remain outside known SAM envelopes. Fuse organic reports without forcing SSN disclosure.</td><td><strong>Classify priority contacts</strong>Priority 1: threats to convoy/B-2. Priority 2: maritime strike launchers. Priority 3: Shandong group. Correlate emissions, movement, and visual ID.</td><td><strong>Close the kill-chain gap</strong>Generate targeting-quality updates only for authorized objectives; cross-check neutral traffic and age of contact immediately before engagement.</td><td><strong>Rebuild uncertainty</strong>Assess lost contacts, likely submarine displacement, weapon expenditure, and deception indicators. Publish Day 2 collection deck.</td></tr>
+            <tr><th scope="row">COUNTER-AIR / IAMD</th><td><strong>Defend the network</strong>CAP over Basa, Palawan, B-1, and B-3. Preserve AEW and tanker standoff. Surface combatants radiate only as directed or in self-defense.</td><td><strong>Contest reconnaissance</strong>Intercept high-value ISR when tactically sound; use fighters to complicate targeting. Maintain layered defense around Palawan and B-1.</td><td><strong>Defeat the raid</strong>Prioritize hostile weapons and confirmed shooters threatening protected forces. Avoid pursuit into dense land-based SAM coverage without release.</td><td><strong>Reconstitute</strong>Rotate CAP, reload available ships and aircraft, redistribute interceptors, and account for every high-value defensive missile expenditure.</td></tr>
+            <tr><th scope="row">SURFACE WARFARE</th><td><strong>Weapons tight</strong>Track RED combatants and establish identification standards. Coastal batteries remain concealed and ready.</td><td><strong>Hold at risk</strong>Create cross-domain engagement options against a force closing the resupply corridor. Do not reveal coastal systems for low-value targets.</td><td><strong>Engage on threshold</strong>On hostile act/intent or release, mass effects against the immediate operational threat; terminate once the threat is neutralized or withdrawing.</td><td><strong>Displace &amp; reload</strong>Move surviving firing units, review battle damage, and preserve remaining long-range inventory for the next decision window.</td></tr>
+            <tr><th scope="row">UNDERSEA WARFARE</th><td><strong>Sanitize &amp; listen</strong>Organic helicopters screen major groups; P-8s establish patrol boxes. SSNs remain covert and report only as required.</td><td><strong>Develop barriers</strong>Focus Palawan and western Luzon approaches; classify contacts before diverting assets. Treat datum age as a planning constraint.</td><td><strong>Protect / exploit</strong>Concentrate prosecution on submarines threatening high-value units. SSNs may hold designated combatants at risk within release criteria.</td><td><strong>Re-seed the picture</strong>Mark contact confidence, probable escape routes, sonobuoy state, and helicopter readiness. Shift barriers based on observed displacement.</td></tr>
+            <tr><th scope="row">INFORMATION / EW</th><td><strong>Control signature</strong>EMCON plans active; verify low-probability paths and authentication. Establish a deliberate, plausible emissions pattern.</td><td><strong>Break correlation</strong>Use selective jamming, decoys, and maneuver to force RED re-collection. Protect friendly datalinks and avoid predictable sensor cycles.</td><td><strong>Support decisive action</strong>Time electronic attack to the protected force or authorized engagement; avoid broad effects that mask civilian or neutral tracks.</td><td><strong>Assess compromise</strong>Compare RED reactions with friendly signatures, update emission plans, and change compromised patterns before Day 2.</td></tr>
+            <tr><th scope="row">FIRES / STRIKE</th><td><strong>Stage; do not expose</strong>Validate loadouts, mission data, divert bases, tanker timing, and restricted target areas. No mainland or Guam strikes.</td><td><strong>Build options</strong>Prepare proportional response packages against maritime forces and forward military nodes only; retain weapons for self-defense and follow-on.</td><td><strong class="decision">DECISION: RELEASE / WITHHOLD</strong>Release only against positively identified, authorized targets tied to the commander’s purpose. Abort when identification, proportionality, or recovery margin fails.</td><td><strong>Battle-damage estimate</strong>Do not reattack merely to improve confidence. Reconcile expenditure and recommend reattack, contain, or disengage for Day 2.</td></tr>
+            <tr><th scope="row">PROTECTION / CSAR</th><td><strong>Prepare recovery</strong>CSAR packages at carrier/ARG and land base; confirm safe lanes, pickup authority, and survivor reporting. Harden/disperse base assets.</td><td><strong>Shadow high-risk activity</strong>Position rescue capacity without telegraphing the main effort; track damaged aircraft and alternate recovery fields.</td><td><strong>Recover without compounding loss</strong>Launch when survivability and survivor value justify risk. Protect damaged high-value units and clear threatened magazines/fuel areas.</td><td><strong>Account for personnel</strong>Resolve missing crews, isolate damaged platforms, replenish survival equipment, and update recovery posture.</td></tr>
+            <tr><th scope="row">SUSTAINMENT</th><td><strong>Generate sorties</strong>Protect fuel and magazines; confirm tanker tracks and logistics aircraft. Set minimum recovery fuel and defensive-magazine floors.</td><td><strong>Preserve endurance</strong>Rotate aircrews and ASW helicopters; adjust tanker plan to actual demand; keep replenishment ships outside likely threat axes.</td><td><strong>Support the main effort</strong>Prioritize fuel, weapons, and deck cycles to defense of the convoy and high-value units. Defer low-payoff sorties.</td><td><strong>Close the books</strong>Reconcile fuel, damage, stores, aircraft readiness, and weapons by stable campaign ID; prepare explicit Day 2 replenishment decisions.</td></tr>
+            <tr><th scope="row">C2 / DECISIONS</th><td><strong>Confirm command posture</strong>Validate comms, ROE, protected-area restrictions, and lost-communications actions. Publish commander’s critical information requirements.</td><td><strong class="decision">DP 1 · RED intent</strong>Has RED crossed from surveillance/coercion into attack preparation? Decide whether to reinforce the convoy axis or retain posture.</td><td><strong class="decision">DP 2 · Force commitment</strong>On hostile act/intent, decide scope of response. Separate self-defense authority from permission to attack protected geography.</td><td><strong class="decision">DP 3 · Day 2 posture</strong>Continue, disengage, or request escalation. Conduct 2400Z operational pause and preserve final scenario state.</td></tr>
+            <tr><th scope="row">ASSESSMENT</th><td><strong>Measures set</strong>Track recognized-picture continuity, high-value-unit location confidence, sortie capacity, and RED collection activity.</td><td><strong>Conditions check</strong>Convoy route viable? RED strike forces localized? Undersea confidence acceptable? Enablers still protected?</td><td><strong>Effects check</strong>Threat defeated or displaced? Escalation contained? Remaining combat power sufficient for a second salvo?</td><td><strong>End-state check</strong>Resupply force viable; BLUE retains maneuver and strike options; RED denied local control; restrictions recorded; next-day posture coherent.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matrix-note"><span>All times Zulu. Conditions—not the clock—govern transition.</span><span>ROE and scenario event state supersede this planning aid.</span></div>
+    </section>
+
+    <section class="section" id="control">
+      <div class="section-head">
+        <div class="section-no">SECTION 05</div>
+        <div><h2>Control &amp; Assessment</h2><p class="section-intro">A small set of decision points and measures keeps execution aligned to intent without over-controlling dispersed commanders.</p></div>
+      </div>
+
+      <div class="control-grid">
+        <article class="control-card"><h3>Commander's critical information</h3><dl><dt>PIR 01</dt><dd>Indications that RED is preparing or initiating a coordinated maritime strike.</dd><dt>PIR 02</dt><dd>A submarine contact with a credible path to TG B-1, TG B-3, or the resupply corridor.</dd><dt>PIR 03</dt><dd>RED surface or amphibious movement that can create a fait accompli within 12 hours.</dd><dt>FFIR 01</dt><dd>Loss or mission kill of an AEW, tanker, carrier/amphibious ship, or key runway.</dd><dt>FFIR 02</dt><dd>Defensive magazine or sortie-generation capacity falling below the ability to defeat one more raid.</dd></dl></article>
+        <article class="control-card"><h3>Authorities &amp; boundaries</h3><dl><dt>Self-defense</dt><dd>Always retained consistent with scenario ROE and positive identification requirements.</dd><dt>Mainland</dt><dd>Strikes not authorized without explicit escalation event and command release.</dd><dt>Guam</dt><dd>Protected from attack under the initial scenario state.</dd><dt>Civilian</dt><dd>No deliberate effects against civilian infrastructure; maintain proportionality and track separation.</dd><dt>Submarines</dt><dd>Do not compromise covert disposition for routine reporting or low-value prosecution.</dd></dl></article>
+        <article class="control-card full"><h3>Measures of effectiveness · assessed at each six-hour gate</h3><div class="criteria"><div class="stat"><span>ACCESS</span><strong>Resupply route remains viable</strong></div><div class="stat"><span>SURVIVABILITY</span><strong>High-value units retain layered defense</strong></div><div class="stat"><span>DECISION ADVANTAGE</span><strong>Priority threats held at useful confidence</strong></div><div class="stat"><span>ENDURANCE</span><strong>Force can defeat one additional major action</strong></div></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><span>FAULT LINE · SCS-2026 · FICTIONAL CAMPAIGN PLANNING PRODUCT</span><span>Source baseline: Day 1 OOB proposal + day-001 input · Generated 15 Aug 2026</span></div></footer>
+
+  <script>
+    const links = [...document.querySelectorAll('.nav-link')];
+    const sections = links.map(link => document.querySelector(link.hash)).filter(Boolean);
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      links.forEach(link => link.classList.toggle('active', link.hash === `#${visible.target.id}`));
+    }, { rootMargin: '-20% 0px -66% 0px', threshold: [0, .1, .4] });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
