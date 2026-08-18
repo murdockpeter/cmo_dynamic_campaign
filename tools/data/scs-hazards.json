@@ -1,0 +1,19 @@
+{
+  "theater_id": "south_china_sea",
+  "notes": [
+    "Conservative supplemental buffers for small reefs, shoals, and artificial-island features that may be simplified or absent in Natural Earth 1:10m.",
+    "These are navigation hazards, not territorial or sovereignty assertions."
+  ],
+  "hazards": [
+    {"name": "Woody Island", "latitude": 16.833, "longitude": 112.333, "radius_nm": 2.0},
+    {"name": "Fiery Cross Reef", "latitude": 9.550, "longitude": 112.883, "radius_nm": 2.0},
+    {"name": "Scarborough Shoal", "latitude": 15.150, "longitude": 117.750, "radius_nm": 3.0},
+    {"name": "Mischief Reef", "latitude": 9.900, "longitude": 115.533, "radius_nm": 2.5},
+    {"name": "Subi Reef", "latitude": 10.917, "longitude": 114.083, "radius_nm": 2.5},
+    {"name": "Johnson South Reef", "latitude": 9.717, "longitude": 114.283, "radius_nm": 2.0},
+    {"name": "Second Thomas Shoal", "latitude": 9.783, "longitude": 115.867, "radius_nm": 2.5},
+    {"name": "Thitu Island", "latitude": 11.050, "longitude": 114.283, "radius_nm": 2.0},
+    {"name": "Itu Aba", "latitude": 10.383, "longitude": 114.367, "radius_nm": 2.0},
+    {"name": "Spratly Island", "latitude": 8.633, "longitude": 111.917, "radius_nm": 2.0}
+  ]
+}

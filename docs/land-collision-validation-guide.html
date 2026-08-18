@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Visual guide to land-collision validation in the C:MO dynamic campaign generator.">
+  <title>Land Collision Validation · C:MO Generator</title>
+  <style>
+    :root {
+      --ink: #eef8f6;
+      --muted: #9bb8b5;
+      --deep: #061516;
+      --panel: rgba(11, 37, 38, .82);
+      --line: rgba(151, 211, 198, .18);
+      --cyan: #61d7cc;
+      --mint: #a8f0cf;
+      --amber: #f1c66a;
+      --coral: #f28f79;
+      --navy: #09282c;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .30);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 78% 2%, rgba(46, 142, 135, .24), transparent 31rem),
+        radial-gradient(circle at 8% 42%, rgba(34, 98, 113, .15), transparent 30rem),
+        linear-gradient(180deg, #071c1e 0%, var(--deep) 52%, #041011 100%);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .14;
+      background-image:
+        linear-gradient(rgba(130, 200, 190, .12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(130, 200, 190, .12) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+    a { color: var(--mint); text-decoration-color: rgba(168, 240, 207, .38); text-underline-offset: .2em; }
+    a:hover { color: white; text-decoration-color: white; }
+    code, pre { font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace; }
+    code { color: #c8fff0; }
+    .shell {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      position: relative;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: .55rem;
+      align-items: center;
+      color: var(--cyan);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+
+    header { padding: 76px 0 44px; }
+    .hero {
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: clamp(30px, 6vw, 72px);
+      background: linear-gradient(135deg, rgba(9, 42, 45, .96), rgba(8, 28, 31, .78));
+      box-shadow: var(--shadow);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -125px;
+      top: -145px;
+      border: 1px solid rgba(97, 215, 204, .24);
+      border-radius: 50%;
+      box-shadow: 0 0 0 44px rgba(97, 215, 204, .035), 0 0 0 88px rgba(97, 215, 204, .025);
+    }
+    h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.025em; }
+    h1 { margin-top: 20px; max-width: 820px; font-size: clamp(2.5rem, 6.5vw, 5.6rem); font-weight: 780; }
+    h1 em { color: var(--mint); font-style: normal; }
+    .lede { max-width: 780px; margin: 24px 0 0; color: #c4d9d7; font-size: clamp(1.02rem, 2vw, 1.24rem); }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      margin-top: 28px;
+      padding: 8px 13px;
+      border: 1px solid rgba(168, 240, 207, .27);
+      border-radius: 999px;
+      background: rgba(168, 240, 207, .07);
+      color: var(--mint);
+      font-weight: 750;
+      font-size: .87rem;
+    }
+    .status i { width: 8px; height: 8px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 16px var(--mint); }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 44px; }
+    .metric { padding: 18px; border-left: 1px solid var(--line); }
+    .metric strong { display: block; color: white; font-size: 1.65rem; line-height: 1.1; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; }
+
+    nav {
+      position: sticky;
+      z-index: 10;
+      top: 12px;
+      margin-bottom: 70px;
+      padding: 10px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(5, 22, 23, .86);
+      backdrop-filter: blur(16px);
+      white-space: nowrap;
+      scrollbar-width: thin;
+    }
+    nav a { display: inline-block; padding: 7px 12px; color: var(--muted); text-decoration: none; font-size: .82rem; font-weight: 700; }
+    nav a:hover { color: white; }
+
+    main { padding-bottom: 90px; }
+    section { scroll-margin-top: 90px; margin: 0 0 92px; }
+    .section-head { display: grid; grid-template-columns: 160px 1fr; gap: 26px; margin-bottom: 30px; }
+    .section-no { color: var(--cyan); font: 800 .76rem/1.2 "Cascadia Code", monospace; letter-spacing: .13em; text-transform: uppercase; }
+    h2 { max-width: 760px; font-size: clamp(1.9rem, 4vw, 3.35rem); }
+    .intro { max-width: 790px; margin: 16px 0 0; color: var(--muted); font-size: 1.05rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 25px;
+      background: var(--panel);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, .12);
+    }
+    .card h3 { font-size: 1.15rem; }
+    .card p { margin: 10px 0 0; color: var(--muted); }
+    .tag {
+      display: inline-block;
+      margin-bottom: 13px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: var(--cyan);
+      background: rgba(97, 215, 204, .09);
+      font: 700 .72rem/1.4 "Cascadia Code", monospace;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pipeline { display: grid; grid-template-columns: repeat(6, 1fr); align-items: stretch; gap: 9px; }
+    .stage { position: relative; min-height: 180px; padding: 21px 16px; border: 1px solid var(--line); border-radius: 17px; background: rgba(8, 32, 34, .9); }
+    .stage:not(:last-child)::after { content: "→"; position: absolute; z-index: 2; right: -14px; top: 50%; color: var(--cyan); font-weight: 900; }
+    .stage b { display: block; margin-bottom: 9px; color: white; font-size: .92rem; }
+    .stage p { margin: 0; color: var(--muted); font-size: .79rem; line-height: 1.55; }
+    .stage .num { display: block; margin-bottom: 15px; color: var(--cyan); font: 800 .71rem/1 monospace; }
+    .stage.gate { border-color: rgba(241, 198, 106, .42); background: rgba(63, 48, 23, .25); }
+    .stage.pass { border-color: rgba(168, 240, 207, .35); }
+
+    .authority { display: grid; grid-template-columns: 1fr 84px 1fr; align-items: stretch; }
+    .authority .bridge { display: grid; place-items: center; color: var(--amber); font-size: 1.8rem; }
+    .authority-card { padding: 30px; border: 1px solid var(--line); border-radius: 22px; background: var(--panel); }
+    .authority-card:first-child { border-top: 3px solid var(--cyan); }
+    .authority-card:last-child { border-top: 3px solid var(--amber); }
+    .authority-card h3 { margin: 7px 0 12px; font-size: 1.5rem; }
+    .authority-card p { color: var(--muted); }
+    .authority-card ul { padding-left: 1.1rem; color: #c7dad8; }
+
+    .steps { counter-reset: step; display: grid; gap: 10px; }
+    .step { counter-increment: step; display: grid; grid-template-columns: 54px 1fr auto; gap: 17px; align-items: start; padding: 19px; border: 1px solid var(--line); border-radius: 16px; background: rgba(8, 31, 33, .74); }
+    .step::before { content: counter(step, decimal-leading-zero); display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(97, 215, 204, .1); color: var(--cyan); font: 800 .75rem monospace; }
+    .step h3 { margin: 2px 0 5px; font-size: 1rem; }
+    .step p { margin: 0; color: var(--muted); font-size: .91rem; }
+    .step .setting { padding: 4px 8px; border-radius: 7px; color: var(--mint); background: rgba(168, 240, 207, .06); font: 700 .75rem monospace; white-space: nowrap; }
+
+    .codebox { overflow-x: auto; margin-top: 22px; border: 1px solid var(--line); border-radius: 18px; background: #041214; }
+    .codebar { display: flex; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--line); color: var(--muted); font: 700 .72rem monospace; text-transform: uppercase; }
+    pre { margin: 0; padding: 22px; color: #c8e7e2; font-size: .84rem; line-height: 1.65; }
+    .key { color: var(--amber); }
+    .ok { color: var(--mint); }
+    .bad { color: var(--coral); }
+
+    .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .rule { padding: 27px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+    .rule strong { display: block; font-size: 1.2rem; }
+    .rule .threshold { margin: 13px 0; color: var(--amber); font: 750 1.05rem monospace; }
+    .rule p { color: var(--muted); }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; }
+    th, td { padding: 15px 18px; text-align: left; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-size: .72rem; letter-spacing: .09em; text-transform: uppercase; }
+    td { color: #c9dcda; font-size: .9rem; }
+    tbody tr:last-child td { border-bottom: 0; }
+    .pill { display: inline-block; padding: 4px 9px; border-radius: 999px; background: rgba(168, 240, 207, .08); color: var(--mint); font: 700 .76rem monospace; }
+
+    .markers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .marker { min-height: 155px; padding: 21px; border: 1px solid var(--line); border-radius: 17px; background: var(--panel); }
+    .marker code { font-size: .85rem; font-weight: 800; }
+    .marker p { margin: 12px 0 0; color: var(--muted); font-size: .85rem; }
+
+    .artifacts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .artifact { display: flex; gap: 14px; align-items: start; padding: 15px 17px; border: 1px solid var(--line); border-radius: 14px; background: rgba(8, 31, 33, .68); text-decoration: none; }
+    .artifact:hover { border-color: rgba(168, 240, 207, .4); background: rgba(13, 48, 50, .78); }
+    .artifact b { display: block; color: var(--ink); font-size: .88rem; }
+    .artifact span { display: block; margin-top: 3px; color: var(--muted); font-size: .78rem; }
+    .artifact::before { content: "↗"; flex: none; color: var(--cyan); }
+
+    .callout { margin-top: 20px; padding: 22px 25px; border-left: 3px solid var(--amber); border-radius: 0 14px 14px 0; background: rgba(241, 198, 106, .07); color: #d9d0b9; }
+    .callout strong { color: var(--amber); }
+    .limits { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .limits .card:first-child { border-top: 3px solid var(--mint); }
+    .limits .card:last-child { border-top: 3px solid var(--coral); }
+    .limits ul { margin: 13px 0 0; padding-left: 1.15rem; color: var(--muted); }
+    footer { padding: 30px 0 55px; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+    footer .shell { display: flex; justify-content: space-between; gap: 20px; }
+
+    @media (max-width: 920px) {
+      .metrics, .markers { grid-template-columns: repeat(2, 1fr); }
+      .pipeline { grid-template-columns: repeat(2, 1fr); }
+      .stage:not(:last-child)::after { display: none; }
+    }
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 24px, 1180px); }
+      header { padding-top: 28px; }
+      .hero { border-radius: 20px; }
+      .section-head { grid-template-columns: 1fr; gap: 9px; }
+      .card-grid, .rules, .limits, .artifacts, .authority { grid-template-columns: 1fr; }
+      .authority .bridge { min-height: 50px; transform: rotate(90deg); }
+      .step { grid-template-columns: 44px 1fr; }
+      .step .setting { grid-column: 2; justify-self: start; }
+      .pipeline { grid-template-columns: 1fr; }
+      footer .shell { display: block; }
+    }
+    @media print {
+      :root { --ink: #10201f; --muted: #445d5a; --line: #bfd0cd; --panel: #fff; }
+      body { background: #fff; color: var(--ink); }
+      body::before, nav { display: none; }
+      .hero, .card, .stage, .authority-card, .step, .rule, .table-wrap, .marker, .artifact { background: #fff; box-shadow: none; break-inside: avoid; }
+      header { padding-top: 20px; }
+      section { margin-bottom: 48px; }
+      a { color: #165f58; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="hero">
+      <span class="eyebrow">C:MO generator · navigation safety</span>
+      <h1>How routes stay <em>off the land.</em></h1>
+      <p class="lede">A practical guide to the generator’s layered land-collision system—from authored coordinates and automatic route repair to C:MO-native terrain sampling and validation of the scenario loaded back from disk.</p>
+      <div class="status"><i></i> Day 1 validation: PASS</div>
+      <div class="metrics" aria-label="Current Day 1 validation figures">
+        <div class="metric"><strong>37</strong><span>starts checked</span></div>
+        <div class="metric"><strong>16</strong><span>routes checked</span></div>
+        <div class="metric"><strong>4</strong><span>routes repaired</span></div>
+        <div class="metric"><strong>0.5 nm</strong><span>C:MO sample interval</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav aria-label="Guide sections">
+      <a href="#overview">Pipeline</a>
+      <a href="#authority">Two authorities</a>
+      <a href="#offline">Offline checks</a>
+      <a href="#preflight">C:MO preflight</a>
+      <a href="#save">Build &amp; reload</a>
+      <a href="#results">Current results</a>
+      <a href="#operations">Operator flow</a>
+      <a href="#limits">Guarantees</a>
+      <a href="#files">Source map</a>
+    </nav>
+
+    <main>
+      <section id="overview">
+        <div class="section-head">
+          <div class="section-no">01 · Overview</div>
+          <div>
+            <h2>A gated pipeline, not a single collision test</h2>
+            <p class="intro">Navigation is checked twice by independent data sources and again against the units C:MO actually created. A failed preflight cannot accidentally fall through into the build.</p>
+          </div>
+        </div>
+        <div class="pipeline" role="img" aria-label="Route validation pipeline">
+          <div class="stage"><span class="num">01</span><b>Author</b><p>Starts and intended waypoints live in the Python scenario definition.</p></div>
+          <div class="stage"><span class="num">02</span><b>Plan &amp; repair</b><p>Natural Earth coastlines and local hazards detect and reroute unsafe legs.</p></div>
+          <div class="stage gate"><span class="num">03</span><b>CMO preflight</b><p>The simulation engine samples terrain and water depth before any unit is built.</p></div>
+          <div class="stage pass"><span class="num">04</span><b>Build gate</b><p><code>build.lua</code> proceeds only when the preflight key is explicitly true.</p></div>
+          <div class="stage"><span class="num">05</span><b>Validate</b><p>Actual assigned courses, waypoint counts, GUIDs and DBIDs are inspected.</p></div>
+          <div class="stage"><span class="num">06</span><b>Save &amp; reload</b><p>The saved <code>.scen</code> is reopened and validation runs against disk state.</p></div>
+        </div>
+      </section>
+
+      <section id="authority">
+        <div class="section-head">
+          <div class="section-no">02 · Authority</div>
+          <div>
+            <h2>Planning geometry proposes. C:MO terrain disposes.</h2>
+            <p class="intro">The offline layer makes generation deterministic and repairable. The engine layer is the final answer because it uses the terrain database that will govern the scenario.</p>
+          </div>
+        </div>
+        <div class="authority">
+          <article class="authority-card">
+            <span class="tag">Planning authority</span>
+            <h3>Natural Earth + hazards</h3>
+            <p>A clipped 1:10m land dataset provides polygon and coastline geometry. A separate hazard file adds conservative envelopes around reefs, shoals and artificial islands.</p>
+            <ul>
+              <li>Fast enough to evaluate and repair every generated route.</li>
+              <li>Finds exact segment/coast intersections.</li>
+              <li>Provides clearance measurements and detour geometry.</li>
+            </ul>
+          </article>
+          <div class="bridge" aria-hidden="true">→</div>
+          <article class="authority-card">
+            <span class="tag">Final authority</span>
+            <h3>C:MO’s own elevation model</h3>
+            <p><code>World_GetElevation</code> evaluates sampled points inside a fresh DB3K scenario. It confirms that routes are navigable according to C:MO—not merely according to the external map.</p>
+            <ul>
+              <li>Surface routes reject all elevations at or above sea level.</li>
+              <li>Submarine routes additionally require 200 m water depth.</li>
+              <li>The build is gated on an all-clear result.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="offline">
+        <div class="section-head">
+          <div class="section-no">03 · Offline gate</div>
+          <div>
+            <h2>Detect, move, detour, simplify, recheck</h2>
+            <p class="intro"><code>tools/navigation.py</code> turns raw land polygons into an indexed navigation model. <code>resolve_navigation_routes()</code> in the generator applies it before Lua is emitted.</p>
+          </div>
+        </div>
+        <div class="steps">
+          <article class="step"><div><h3>Validate every unit start</h3><p>All surface and submarine spawn points are checked for land and named hazard containment before a route is considered.</p></div><span class="setting">37 starts</span></article>
+          <article class="step"><div><h3>Reject bad waypoints</h3><p>Each authored point is tested against land polygons and conservative hazard envelopes.</p></div><span class="setting">point_on_land()</span></article>
+          <article class="step"><div><h3>Intersect every route leg</h3><p>Each great-circle leg is checked for exact crossings against indexed coastline segments, catching narrow islands between waypoints.</p></div><span class="setting">exact geometry</span></article>
+          <article class="step"><div><h3>Densify and measure clearance</h3><p>Great-circle interpolation samples the route at 0.25 nm. Nearest-coast distance is compared with the route-type safety margin.</p></div><span class="setting">0.25 nm</span></article>
+          <article class="step"><div><h3>Repair the unsafe geometry</h3><p>Unsafe waypoints are relocated to water; candidate detours are inserted around the failing coast or hazard and scored for safety and added distance.</p></div><span class="setting">iterative</span></article>
+          <article class="step"><div><h3>Simplify only when safe</h3><p>Unnecessary repair points are removed only if the shortened leg still passes every intersection, hazard and clearance test.</p></div><span class="setting">safe simplify</span></article>
+          <article class="step"><div><h3>Revalidate the complete result</h3><p>The entire repaired route is tested again. Generation stops if no safe route can be found within the bounded repair attempts.</p></div><span class="setting">fail closed</span></article>
+        </div>
+
+        <div class="rules" style="margin-top: 18px">
+          <article class="rule">
+            <span class="tag">Surface</span>
+            <strong>Ships remain clear of shore</strong>
+            <div class="threshold">minimum clearance ≥ 3.0 nm</div>
+            <p>Land intersections and configured hazards are always failures, even if sampled clearance appears acceptable elsewhere.</p>
+          </article>
+          <article class="rule">
+            <span class="tag">Subsurface</span>
+            <strong>Submarines need water and depth</strong>
+            <div class="threshold">clearance ≥ 2.0 nm · depth ≥ 200 m</div>
+            <p>The offline model protects horizontal clearance; C:MO preflight supplies the decisive bathymetric depth test.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="preflight">
+        <div class="section-head">
+          <div class="section-no">04 · Engine gate</div>
+          <div>
+            <h2>Preflight happens before physical generation</h2>
+            <p class="intro"><code>preflight.lua</code> runs in a fresh blank scenario using DB3K_515. It recreates each route’s great-circle track with C:MO functions and asks the engine for elevation every 0.5 nm.</p>
+          </div>
+        </div>
+        <div class="card-grid">
+          <article class="card"><span class="tag">Geometry</span><h3>Engine-native track sampling</h3><p><code>Tool_Bearing</code> calculates the leg bearing. <code>World_GetPointFromBearing</code> advances each sample along the same spherical geometry C:MO understands.</p></article>
+          <article class="card"><span class="tag">Terrain</span><h3>Elevation is queried in C:MO</h3><p><code>World_GetElevation</code> returns elevation at each sample. Surface and submarine rules are evaluated independently and failures retain route and location context.</p></article>
+          <article class="card"><span class="tag">Failure behavior</span><h3>No partial approval</h3><p>Every failure is printed. The script reports its total and withholds the preflight key unless the count is exactly zero.</p></article>
+          <article class="card"><span class="tag">Execution</span><h3>Separated for console reliability</h3><p>Preflight and build are separate scripts so the expensive terrain sweep completes within C:MO’s interactive console execution constraints before construction begins.</p></article>
+        </div>
+        <div class="codebox">
+          <div class="codebar"><span>Conceptual gate logic</span><span>preflight.lua → build.lua</span></div>
+          <pre><span class="key">surface failure</span>  = elevation &gt;= 0
+<span class="key">submarine failure</span> = elevation &gt;= 0 or water_depth &lt; 200
+
+if failure_count == 0 then
+    ScenEdit_SetKeyValue(<span class="ok">"dc.navigation.preflight"</span>, <span class="ok">"true"</span>)
+end
+
+-- build.lua fails closed:
+if ScenEdit_GetKeyValue(<span class="ok">"dc.navigation.preflight"</span>) ~= <span class="ok">"true"</span> then
+    error(<span class="bad">"Navigation preflight has not passed"</span>)
+end</pre>
+        </div>
+      </section>
+
+      <section id="save">
+        <div class="section-head">
+          <div class="section-no">05 · Physical scenario</div>
+          <div>
+            <h2>The built object graph is checked—then the disk file is checked again</h2>
+            <p class="intro">Passing planned coordinates is necessary but not sufficient. <code>validate.lua</code> resolves the units C:MO created and inspects their actual state.</p>
+          </div>
+        </div>
+        <div class="steps">
+          <article class="step"><div><h3>Build the scenario</h3><p>After the key gate, <code>build.lua</code> creates sides, units, missions, reference points and courses. The completed run reported 336 tracked objects.</p></div><span class="setting">DCBUILD</span></article>
+          <article class="step"><div><h3>Resolve actual assigned courses</h3><p>Validation reads route points back from the created units instead of assuming C:MO retained the submitted data unchanged.</p></div><span class="setting">16 routes</span></article>
+          <article class="step"><div><h3>Check shape and terrain</h3><p>Expected waypoint counts are compared, then the retrieved courses are terrain/depth sampled again.</p></div><span class="setting">0 errors</span></article>
+          <article class="step"><div><h3>Check stable identities</h3><p>Tracked units are verified by GUID and DBID, helping catch missing, substituted or incorrectly instantiated platforms.</p></div><span class="setting">GUID + DBID</span></article>
+          <article class="step"><div><h3>Save, reopen, repeat</h3><p>The resulting <code>Day1.scen</code> is loaded from disk and <code>validate.lua</code> runs once more. This tests persistence, not just in-memory build state.</p></div><span class="setting">disk truth</span></article>
+        </div>
+        <div class="callout"><strong>Latest result:</strong> the regenerated Day 1 scenario passed preflight, post-build validation, and validation after disk reload with zero route errors. The saved file’s SHA-256 is <code>F3A0B2E658A7476A2B1C6BEF2973E4D4F60C477BD94F24523192E4D1AAC62127</code>.</div>
+      </section>
+
+      <section id="results">
+        <div class="section-head">
+          <div class="section-no">06 · Current audit</div>
+          <div>
+            <h2>Four routes needed intervention</h2>
+            <p class="intro">The current Day 1 audit passed. These routes were automatically changed before Lua generation; all other checked routes retained their authored geometry.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Route</th><th>Type</th><th>Authored</th><th>Resolved</th><th>Minimum clearance</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>TG B-3 America ARG</td><td>Surface</td><td>8 points</td><td>10 points</td><td>3.047 nm</td><td><span class="pill">repaired</span></td></tr>
+              <tr><td>TG R-2 Southern Theater SAG</td><td>Surface</td><td>3 points</td><td>4 points</td><td>3.051 nm</td><td><span class="pill">repaired</span></td></tr>
+              <tr><td>TG R-3 Hainan Amphibious Group</td><td>Surface</td><td>3 points</td><td>4 points</td><td>3.046 nm</td><td><span class="pill">repaired</span></td></tr>
+              <tr><td>BLU-USN-SSN-0001</td><td>Submarine</td><td>3 points</td><td>4 points</td><td>2.676 nm</td><td><span class="pill">repaired</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="operations">
+        <div class="section-head">
+          <div class="section-no">07 · Operations</div>
+          <div>
+            <h2>What to run, and what success looks like</h2>
+            <p class="intro">The Python stage must pass before entering C:MO. Inside C:MO, wait for each completion marker before moving to the next script.</p>
+          </div>
+        </div>
+        <div class="codebox">
+          <div class="codebar"><span>Generation</span><span>PowerShell · repository root</span></div>
+          <pre>python tools/generate_day1.py
+
+# Inspect the visual audit before launching the simulation:
+days/day-001/route-audit.html</pre>
+        </div>
+        <div class="markers" style="margin-top: 18px">
+          <article class="marker"><code>DCNAV|COMPLETE</code><p>C:MO terrain preflight finished. Require <span class="ok">failures=0</span> before continuing.</p></article>
+          <article class="marker"><code>DCPREFLIGHT|COMPLETE</code><p>The gate key was issued. The current run covered 16 routes.</p></article>
+          <article class="marker"><code>DCBUILD|COMPLETE</code><p>Physical scenario creation finished. Only now save the scenario.</p></article>
+          <article class="marker"><code>DCVALIDATE|COMPLETE</code><p>Require <span class="ok">errors=0</span> before and after loading the saved file.</p></article>
+        </div>
+        <div class="callout"><strong>Recommended sequence:</strong> run <code>preflight.lua</code> → run <code>build.lua</code> → run <code>validate.lua</code> → save the scenario → reload the saved <code>.scen</code> → run <code>validate.lua</code> again.</div>
+      </section>
+
+      <section id="limits">
+        <div class="section-head">
+          <div class="section-no">08 · Scope</div>
+          <div>
+            <h2>What the checks guarantee—and what they do not</h2>
+            <p class="intro">The framework is intentionally strict about the generated initial state. It does not claim to be a runtime navigation controller.</p>
+          </div>
+        </div>
+        <div class="limits">
+          <article class="card">
+            <span class="tag">Covered</span>
+            <h3>Generated navigation state</h3>
+            <ul>
+              <li>Declared surface and submarine starting positions.</li>
+              <li>Every generated initial route leg and waypoint.</li>
+              <li>Coast intersections, named hazards and clearance.</li>
+              <li>C:MO terrain and submarine water-depth constraints.</li>
+              <li>Actual built courses and persisted saved-file state.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="tag" style="color: var(--coral); background: rgba(242,143,121,.08)">Not covered</span>
+            <h3>Routes changed during play</h3>
+            <ul>
+              <li>Player-created or manually edited courses after generation.</li>
+              <li>AI, mission logic or event scripts that later reroute a unit.</li>
+              <li>Navigation safety outside the generated scenario’s initial state.</li>
+              <li>Chart-grade coastal detail from Natural Earth alone—hence the required C:MO corroboration.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="files">
+        <div class="section-head">
+          <div class="section-no">09 · Source map</div>
+          <div>
+            <h2>Follow the implementation and its evidence</h2>
+            <p class="intro">These links are relative to this guide, so the document remains portable with the repository.</p>
+          </div>
+        </div>
+        <div class="artifacts">
+          <a class="artifact" href="../tools/navigation.py"><span><b>tools/navigation.py</b><span>Land index, validation, clearance and repair algorithms</span></span></a>
+          <a class="artifact" href="../tools/generate_day1.py"><span><b>tools/generate_day1.py</b><span>Route resolution and generated Lua validation stages</span></span></a>
+          <a class="artifact" href="../tools/data/scs-land.geojson"><span><b>tools/data/scs-land.geojson</b><span>Clipped Natural Earth 1:10m planning geometry</span></span></a>
+          <a class="artifact" href="../tools/data/scs-hazards.json"><span><b>tools/data/scs-hazards.json</b><span>Conservative local reef, shoal and island envelopes</span></span></a>
+          <a class="artifact" href="../days/day-001/route-audit.html"><span><b>route-audit.html</b><span>Visual map of authored and resolved Day 1 routes</span></span></a>
+          <a class="artifact" href="../days/day-001/route-audit.json"><span><b>route-audit.json</b><span>Machine-readable measurements and repair outcomes</span></span></a>
+          <a class="artifact" href="../days/day-001/preflight.lua"><span><b>preflight.lua</b><span>C:MO-native terrain and depth gate</span></span></a>
+          <a class="artifact" href="../days/day-001/build.lua"><span><b>build.lua</b><span>Gated physical scenario construction</span></span></a>
+          <a class="artifact" href="../days/day-001/validate.lua"><span><b>validate.lua</b><span>Post-build and post-reload object validation</span></span></a>
+          <a class="artifact" href="../days/day-001/cmo-validation-20260818.txt"><span><b>cmo-validation-20260818.txt</b><span>Receipt from the successful engine validation run</span></span></a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="shell"><span>C:MO Dynamic Campaign Generator · Land Collision Validation</span><span>Current audit snapshot: 18 August 2026</span></div>
+  </footer>
+</body>
+</html>

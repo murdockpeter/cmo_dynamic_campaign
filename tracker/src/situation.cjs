@@ -11,35 +11,7 @@ const LOCATIONS = {
   'Suixi AB  (PLAAF)': [21.214, 110.358],
   'Woody Island': [16.833, 112.333],
   'Fiery Cross Reef': [9.550, 112.883],
-  'TG B-1 George Washington CSG': [15.0, 125.1],
-  'TG B-2 Philippine West Sea SAG': [10.8, 117.8],
-  'TG B-3 America ARG': [10.2, 121.1],
-  'TG R-1 Shandong CSG': [16.3, 114.5],
-  'TG R-2 Southern Theater SAG': [12.5, 113.8],
-  'TG R-3 Hainan Amphibious Group': [17.8, 111.8],
 };
-
-const ROUTES = [
-  ['BLUE', 'TG B-1 George Washington CSG', [[15,125.1],[14.5,124.9],[13.8,124.5]]],
-  ['BLUE', 'TG B-2 Philippine West Sea SAG', [[10.8,117.8],[11.4,117.3],[12,116.9]]],
-  ['BLUE', 'TG B-3 America ARG', [[10.2,121.1],[10.6,120.3],[11.2,119.7]]],
-  ['RED', 'TG R-1 Shandong CSG', [[16.3,114.5],[15.5,114.2],[14.7,114]]],
-  ['RED', 'TG R-2 Southern Theater SAG', [[12.5,113.8],[11.8,114],[10.8,114.5]]],
-  ['RED', 'TG R-3 Hainan Amphibious Group', [[17.8,111.8],[17,112.3],[16,112.9]]],
-];
-
-const MISSIONS = [
-  ['BLUE','AAW','West Luzon CAP',[[14,117.5],[18,117.5],[18,120],[14,120]]],
-  ['BLUE','AAW','Palawan CAP',[[8,116.8],[12.5,116.8],[12.5,119.3],[8,119.3]]],
-  ['BLUE','ASW','Palawan ASW',[[8,115],[12.5,115],[12.5,117.5],[8,117.5]]],
-  ['BLUE','AEW','AEW Central',[[12.3,122],[14,122]]],
-  ['BLUE','TANKER','Tanker Central',[[11.5,122.5],[14.5,122.5]]],
-  ['RED','AAW','Hainan CAP',[[16.5,109.5],[22,109.5],[22,114],[16.5,114]]],
-  ['RED','AAW','Spratly CAP',[[8,111],[12,111],[12,115],[8,115]]],
-  ['RED','ASW','Central Basin ASW',[[11,114],[17,114],[17,118],[11,118]]],
-  ['RED','AEW','AEW Hainan',[[17,112],[19,112]]],
-  ['RED','TANKER','Tanker Hainan',[[18,113],[20,113]]],
-];
 
 function nodeName(unit) { return unit.base || unit.group || unit.campaign_id; }
 function packageName(id) { return id.replace(/-\d{2,4}$/, ''); }
@@ -74,11 +46,10 @@ function loadSituation(root) {
   return {
     meta: { ...input, updated: new Date().toISOString(), source: 'Day 1 planning baseline' }, totals,
     nodes: [...nodes.values()].filter((node) => !node.name.includes('SSN-') && !node.name.includes('SSK-') && !node.name.includes('SSBN-')),
-    submarines, routes: ROUTES.map(([side,name,points]) => ({ side,name,points })),
-    missions: MISSIONS.map(([side,type,name,points]) => ({ side,type,name,points })),
-    boundaries: [
-      { name: 'Mainland strike restriction', note: 'Attacks require an explicit escalation event.', points: [[18.0,108.2],[23.0,108.2],[23.0,117.5],[18.0,117.5]] },
-    ],
+    submarines,
+    routes: (input.navigation?.routes || []).filter((route) => route.domain === 'surface'),
+    missions: (input.missions || []).map((mission) => ({ side:mission.side,type:mission.type,name:mission.display_name || mission.name,points:mission.points })),
+    boundaries: input.boundaries || [],
   };
 }
 

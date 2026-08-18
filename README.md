@@ -62,3 +62,18 @@ npm start
 ```
 
 See [tracker/README.md](tracker/README.md) for key handling and displayed layers.
+
+## Navigation safety
+
+Scenario generation now fails closed on unsafe ship/submarine starts and routes.
+The preflight uses Natural Earth 1:10m coastline geometry, supplemental South
+China Sea reef/shoal hazards, automatic multi-waypoint repair, and configurable
+coastal clearance. The generated `preflight.lua` then corroborates every route
+against C:MO's own terrain/bathymetry with `World_GetElevation()`. `build.lua`
+refuses to run unless that engine preflight completed successfully.
+
+Review the generated `days/day-001/route-audit.html` before running the build.
+See [docs/navigation-safety.md](docs/navigation-safety.md) for implementation,
+tests, guarantees, and limitations, or open the
+[visual land-collision validation guide](docs/land-collision-validation-guide.html)
+for the complete illustrated pipeline and current validation evidence.

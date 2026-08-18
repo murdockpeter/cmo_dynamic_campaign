@@ -29,3 +29,7 @@ local campaign reports that already hold the demo key. Otherwise choose
 
 Positions are the frozen Day 1 starting situation, not live telemetry from a
 running C:MO session. Reloading reflects edits to the current manifest/input.
+Surface routes, repaired submarine courses, mission geometry, and boundaries are
+read from those generated artifacts; the tracker no longer maintains separate
+route/mission coordinate constants. The map visualizes the navigation result,
+while `days/day-001/route-audit.html` is the authoritative preflight report.

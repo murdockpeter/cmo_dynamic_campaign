@@ -28,6 +28,7 @@ during a played game-day.
 Codex will generate a deterministic Day 1 package:
 
 - frozen `input.json` containing the approved OOB and situation;
+- `preflight.lua` to create the blank scenario and run C:MO terrain/depth checks;
 - `build.lua` to create/import units, airfields, sides, postures, missions, zones,
   events, and initial state;
 - `manifest.json` mapping stable campaign IDs to DBIDs and predetermined/generated
@@ -44,6 +45,15 @@ The generated build will use:
 5. support, patrol, strike-ready, and logistics missions;
 6. scheduled checkpoint and end-of-day events;
 7. stable campaign identifiers recorded in the manifest and CMO key store.
+
+Before Lua is emitted, every generated ship/submarine start and complete route is
+checked against the offline South China Sea coastline/hazard index. Unsafe legs
+are repaired with additional waypoints and revalidated; unresolved errors stop
+generation. `route-audit.json` and `route-audit.html` record all original and
+resolved courses. During the C:MO build, `World_GetElevation()` samples the
+resolved routes against the engine's terrain and bathymetry. Any land hit or
+submarine water-depth violation prevents the preflight key from being set, and
+the build refuses to start without that key.
 
 The user will open the CMO Scenario Editor and run the generated build script.
 CMO itself must perform the final **Save As Scenario** operation because it owns
@@ -214,4 +224,3 @@ days/
 
 Large `.scen` and `.save` files stay local and are ignored by Git. Small manifests,
 ledgers, scripts, AARs, and adjudication records are suitable for version control.
-

@@ -1,0 +1,1284 @@
+{
+  "campaign": "SCS-2026",
+  "day": 1,
+  "status": "pass",
+  "coastline": {
+    "title": "South China Sea Natural Earth 1:10m land and minor islands",
+    "source": "Natural Earth public-domain 1:10m land and minor-islands datasets",
+    "source_inputs": [
+      "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_land.geojson",
+      "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_minor_islands.geojson"
+    ],
+    "bounds": {
+      "west": 105.0,
+      "south": 3.0,
+      "east": 130.0,
+      "north": 25.0
+    },
+    "coordinate_order": "longitude, latitude"
+  },
+  "supplemental_hazards": [
+    {
+      "name": "Woody Island",
+      "latitude": 16.833,
+      "longitude": 112.333,
+      "radius_nm": 2.0
+    },
+    {
+      "name": "Fiery Cross Reef",
+      "latitude": 9.55,
+      "longitude": 112.883,
+      "radius_nm": 2.0
+    },
+    {
+      "name": "Scarborough Shoal",
+      "latitude": 15.15,
+      "longitude": 117.75,
+      "radius_nm": 3.0
+    },
+    {
+      "name": "Mischief Reef",
+      "latitude": 9.9,
+      "longitude": 115.533,
+      "radius_nm": 2.5
+    },
+    {
+      "name": "Subi Reef",
+      "latitude": 10.917,
+      "longitude": 114.083,
+      "radius_nm": 2.5
+    },
+    {
+      "name": "Johnson South Reef",
+      "latitude": 9.717,
+      "longitude": 114.283,
+      "radius_nm": 2.0
+    },
+    {
+      "name": "Second Thomas Shoal",
+      "latitude": 9.783,
+      "longitude": 115.867,
+      "radius_nm": 2.5
+    },
+    {
+      "name": "Thitu Island",
+      "latitude": 11.05,
+      "longitude": 114.283,
+      "radius_nm": 2.0
+    },
+    {
+      "name": "Itu Aba",
+      "latitude": 10.383,
+      "longitude": 114.367,
+      "radius_nm": 2.0
+    },
+    {
+      "name": "Spratly Island",
+      "latitude": 8.633,
+      "longitude": 111.917,
+      "radius_nm": 2.0
+    }
+  ],
+  "settings": {
+    "surface_clearance_nm": 3.0,
+    "submarine_clearance_nm": 2.0,
+    "submarine_min_water_depth_m": 200,
+    "cmo_terrain_sample_nm": 0.5
+  },
+  "spawn_checks": [
+    {
+      "id": "BLU-USN-CVN-0001",
+      "side": "BLUE",
+      "group": "TG B-1 George Washington CSG",
+      "domain": "surface",
+      "point": [
+        15.0,
+        125.1
+      ],
+      "clearance_nm": 75.04,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-DDG-0001",
+      "side": "BLUE",
+      "group": "TG B-1 George Washington CSG",
+      "domain": "surface",
+      "point": [
+        15.05,
+        125.14
+      ],
+      "clearance_nm": 78.806,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-DDG-0002",
+      "side": "BLUE",
+      "group": "TG B-1 George Washington CSG",
+      "domain": "surface",
+      "point": [
+        14.95,
+        125.14
+      ],
+      "clearance_nm": 74.48,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-DDG-0003",
+      "side": "BLUE",
+      "group": "TG B-1 George Washington CSG",
+      "domain": "surface",
+      "point": [
+        15.04,
+        125.05
+      ],
+      "clearance_nm": 74.902,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-AOE-0001",
+      "side": "BLUE",
+      "group": "TG B-1 George Washington CSG",
+      "domain": "surface",
+      "point": [
+        14.96,
+        125.05
+      ],
+      "clearance_nm": 71.315,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-PHN-FFG-0001",
+      "side": "BLUE",
+      "group": "TG B-2 Philippine West Sea SAG",
+      "domain": "surface",
+      "point": [
+        10.8,
+        117.8
+      ],
+      "clearance_nm": 69.817,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-PHN-FFG-0002",
+      "side": "BLUE",
+      "group": "TG B-2 Philippine West Sea SAG",
+      "domain": "surface",
+      "point": [
+        10.85,
+        117.84
+      ],
+      "clearance_nm": 69.829,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-PHN-COR-0001",
+      "side": "BLUE",
+      "group": "TG B-2 Philippine West Sea SAG",
+      "domain": "surface",
+      "point": [
+        10.75,
+        117.84
+      ],
+      "clearance_nm": 66.048,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-LHA-0001",
+      "side": "BLUE",
+      "group": "TG B-3 America ARG",
+      "domain": "surface",
+      "point": [
+        10.2,
+        121.1
+      ],
+      "clearance_nm": 34.602,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-LPD-0001",
+      "side": "BLUE",
+      "group": "TG B-3 America ARG",
+      "domain": "surface",
+      "point": [
+        10.25,
+        121.14
+      ],
+      "clearance_nm": 34.362,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-DDG-0004",
+      "side": "BLUE",
+      "group": "TG B-3 America ARG",
+      "domain": "surface",
+      "point": [
+        10.15,
+        121.14
+      ],
+      "clearance_nm": 31.109,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-CV-0001",
+      "side": "RED",
+      "group": "TG R-1 Shandong CSG",
+      "domain": "surface",
+      "point": [
+        16.3,
+        114.5
+      ],
+      "clearance_nm": 103.813,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-DDG-0001",
+      "side": "RED",
+      "group": "TG R-1 Shandong CSG",
+      "domain": "surface",
+      "point": [
+        16.35,
+        114.54
+      ],
+      "clearance_nm": 105.471,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-DDG-0002",
+      "side": "RED",
+      "group": "TG R-1 Shandong CSG",
+      "domain": "surface",
+      "point": [
+        16.25,
+        114.54
+      ],
+      "clearance_nm": 106.745,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-DDG-0003",
+      "side": "RED",
+      "group": "TG R-1 Shandong CSG",
+      "domain": "surface",
+      "point": [
+        16.34,
+        114.45
+      ],
+      "clearance_nm": 100.492,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-FFG-0001",
+      "side": "RED",
+      "group": "TG R-1 Shandong CSG",
+      "domain": "surface",
+      "point": [
+        16.26,
+        114.45
+      ],
+      "clearance_nm": 101.559,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-AOE-0001",
+      "side": "RED",
+      "group": "TG R-1 Shandong CSG",
+      "domain": "surface",
+      "point": [
+        16.38,
+        114.5
+      ],
+      "clearance_nm": 102.88,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-DDG-0004",
+      "side": "RED",
+      "group": "TG R-2 Southern Theater SAG",
+      "domain": "surface",
+      "point": [
+        12.5,
+        113.8
+      ],
+      "clearance_nm": 89.489,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-DDG-0005",
+      "side": "RED",
+      "group": "TG R-2 Southern Theater SAG",
+      "domain": "surface",
+      "point": [
+        12.55,
+        113.84
+      ],
+      "clearance_nm": 91.666,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-DDG-0006",
+      "side": "RED",
+      "group": "TG R-2 Southern Theater SAG",
+      "domain": "surface",
+      "point": [
+        12.45,
+        113.84
+      ],
+      "clearance_nm": 85.921,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-FFG-0002",
+      "side": "RED",
+      "group": "TG R-2 Southern Theater SAG",
+      "domain": "surface",
+      "point": [
+        12.54,
+        113.75
+      ],
+      "clearance_nm": 92.698,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-AOR-0001",
+      "side": "RED",
+      "group": "TG R-2 Southern Theater SAG",
+      "domain": "surface",
+      "point": [
+        12.46,
+        113.75
+      ],
+      "clearance_nm": 88.182,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-LHD-0001",
+      "side": "RED",
+      "group": "TG R-3 Hainan Amphibious Group",
+      "domain": "surface",
+      "point": [
+        17.8,
+        111.8
+      ],
+      "clearance_nm": 54.454,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-LPD-0001",
+      "side": "RED",
+      "group": "TG R-3 Hainan Amphibious Group",
+      "domain": "surface",
+      "point": [
+        17.85,
+        111.84
+      ],
+      "clearance_nm": 56.32,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-LPD-0002",
+      "side": "RED",
+      "group": "TG R-3 Hainan Amphibious Group",
+      "domain": "surface",
+      "point": [
+        17.75,
+        111.84
+      ],
+      "clearance_nm": 50.782,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-DDG-0007",
+      "side": "RED",
+      "group": "TG R-3 Hainan Amphibious Group",
+      "domain": "surface",
+      "point": [
+        17.84,
+        111.75
+      ],
+      "clearance_nm": 57.848,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-FFG-0003",
+      "side": "RED",
+      "group": "TG R-3 Hainan Amphibious Group",
+      "domain": "surface",
+      "point": [
+        17.76,
+        111.75
+      ],
+      "clearance_nm": 53.593,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-SSN-0001",
+      "side": "BLUE",
+      "domain": "submarine",
+      "point": [
+        16.2,
+        118.4
+      ],
+      "clearance_nm": 70.295,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-SSN-0002",
+      "side": "BLUE",
+      "domain": "submarine",
+      "point": [
+        12.7,
+        115.7
+      ],
+      "clearance_nm": 102.911,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-SSN-0003",
+      "side": "BLUE",
+      "domain": "submarine",
+      "point": [
+        10.6,
+        116.4
+      ],
+      "clearance_nm": 34.272,
+      "status": "pass"
+    },
+    {
+      "id": "BLU-USN-SSN-0004",
+      "side": "BLUE",
+      "domain": "submarine",
+      "point": [
+        9.5,
+        117.4
+      ],
+      "clearance_nm": 30.476,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSN-0001",
+      "side": "RED",
+      "domain": "submarine",
+      "point": [
+        17.0,
+        116.0
+      ],
+      "clearance_nm": 146.695,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSN-0002",
+      "side": "RED",
+      "domain": "submarine",
+      "point": [
+        13.5,
+        117.3
+      ],
+      "clearance_nm": 99.421,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSK-0001",
+      "side": "RED",
+      "domain": "submarine",
+      "point": [
+        11.2,
+        114.8
+      ],
+      "clearance_nm": 13.356,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSK-0002",
+      "side": "RED",
+      "domain": "submarine",
+      "point": [
+        9.6,
+        115.5
+      ],
+      "clearance_nm": 15.606,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSK-0003",
+      "side": "RED",
+      "domain": "submarine",
+      "point": [
+        15.0,
+        119.0
+      ],
+      "clearance_nm": 57.527,
+      "status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSBN-0001",
+      "side": "RED",
+      "domain": "submarine",
+      "point": [
+        18.1,
+        111.0
+      ],
+      "clearance_nm": 47.761,
+      "status": "pass"
+    }
+  ],
+  "routes": [
+    {
+      "id": "TG B-1 George Washington CSG",
+      "side": "BLUE",
+      "domain": "surface",
+      "clearance_nm": 3.0,
+      "original_points": [
+        [
+          15.0,
+          125.1
+        ],
+        [
+          14.5,
+          124.9
+        ],
+        [
+          13.8,
+          124.5
+        ]
+      ],
+      "resolved_points": [
+        [
+          15.0,
+          125.1
+        ],
+        [
+          14.5,
+          124.9
+        ],
+        [
+          13.8,
+          124.5
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 4.781,
+      "offline_status": "pass"
+    },
+    {
+      "id": "TG B-2 Philippine West Sea SAG",
+      "side": "BLUE",
+      "domain": "surface",
+      "clearance_nm": 3.0,
+      "original_points": [
+        [
+          10.8,
+          117.8
+        ],
+        [
+          11.4,
+          117.3
+        ],
+        [
+          12.0,
+          116.9
+        ]
+      ],
+      "resolved_points": [
+        [
+          10.8,
+          117.8
+        ],
+        [
+          11.4,
+          117.3
+        ],
+        [
+          12.0,
+          116.9
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 69.817,
+      "offline_status": "pass"
+    },
+    {
+      "id": "TG B-3 America ARG",
+      "side": "BLUE",
+      "domain": "surface",
+      "clearance_nm": 3.0,
+      "original_points": [
+        [
+          10.2,
+          121.1
+        ],
+        [
+          9.0,
+          120.5
+        ],
+        [
+          7.5,
+          118.5
+        ],
+        [
+          7.5,
+          117.0
+        ],
+        [
+          8.5,
+          116.5
+        ],
+        [
+          9.5,
+          117.2
+        ],
+        [
+          10.5,
+          118.2
+        ],
+        [
+          11.2,
+          119.7
+        ]
+      ],
+      "resolved_points": [
+        [
+          10.2,
+          121.1
+        ],
+        [
+          9.0,
+          120.5
+        ],
+        [
+          7.5,
+          118.5
+        ],
+        [
+          7.5,
+          117.0
+        ],
+        [
+          8.5,
+          116.5
+        ],
+        [
+          9.5,
+          117.2
+        ],
+        [
+          10.5,
+          118.2
+        ],
+        [
+          12.50376,
+          118.71218
+        ],
+        [
+          11.228865,
+          119.85292
+        ],
+        [
+          11.2,
+          119.7
+        ]
+      ],
+      "changed": true,
+      "initial_issues": [
+        {
+          "kind": "land-crossing",
+          "point": [
+            11.000252,
+            119.269655
+          ],
+          "clearance_nm": 0.0,
+          "message": "route leg intersects mapped land"
+        }
+      ],
+      "minimum_resolved_clearance_nm": 3.047,
+      "offline_status": "pass"
+    },
+    {
+      "id": "TG R-1 Shandong CSG",
+      "side": "RED",
+      "domain": "surface",
+      "clearance_nm": 3.0,
+      "original_points": [
+        [
+          16.3,
+          114.5
+        ],
+        [
+          15.5,
+          114.2
+        ],
+        [
+          14.7,
+          114.0
+        ]
+      ],
+      "resolved_points": [
+        [
+          16.3,
+          114.5
+        ],
+        [
+          15.5,
+          114.2
+        ],
+        [
+          14.7,
+          114.0
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 102.944,
+      "offline_status": "pass"
+    },
+    {
+      "id": "TG R-2 Southern Theater SAG",
+      "side": "RED",
+      "domain": "surface",
+      "clearance_nm": 3.0,
+      "original_points": [
+        [
+          12.5,
+          113.8
+        ],
+        [
+          11.8,
+          114.0
+        ],
+        [
+          10.8,
+          114.5
+        ]
+      ],
+      "resolved_points": [
+        [
+          12.5,
+          113.8
+        ],
+        [
+          11.8,
+          114.0
+        ],
+        [
+          11.129861,
+          114.339063
+        ],
+        [
+          10.8,
+          114.5
+        ]
+      ],
+      "changed": true,
+      "initial_issues": [
+        {
+          "kind": "clearance",
+          "point": [
+            11.083667,
+            114.358561
+          ],
+          "clearance_nm": 2.888,
+          "message": "route leg has only 2.89 nm land clearance"
+        }
+      ],
+      "minimum_resolved_clearance_nm": 3.051,
+      "offline_status": "pass"
+    },
+    {
+      "id": "TG R-3 Hainan Amphibious Group",
+      "side": "RED",
+      "domain": "surface",
+      "clearance_nm": 3.0,
+      "original_points": [
+        [
+          17.8,
+          111.8
+        ],
+        [
+          17.0,
+          112.3
+        ],
+        [
+          16.0,
+          112.9
+        ]
+      ],
+      "resolved_points": [
+        [
+          17.8,
+          111.8
+        ],
+        [
+          17.010713,
+          112.313351
+        ],
+        [
+          16.980616,
+          112.377884
+        ],
+        [
+          16.0,
+          112.9
+        ]
+      ],
+      "changed": true,
+      "initial_issues": [
+        {
+          "kind": "point-clearance",
+          "point": [
+            17.0,
+            112.3
+          ],
+          "clearance_nm": 2.887,
+          "message": "route point 2 has 2.89 nm land clearance"
+        },
+        {
+          "kind": "clearance",
+          "point": [
+            17.0,
+            112.3
+          ],
+          "clearance_nm": 2.887,
+          "message": "route leg has only 2.89 nm land clearance"
+        },
+        {
+          "kind": "clearance",
+          "point": [
+            16.928115,
+            112.343375
+          ],
+          "clearance_nm": 0.148,
+          "message": "route leg has only 0.15 nm land clearance"
+        }
+      ],
+      "minimum_resolved_clearance_nm": 3.046,
+      "offline_status": "pass"
+    },
+    {
+      "id": "BLU-USN-SSN-0001",
+      "side": "BLUE",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          16.2,
+          118.4
+        ],
+        [
+          15.4,
+          117.8
+        ],
+        [
+          14.5,
+          117.6
+        ]
+      ],
+      "resolved_points": [
+        [
+          16.2,
+          118.4
+        ],
+        [
+          15.4,
+          117.8
+        ],
+        [
+          15.180154,
+          117.653699
+        ],
+        [
+          14.5,
+          117.6
+        ]
+      ],
+      "changed": true,
+      "initial_issues": [
+        {
+          "kind": "land-crossing",
+          "point": [
+            15.199663,
+            117.755332
+          ],
+          "clearance_nm": 0.0,
+          "message": "route leg intersects mapped land"
+        }
+      ],
+      "minimum_resolved_clearance_nm": 2.676,
+      "offline_status": "pass"
+    },
+    {
+      "id": "BLU-USN-SSN-0002",
+      "side": "BLUE",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          12.7,
+          115.7
+        ],
+        [
+          11.8,
+          115.2
+        ],
+        [
+          11.0,
+          115.8
+        ]
+      ],
+      "resolved_points": [
+        [
+          12.7,
+          115.7
+        ],
+        [
+          11.8,
+          115.2
+        ],
+        [
+          11.0,
+          115.8
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 10.161,
+      "offline_status": "pass"
+    },
+    {
+      "id": "BLU-USN-SSN-0003",
+      "side": "BLUE",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          10.6,
+          116.4
+        ],
+        [
+          10.3,
+          116.4
+        ],
+        [
+          9.8,
+          116.2
+        ],
+        [
+          9.2,
+          115.7
+        ]
+      ],
+      "resolved_points": [
+        [
+          10.6,
+          116.4
+        ],
+        [
+          10.3,
+          116.4
+        ],
+        [
+          9.8,
+          116.2
+        ],
+        [
+          9.2,
+          115.7
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 12.063,
+      "offline_status": "pass"
+    },
+    {
+      "id": "BLU-USN-SSN-0004",
+      "side": "BLUE",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          9.5,
+          117.4
+        ],
+        [
+          10.2,
+          117.1
+        ],
+        [
+          10.6,
+          117.6
+        ],
+        [
+          11.0,
+          117.2
+        ]
+      ],
+      "resolved_points": [
+        [
+          9.5,
+          117.4
+        ],
+        [
+          10.2,
+          117.1
+        ],
+        [
+          10.6,
+          117.6
+        ],
+        [
+          11.0,
+          117.2
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 30.476,
+      "offline_status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSN-0001",
+      "side": "RED",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          17.0,
+          116.0
+        ],
+        [
+          16.0,
+          116.4
+        ],
+        [
+          15.0,
+          116.0
+        ]
+      ],
+      "resolved_points": [
+        [
+          17.0,
+          116.0
+        ],
+        [
+          16.0,
+          116.4
+        ],
+        [
+          15.0,
+          116.0
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 88.127,
+      "offline_status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSN-0002",
+      "side": "RED",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          13.5,
+          117.3
+        ],
+        [
+          12.8,
+          117.0
+        ],
+        [
+          12.0,
+          117.5
+        ]
+      ],
+      "resolved_points": [
+        [
+          13.5,
+          117.3
+        ],
+        [
+          12.8,
+          117.0
+        ],
+        [
+          12.0,
+          117.5
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 99.421,
+      "offline_status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSK-0001",
+      "side": "RED",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          11.2,
+          114.8
+        ],
+        [
+          11.2,
+          115.2
+        ],
+        [
+          10.5,
+          115.3
+        ],
+        [
+          9.8,
+          115.0
+        ]
+      ],
+      "resolved_points": [
+        [
+          11.2,
+          114.8
+        ],
+        [
+          11.2,
+          115.2
+        ],
+        [
+          10.5,
+          115.3
+        ],
+        [
+          9.8,
+          115.0
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 4.926,
+      "offline_status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSK-0002",
+      "side": "RED",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          9.6,
+          115.5
+        ],
+        [
+          9.0,
+          115.1
+        ],
+        [
+          8.5,
+          115.7
+        ]
+      ],
+      "resolved_points": [
+        [
+          9.6,
+          115.5
+        ],
+        [
+          9.0,
+          115.1
+        ],
+        [
+          8.5,
+          115.7
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 15.606,
+      "offline_status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSK-0003",
+      "side": "RED",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          15.0,
+          119.0
+        ],
+        [
+          14.3,
+          118.5
+        ],
+        [
+          13.5,
+          118.8
+        ]
+      ],
+      "resolved_points": [
+        [
+          15.0,
+          119.0
+        ],
+        [
+          14.3,
+          118.5
+        ],
+        [
+          13.5,
+          118.8
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 57.527,
+      "offline_status": "pass"
+    },
+    {
+      "id": "RED-PLAN-SSBN-0001",
+      "side": "RED",
+      "domain": "submarine",
+      "clearance_nm": 2.0,
+      "original_points": [
+        [
+          18.1,
+          111.0
+        ],
+        [
+          17.8,
+          111.4
+        ],
+        [
+          17.2,
+          111.5
+        ],
+        [
+          17.7,
+          111.8
+        ]
+      ],
+      "resolved_points": [
+        [
+          18.1,
+          111.0
+        ],
+        [
+          17.8,
+          111.4
+        ],
+        [
+          17.2,
+          111.5
+        ],
+        [
+          17.7,
+          111.8
+        ]
+      ],
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 38.522,
+      "offline_status": "pass"
+    }
+  ]
+}

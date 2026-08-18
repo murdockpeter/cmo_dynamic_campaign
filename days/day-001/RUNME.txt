@@ -1,11 +1,14 @@
 CMO Scenario Editor instructions
 
-1. Open CMO and enter Scenario Editor mode.
-2. Open Editor > Lua Script Console.
-3. Run:
+1. Review route-audit.html. All routes and starts must pass before continuing.
+2. Open CMO and enter Scenario Editor mode.
+3. Open Editor > Lua Script Console.
+4. Run the C:MO-native terrain/depth preflight:
+   ScenEdit_RunScript('DynamicCampaign/SCS_Day1/preflight.lua')
+5. Wait for DCPREFLIGHT|COMPLETE, then run the scenario build:
    ScenEdit_RunScript('DynamicCampaign/SCS_Day1/build.lua')
-4. Wait for the Day 1 build-complete message.
-5. Run validation:
+6. Wait for the Day 1 build-complete message. A missing preflight aborts the build.
+7. Run post-build identity and navigation validation:
    ScenEdit_RunScript('DynamicCampaign/SCS_Day1/validate.lua')
-6. Use Editor > Save As Scenario and save to:
+8. Use Editor > Save As Scenario and save to:
    C:\Users\Peter G. Robbins\Documents\claudeprojects\cmo_dynamic_campaign\days\day-001\Day1.scen

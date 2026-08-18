@@ -1,0 +1,40 @@
+C:MO Day 1 generation and validation receipt
+Date: 2026-08-18 (America/New_York)
+C:MO: v1.10 RC - Build 1900.5
+Database: DB3K_515.db3
+
+Engine navigation preflight
+- DCNAV|COMPLETE|routes=16|failures=0
+- DCPREFLIGHT|COMPLETE|routes=16
+- Surface routes reject elevation >= 0 m.
+- Submarine routes reject land and water shallower than 200 m.
+- Sampling interval: 0.5 nautical miles along great-circle legs.
+
+Scenario build
+- DCBUILD|COMPLETE|tracked=336
+- Output: Day1.scen
+- Size: 698957 bytes
+- SHA-256: F3A0B2E658A7476A2B1C6BEF2973E4D4F60C477BD94F24523192E4D1AAC62127
+- Container title: Fault Line - South China Sea Day 1
+- Container database: DB3K_515.db3
+- Container build: v1.10 RC - Build 1900.5
+- Container compression version: 5
+
+Post-build validation, before reload
+- DCVALIDATE|SUMMARY|expected=336|routes=16|errors=0
+
+Saved-file reload validation
+- Day1.scen was loaded from disk through C:MO's Load Scenario workflow.
+- DCVALIDATE|SUMMARY|expected=336|routes=16|errors=0
+- All six surface-group routes and ten submarine routes emitted NAV-PASS.
+
+Known non-navigation warning
+- C:MO logged rejected underwater facility placements while importing the
+  Woody Island / Fiery Cross templates. The tracked 336-unit manifest and all
+  routes validate, but imported fixed-facility template composition is not yet
+  covered by validate.lua and should be audited separately.
+
+Original scenario backup
+- The two identical pre-navigation backups were moved outside the repository to:
+  C:\Users\Peter G. Robbins\AppData\Local\Temp\cmo-day1-backups-20260818-1116
+- Original SHA-256: DA0F862AA53019957B524AC3B58C653CC4CFD5774464D1BD20E115FDFA5B58CA

@@ -1647,7 +1647,11 @@
       "kind": "ship",
       "dbid": 5167,
       "group": "TG B-1 George Washington CSG",
-      "planned_guid": "dfabc5c9-044c-56f9-8de8-ceb10064be41"
+      "planned_guid": "dfabc5c9-044c-56f9-8de8-ceb10064be41",
+      "start": [
+        15.0,
+        125.1
+      ]
     },
     {
       "campaign_id": "BLU-USN-DDG-0001",
@@ -1655,7 +1659,11 @@
       "kind": "ship",
       "dbid": 2718,
       "group": "TG B-1 George Washington CSG",
-      "planned_guid": "60af27ba-206a-566d-ab05-a39f223b80ea"
+      "planned_guid": "60af27ba-206a-566d-ab05-a39f223b80ea",
+      "start": [
+        15.05,
+        125.14
+      ]
     },
     {
       "campaign_id": "BLU-USN-DDG-0002",
@@ -1663,7 +1671,11 @@
       "kind": "ship",
       "dbid": 5110,
       "group": "TG B-1 George Washington CSG",
-      "planned_guid": "4e43d3a7-1794-57f1-9dff-51e07f68acd8"
+      "planned_guid": "4e43d3a7-1794-57f1-9dff-51e07f68acd8",
+      "start": [
+        14.95,
+        125.14
+      ]
     },
     {
       "campaign_id": "BLU-USN-DDG-0003",
@@ -1671,7 +1683,11 @@
       "kind": "ship",
       "dbid": 5122,
       "group": "TG B-1 George Washington CSG",
-      "planned_guid": "b91ebbbf-1f65-5516-9b65-25991d4e87df"
+      "planned_guid": "b91ebbbf-1f65-5516-9b65-25991d4e87df",
+      "start": [
+        15.04,
+        125.05
+      ]
     },
     {
       "campaign_id": "BLU-USN-AOE-0001",
@@ -1679,7 +1695,11 @@
       "kind": "ship",
       "dbid": 5036,
       "group": "TG B-1 George Washington CSG",
-      "planned_guid": "2cfa881a-1439-5a39-ad31-b5c9e5ea9eb3"
+      "planned_guid": "2cfa881a-1439-5a39-ad31-b5c9e5ea9eb3",
+      "start": [
+        14.96,
+        125.05
+      ]
     },
     {
       "campaign_id": "BLU-PHN-FFG-0001",
@@ -1687,7 +1707,11 @@
       "kind": "ship",
       "dbid": 3545,
       "group": "TG B-2 Philippine West Sea SAG",
-      "planned_guid": "0a160f8e-0d1a-5eb9-94d0-941543bfab6b"
+      "planned_guid": "0a160f8e-0d1a-5eb9-94d0-941543bfab6b",
+      "start": [
+        10.8,
+        117.8
+      ]
     },
     {
       "campaign_id": "BLU-PHN-FFG-0002",
@@ -1695,7 +1719,11 @@
       "kind": "ship",
       "dbid": 3545,
       "group": "TG B-2 Philippine West Sea SAG",
-      "planned_guid": "2c5b00a7-8ed3-5926-a54b-851aa2df6957"
+      "planned_guid": "2c5b00a7-8ed3-5926-a54b-851aa2df6957",
+      "start": [
+        10.85,
+        117.84
+      ]
     },
     {
       "campaign_id": "BLU-PHN-COR-0001",
@@ -1703,7 +1731,11 @@
       "kind": "ship",
       "dbid": 3325,
       "group": "TG B-2 Philippine West Sea SAG",
-      "planned_guid": "fddd5d84-7c51-57d9-b25a-d6295b361e69"
+      "planned_guid": "fddd5d84-7c51-57d9-b25a-d6295b361e69",
+      "start": [
+        10.75,
+        117.84
+      ]
     },
     {
       "campaign_id": "BLU-USN-LHA-0001",
@@ -1711,7 +1743,11 @@
       "kind": "ship",
       "dbid": 3563,
       "group": "TG B-3 America ARG",
-      "planned_guid": "d4f26f3e-071a-562f-a028-f1236981fb01"
+      "planned_guid": "d4f26f3e-071a-562f-a028-f1236981fb01",
+      "start": [
+        10.2,
+        121.1
+      ]
     },
     {
       "campaign_id": "BLU-USN-LPD-0001",
@@ -1719,7 +1755,11 @@
       "kind": "ship",
       "dbid": 4300,
       "group": "TG B-3 America ARG",
-      "planned_guid": "51e09edb-2d5c-5e18-ac1f-fc7efe3fc277"
+      "planned_guid": "51e09edb-2d5c-5e18-ac1f-fc7efe3fc277",
+      "start": [
+        10.25,
+        121.14
+      ]
     },
     {
       "campaign_id": "BLU-USN-DDG-0004",
@@ -1727,7 +1767,11 @@
       "kind": "ship",
       "dbid": 5169,
       "group": "TG B-3 America ARG",
-      "planned_guid": "75333807-114b-5dff-bfa9-520d167a41f7"
+      "planned_guid": "75333807-114b-5dff-bfa9-520d167a41f7",
+      "start": [
+        10.15,
+        121.14
+      ]
     },
     {
       "campaign_id": "RED-PLAN-CV-0001",
@@ -1735,7 +1779,11 @@
       "kind": "ship",
       "dbid": 3187,
       "group": "TG R-1 Shandong CSG",
-      "planned_guid": "96e9cc19-c3af-5b7d-afc5-d2bea8d6d9f8"
+      "planned_guid": "96e9cc19-c3af-5b7d-afc5-d2bea8d6d9f8",
+      "start": [
+        16.3,
+        114.5
+      ]
     },
     {
       "campaign_id": "RED-PLAN-DDG-0001",
@@ -1743,7 +1791,11 @@
       "kind": "ship",
       "dbid": 3883,
       "group": "TG R-1 Shandong CSG",
-      "planned_guid": "4da62242-68f2-594a-bc53-654c04ace076"
+      "planned_guid": "4da62242-68f2-594a-bc53-654c04ace076",
+      "start": [
+        16.35,
+        114.54
+      ]
     },
     {
       "campaign_id": "RED-PLAN-DDG-0002",
@@ -1751,7 +1803,11 @@
       "kind": "ship",
       "dbid": 4719,
       "group": "TG R-1 Shandong CSG",
-      "planned_guid": "7ee75d14-9ede-5710-9ae3-579a914a8547"
+      "planned_guid": "7ee75d14-9ede-5710-9ae3-579a914a8547",
+      "start": [
+        16.25,
+        114.54
+      ]
     },
     {
       "campaign_id": "RED-PLAN-DDG-0003",
@@ -1759,7 +1815,11 @@
       "kind": "ship",
       "dbid": 4937,
       "group": "TG R-1 Shandong CSG",
-      "planned_guid": "69fd558a-feee-5157-a191-e049b8baee7d"
+      "planned_guid": "69fd558a-feee-5157-a191-e049b8baee7d",
+      "start": [
+        16.34,
+        114.45
+      ]
     },
     {
       "campaign_id": "RED-PLAN-FFG-0001",
@@ -1767,7 +1827,11 @@
       "kind": "ship",
       "dbid": 4725,
       "group": "TG R-1 Shandong CSG",
-      "planned_guid": "a1b91711-b029-554c-bb17-23e81b00b839"
+      "planned_guid": "a1b91711-b029-554c-bb17-23e81b00b839",
+      "start": [
+        16.26,
+        114.45
+      ]
     },
     {
       "campaign_id": "RED-PLAN-AOE-0001",
@@ -1775,7 +1839,11 @@
       "kind": "ship",
       "dbid": 2980,
       "group": "TG R-1 Shandong CSG",
-      "planned_guid": "969bb8d1-cffd-5483-b0e4-39f2df8c38b3"
+      "planned_guid": "969bb8d1-cffd-5483-b0e4-39f2df8c38b3",
+      "start": [
+        16.38,
+        114.5
+      ]
     },
     {
       "campaign_id": "RED-PLAN-DDG-0004",
@@ -1783,7 +1851,11 @@
       "kind": "ship",
       "dbid": 3883,
       "group": "TG R-2 Southern Theater SAG",
-      "planned_guid": "91844031-f4c4-548c-8c87-b33de225e77b"
+      "planned_guid": "91844031-f4c4-548c-8c87-b33de225e77b",
+      "start": [
+        12.5,
+        113.8
+      ]
     },
     {
       "campaign_id": "RED-PLAN-DDG-0005",
@@ -1791,7 +1863,11 @@
       "kind": "ship",
       "dbid": 4719,
       "group": "TG R-2 Southern Theater SAG",
-      "planned_guid": "f8d42fc6-58fe-5355-84b3-e04916429440"
+      "planned_guid": "f8d42fc6-58fe-5355-84b3-e04916429440",
+      "start": [
+        12.55,
+        113.84
+      ]
     },
     {
       "campaign_id": "RED-PLAN-DDG-0006",
@@ -1799,7 +1875,11 @@
       "kind": "ship",
       "dbid": 4937,
       "group": "TG R-2 Southern Theater SAG",
-      "planned_guid": "eb2c16ba-76e4-502f-9fa4-925bd3bc1106"
+      "planned_guid": "eb2c16ba-76e4-502f-9fa4-925bd3bc1106",
+      "start": [
+        12.45,
+        113.84
+      ]
     },
     {
       "campaign_id": "RED-PLAN-FFG-0002",
@@ -1807,7 +1887,11 @@
       "kind": "ship",
       "dbid": 4725,
       "group": "TG R-2 Southern Theater SAG",
-      "planned_guid": "1cbfed59-3416-5b37-bb4a-8af70a816bf8"
+      "planned_guid": "1cbfed59-3416-5b37-bb4a-8af70a816bf8",
+      "start": [
+        12.54,
+        113.75
+      ]
     },
     {
       "campaign_id": "RED-PLAN-AOR-0001",
@@ -1815,7 +1899,11 @@
       "kind": "ship",
       "dbid": 2927,
       "group": "TG R-2 Southern Theater SAG",
-      "planned_guid": "1624043c-ac85-55af-be3c-f9ca1ae60b8b"
+      "planned_guid": "1624043c-ac85-55af-be3c-f9ca1ae60b8b",
+      "start": [
+        12.46,
+        113.75
+      ]
     },
     {
       "campaign_id": "RED-PLAN-LHD-0001",
@@ -1823,7 +1911,11 @@
       "kind": "ship",
       "dbid": 3153,
       "group": "TG R-3 Hainan Amphibious Group",
-      "planned_guid": "8a76918a-3ae1-5fd9-adc2-d656f0e12526"
+      "planned_guid": "8a76918a-3ae1-5fd9-adc2-d656f0e12526",
+      "start": [
+        17.8,
+        111.8
+      ]
     },
     {
       "campaign_id": "RED-PLAN-LPD-0001",
@@ -1831,7 +1923,11 @@
       "kind": "ship",
       "dbid": 4922,
       "group": "TG R-3 Hainan Amphibious Group",
-      "planned_guid": "2f3541b1-656f-556f-8b5f-ce01e6dd97f0"
+      "planned_guid": "2f3541b1-656f-556f-8b5f-ce01e6dd97f0",
+      "start": [
+        17.85,
+        111.84
+      ]
     },
     {
       "campaign_id": "RED-PLAN-LPD-0002",
@@ -1839,7 +1935,11 @@
       "kind": "ship",
       "dbid": 2006,
       "group": "TG R-3 Hainan Amphibious Group",
-      "planned_guid": "002fd68f-c893-5d72-94d6-ad4e020b8270"
+      "planned_guid": "002fd68f-c893-5d72-94d6-ad4e020b8270",
+      "start": [
+        17.75,
+        111.84
+      ]
     },
     {
       "campaign_id": "RED-PLAN-DDG-0007",
@@ -1847,7 +1947,11 @@
       "kind": "ship",
       "dbid": 4719,
       "group": "TG R-3 Hainan Amphibious Group",
-      "planned_guid": "56931fd3-3fdb-57f7-8cd4-56e408eb5d24"
+      "planned_guid": "56931fd3-3fdb-57f7-8cd4-56e408eb5d24",
+      "start": [
+        17.84,
+        111.75
+      ]
     },
     {
       "campaign_id": "RED-PLAN-FFG-0003",
@@ -1855,7 +1959,11 @@
       "kind": "ship",
       "dbid": 4725,
       "group": "TG R-3 Hainan Amphibious Group",
-      "planned_guid": "73559928-56c5-5f60-8a72-2f0c81fd1b27"
+      "planned_guid": "73559928-56c5-5f60-8a72-2f0c81fd1b27",
+      "start": [
+        17.76,
+        111.75
+      ]
     },
     {
       "campaign_id": "BLU-USN-SSN-0001",
@@ -1873,10 +1981,16 @@
           117.8
         ],
         [
+          15.180154,
+          117.653699
+        ],
+        [
           14.5,
           117.6
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "BLU-USN-SSN-0002",
@@ -1897,7 +2011,9 @@
           11.0,
           115.8
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "BLU-USN-SSN-0003",
@@ -1907,9 +2023,13 @@
       "planned_guid": "bd8c4f24-7e6e-5419-8a57-cf8395ef18d3",
       "start": [
         10.6,
-        116.7
+        116.4
       ],
       "course": [
+        [
+          10.3,
+          116.4
+        ],
         [
           9.8,
           116.2
@@ -1918,7 +2038,9 @@
           9.2,
           115.7
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "BLU-USN-SSN-0004",
@@ -1936,10 +2058,16 @@
           117.1
         ],
         [
+          10.6,
+          117.6
+        ],
+        [
           11.0,
           117.2
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "RED-PLAN-SSN-0001",
@@ -1960,7 +2088,9 @@
           15.0,
           116.0
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "RED-PLAN-SSN-0002",
@@ -1981,7 +2111,9 @@
           12.0,
           117.5
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "RED-PLAN-SSK-0001",
@@ -1995,14 +2127,20 @@
       ],
       "course": [
         [
+          11.2,
+          115.2
+        ],
+        [
           10.5,
-          115.0
+          115.3
         ],
         [
           9.8,
-          114.7
+          115.0
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "RED-PLAN-SSK-0002",
@@ -2023,7 +2161,9 @@
           8.5,
           115.7
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "RED-PLAN-SSK-0003",
@@ -2044,7 +2184,9 @@
           13.5,
           118.8
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "RED-PLAN-SSBN-0001",
@@ -2058,14 +2200,20 @@
       ],
       "course": [
         [
-          17.6,
-          110.7
+          17.8,
+          111.4
         ],
         [
-          18.0,
-          110.3
+          17.2,
+          111.5
+        ],
+        [
+          17.7,
+          111.8
         ]
-      ]
+      ],
+      "planned_depth_m": -150,
+      "minimum_water_depth_m": 200
     },
     {
       "campaign_id": "BLU-USN-F35C-01",

@@ -52,6 +52,7 @@ At minimum:
 Every day directory should eventually contain:
 
 - `input.json`: frozen pre-generation ledger slice and decisions;
+- `preflight.lua`: generated C:MO-native terrain/depth safety gate;
 - `build.lua`: generated, reviewable scenario construction script;
 - `manifest.json`: stable campaign ID to generated CMO GUID mapping;
 - `day-N.scen`: playable generated scenario;
@@ -76,4 +77,3 @@ Every day directory should eventually contain:
 
 No generator pass should silently repair damage, refill magazines, resurrect an
 element, or change a DBID.
-

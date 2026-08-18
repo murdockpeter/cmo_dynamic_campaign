@@ -40,5 +40,647 @@
       "file": "China/South China Sea Islands and Reefs/Fiery Cross Reef 2022.inst"
     }
   ],
+  "navigation": {
+    "audit": "route-audit.json",
+    "audit_report": "route-audit.html",
+    "routes": [
+      {
+        "side": "BLUE",
+        "name": "TG B-1 George Washington CSG",
+        "domain": "surface",
+        "points": [
+          [
+            15.0,
+            125.1
+          ],
+          [
+            14.5,
+            124.9
+          ],
+          [
+            13.8,
+            124.5
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "BLUE",
+        "name": "TG B-2 Philippine West Sea SAG",
+        "domain": "surface",
+        "points": [
+          [
+            10.8,
+            117.8
+          ],
+          [
+            11.4,
+            117.3
+          ],
+          [
+            12.0,
+            116.9
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "BLUE",
+        "name": "TG B-3 America ARG",
+        "domain": "surface",
+        "points": [
+          [
+            10.2,
+            121.1
+          ],
+          [
+            9.0,
+            120.5
+          ],
+          [
+            7.5,
+            118.5
+          ],
+          [
+            7.5,
+            117.0
+          ],
+          [
+            8.5,
+            116.5
+          ],
+          [
+            9.5,
+            117.2
+          ],
+          [
+            10.5,
+            118.2
+          ],
+          [
+            12.50376,
+            118.71218
+          ],
+          [
+            11.228865,
+            119.85292
+          ],
+          [
+            11.2,
+            119.7
+          ]
+        ],
+        "changed": true
+      },
+      {
+        "side": "RED",
+        "name": "TG R-1 Shandong CSG",
+        "domain": "surface",
+        "points": [
+          [
+            16.3,
+            114.5
+          ],
+          [
+            15.5,
+            114.2
+          ],
+          [
+            14.7,
+            114.0
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "RED",
+        "name": "TG R-2 Southern Theater SAG",
+        "domain": "surface",
+        "points": [
+          [
+            12.5,
+            113.8
+          ],
+          [
+            11.8,
+            114.0
+          ],
+          [
+            11.129861,
+            114.339063
+          ],
+          [
+            10.8,
+            114.5
+          ]
+        ],
+        "changed": true
+      },
+      {
+        "side": "RED",
+        "name": "TG R-3 Hainan Amphibious Group",
+        "domain": "surface",
+        "points": [
+          [
+            17.8,
+            111.8
+          ],
+          [
+            17.010713,
+            112.313351
+          ],
+          [
+            16.980616,
+            112.377884
+          ],
+          [
+            16.0,
+            112.9
+          ]
+        ],
+        "changed": true
+      },
+      {
+        "side": "BLUE",
+        "name": "BLU-USN-SSN-0001",
+        "domain": "submarine",
+        "points": [
+          [
+            16.2,
+            118.4
+          ],
+          [
+            15.4,
+            117.8
+          ],
+          [
+            15.180154,
+            117.653699
+          ],
+          [
+            14.5,
+            117.6
+          ]
+        ],
+        "changed": true
+      },
+      {
+        "side": "BLUE",
+        "name": "BLU-USN-SSN-0002",
+        "domain": "submarine",
+        "points": [
+          [
+            12.7,
+            115.7
+          ],
+          [
+            11.8,
+            115.2
+          ],
+          [
+            11.0,
+            115.8
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "BLUE",
+        "name": "BLU-USN-SSN-0003",
+        "domain": "submarine",
+        "points": [
+          [
+            10.6,
+            116.4
+          ],
+          [
+            10.3,
+            116.4
+          ],
+          [
+            9.8,
+            116.2
+          ],
+          [
+            9.2,
+            115.7
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "BLUE",
+        "name": "BLU-USN-SSN-0004",
+        "domain": "submarine",
+        "points": [
+          [
+            9.5,
+            117.4
+          ],
+          [
+            10.2,
+            117.1
+          ],
+          [
+            10.6,
+            117.6
+          ],
+          [
+            11.0,
+            117.2
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "RED",
+        "name": "RED-PLAN-SSN-0001",
+        "domain": "submarine",
+        "points": [
+          [
+            17.0,
+            116.0
+          ],
+          [
+            16.0,
+            116.4
+          ],
+          [
+            15.0,
+            116.0
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "RED",
+        "name": "RED-PLAN-SSN-0002",
+        "domain": "submarine",
+        "points": [
+          [
+            13.5,
+            117.3
+          ],
+          [
+            12.8,
+            117.0
+          ],
+          [
+            12.0,
+            117.5
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "RED",
+        "name": "RED-PLAN-SSK-0001",
+        "domain": "submarine",
+        "points": [
+          [
+            11.2,
+            114.8
+          ],
+          [
+            11.2,
+            115.2
+          ],
+          [
+            10.5,
+            115.3
+          ],
+          [
+            9.8,
+            115.0
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "RED",
+        "name": "RED-PLAN-SSK-0002",
+        "domain": "submarine",
+        "points": [
+          [
+            9.6,
+            115.5
+          ],
+          [
+            9.0,
+            115.1
+          ],
+          [
+            8.5,
+            115.7
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "RED",
+        "name": "RED-PLAN-SSK-0003",
+        "domain": "submarine",
+        "points": [
+          [
+            15.0,
+            119.0
+          ],
+          [
+            14.3,
+            118.5
+          ],
+          [
+            13.5,
+            118.8
+          ]
+        ],
+        "changed": false
+      },
+      {
+        "side": "RED",
+        "name": "RED-PLAN-SSBN-0001",
+        "domain": "submarine",
+        "points": [
+          [
+            18.1,
+            111.0
+          ],
+          [
+            17.8,
+            111.4
+          ],
+          [
+            17.2,
+            111.5
+          ],
+          [
+            17.7,
+            111.8
+          ]
+        ],
+        "changed": false
+      }
+    ]
+  },
+  "missions": [
+    {
+      "side": "BLUE",
+      "name": "BLUE West Luzon CAP",
+      "display_name": "West Luzon CAP",
+      "kind": "Patrol",
+      "type": "AAW",
+      "points": [
+        [
+          14.0,
+          117.5
+        ],
+        [
+          18.0,
+          117.5
+        ],
+        [
+          18.0,
+          120.0
+        ],
+        [
+          14.0,
+          120.0
+        ]
+      ],
+      "onstation": 2,
+      "active": true
+    },
+    {
+      "side": "BLUE",
+      "name": "BLUE Palawan CAP",
+      "display_name": "Palawan CAP",
+      "kind": "Patrol",
+      "type": "AAW",
+      "points": [
+        [
+          8.0,
+          116.8
+        ],
+        [
+          12.5,
+          116.8
+        ],
+        [
+          12.5,
+          119.3
+        ],
+        [
+          8.0,
+          119.3
+        ]
+      ],
+      "onstation": 2,
+      "active": true
+    },
+    {
+      "side": "BLUE",
+      "name": "BLUE AEW Central",
+      "display_name": "AEW Central",
+      "kind": "Support",
+      "type": "AEW",
+      "points": [
+        [
+          12.3,
+          122.0
+        ],
+        [
+          14.0,
+          122.0
+        ]
+      ],
+      "onstation": 1
+    },
+    {
+      "side": "BLUE",
+      "name": "BLUE Tanker Central",
+      "display_name": "Tanker Central",
+      "kind": "Support",
+      "type": "TANKER",
+      "points": [
+        [
+          11.5,
+          122.5
+        ],
+        [
+          14.5,
+          122.5
+        ]
+      ],
+      "onstation": 1
+    },
+    {
+      "side": "BLUE",
+      "name": "BLUE Palawan ASW",
+      "display_name": "Palawan ASW",
+      "kind": "Patrol",
+      "type": "ASW",
+      "points": [
+        [
+          8.0,
+          115.0
+        ],
+        [
+          12.5,
+          115.0
+        ],
+        [
+          12.5,
+          117.5
+        ],
+        [
+          8.0,
+          117.5
+        ]
+      ],
+      "onstation": 1,
+      "active": true
+    },
+    {
+      "side": "RED",
+      "name": "RED Hainan CAP",
+      "display_name": "Hainan CAP",
+      "kind": "Patrol",
+      "type": "AAW",
+      "points": [
+        [
+          16.5,
+          109.5
+        ],
+        [
+          22.0,
+          109.5
+        ],
+        [
+          22.0,
+          114.0
+        ],
+        [
+          16.5,
+          114.0
+        ]
+      ],
+      "onstation": 4,
+      "active": true
+    },
+    {
+      "side": "RED",
+      "name": "RED Spratly CAP",
+      "display_name": "Spratly CAP",
+      "kind": "Patrol",
+      "type": "AAW",
+      "points": [
+        [
+          8.0,
+          111.0
+        ],
+        [
+          12.0,
+          111.0
+        ],
+        [
+          12.0,
+          115.0
+        ],
+        [
+          8.0,
+          115.0
+        ]
+      ],
+      "onstation": 2,
+      "active": true
+    },
+    {
+      "side": "RED",
+      "name": "RED AEW Hainan",
+      "display_name": "AEW Hainan",
+      "kind": "Support",
+      "type": "AEW",
+      "points": [
+        [
+          17.0,
+          112.0
+        ],
+        [
+          19.0,
+          112.0
+        ]
+      ],
+      "onstation": 1
+    },
+    {
+      "side": "RED",
+      "name": "RED Tanker Hainan",
+      "display_name": "Tanker Hainan",
+      "kind": "Support",
+      "type": "TANKER",
+      "points": [
+        [
+          18.0,
+          113.0
+        ],
+        [
+          20.0,
+          113.0
+        ]
+      ],
+      "onstation": 1
+    },
+    {
+      "side": "RED",
+      "name": "RED Central Basin ASW",
+      "display_name": "Central Basin ASW",
+      "kind": "Patrol",
+      "type": "ASW",
+      "points": [
+        [
+          11.0,
+          114.0
+        ],
+        [
+          17.0,
+          114.0
+        ],
+        [
+          17.0,
+          118.0
+        ],
+        [
+          11.0,
+          118.0
+        ]
+      ],
+      "onstation": 1,
+      "active": true
+    }
+  ],
+  "boundaries": [
+    {
+      "name": "Mainland strike restriction",
+      "note": "Attacks require an explicit escalation event.",
+      "points": [
+        [
+          18.0,
+          108.2
+        ],
+        [
+          23.0,
+          108.2
+        ],
+        [
+          23.0,
+          117.5
+        ],
+        [
+          18.0,
+          117.5
+        ]
+      ]
+    }
+  ],
   "tracked_unit_count": 336
 }
