@@ -75,13 +75,25 @@ should start before this works end to end at least once.
       - **Still open**: optional 6/12/18-hour checkpoint saves — not
         implemented; `daily-workflow.md` describes these but no code exists
         for them yet.
-- [ ] **Rebuild and re-validate `Day1.scen`** through CMO's Editor
-      (`preflight.lua` → `build.lua` → `validate.lua`, per `RUNME.txt`) to
-      pick up the finalizer fix and the corrected `TG B-3 America ARG`
-      route, then record a fresh validation receipt (replacing
-      `cmo-validation-20260818.txt`, whose hash is now stale).
-- [ ] **Play Day 1 to completion** using the freshly rebuilt `Day1.scen`
-      (not the stale `Day1_playthru1.scen`), invoke the finalizer, and
+- [x] **Rebuild and re-validate `Day1.scen`** through CMO's Editor (done
+      2026-09-07): ran `preflight.lua` (`DCNAV|COMPLETE|routes=16|failures=0`,
+      `DCPREFLIGHT|COMPLETE|routes=16`) → `build.lua`
+      (`DCBUILD|COMPLETE|tracked=336`) → `validate.lua`
+      (`DCVALIDATE|SUMMARY|expected=336|routes=16|errors=0`) through the
+      live Lua Script Console, confirmed via `LuaHistory_2026-09-07.txt`.
+      Fresh receipt recorded at
+      [cmo-validation-20260907.txt](../days/day-001/cmo-validation-20260907.txt)
+      (the 2026-08-18 receipt is kept for history, not deleted). Note: the
+      operator's manual "Save As Scenario" wrote to C:MO's default
+      Scenarios folder rather than the repo path per `RUNME.txt` — harmless
+      here since `build.lua` had already auto-saved the validated state to
+      `days/day-001/Day1.scen` moments earlier, but worth remembering to
+      navigate to the repo folder explicitly next time.
+- [~] **Play Day 1 to completion** — in progress: the operator started
+      running the scenario right after the rebuild/validate pass above
+      (C:MO autosaves confirm it's live as of 2026-09-07 08:44 AM). Still
+      to do once they reach the 24-hour boundary: pause, invoke
+      "Finalize Game-Day 1" (now safely re-runnable, see the fix above), and
       confirm `day-001-final.save` plus exports/logs land correctly. Also
       confirm the finalizer is safely re-runnable if a first attempt fails
       partway (the fix above).

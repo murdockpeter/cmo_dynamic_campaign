@@ -1,0 +1,78 @@
+C:MO Day 1 generation and validation receipt
+Date: 2026-09-07 (America/New_York)
+C:MO: Bv1.10 RC - Build 1900.8
+Database: DB3K_515.db3
+
+Reason for rebuild
+- Superseded the 2026-08-18 receipt after two fixes to
+  tools/generate_day1.py:
+  1. Finalizer atomicity: the "Finalize Game-Day 1" special action no
+     longer sets the dc.day001.finalized marker before its export/save
+     completes. Export and save now run inside pcall; the marker is only
+     set on success; failure prints DCREPORT|ERROR|... and leaves the day
+     unfinalized. The action is now IsRepeatable=true (was false), so a
+     failed attempt can be safely retried.
+  2. Navigation: TG B-3 America ARG's repaired route now reflects the land
+     collision detection method updated in commit 1500ca2 (2026-08-18),
+     which had never been reflected in a recommitted build.lua/Day1.scen
+     until this rebuild (build.lua's last commit before this was the
+     original repo baseline). All other 15 routes were unchanged; the
+     336-unit manifest and all campaign IDs/GUIDs/DBIDs are unchanged.
+
+Engine navigation preflight
+- DCNAV|COMPLETE|routes=16|failures=0
+- DCPREFLIGHT|COMPLETE|routes=16
+- Surface routes reject elevation >= 0 m.
+- Submarine routes reject land and water shallower than 200 m.
+- Sampling interval: 0.5 nautical miles along great-circle legs.
+
+Scenario build
+- DCBUILD|COMPLETE|tracked=336
+- Output: Day1.scen (written by build.lua's own Command_SaveScen call)
+- Size: 696993 bytes
+- SHA-256: 71780B620ADECC5B378C352D88AF7CDBFDDEFDCDBB5C2A50056E093D18EA07E9
+- Container title: Fault Line - South China Sea Day 1
+- Container database: DB3K_515.db3
+- Container build: Bv1.10 RC - Build 1900.8
+- Container compression version: 5
+
+Post-build validation, before reload
+- DCVALIDATE|SUMMARY|expected=336|routes=16|errors=0
+- All six surface-group routes and ten submarine routes emitted NAV-PASS.
+
+Saved-file reload validation
+- Not performed this pass. The 2026-08-18 receipt additionally reloaded
+  Day1.scen through C:MO's Load Scenario workflow and re-ran validate.lua
+  against the saved file to prove the save round-trip didn't corrupt state.
+  The operator proceeded directly from Editor > Save As Scenario into
+  running the scenario as the actual Day 1 playthrough, so that extra
+  reload-and-revalidate pass on a paused copy was skipped. The pre-save,
+  in-memory validation above (0 errors) is the evidence for this receipt.
+
+Editor "Save As Scenario" location note
+- The manual Save As Scenario step in this session wrote to C:MO's default
+  Scenarios folder (Scenarios\Fault Line - South China Sea Day 1.scen,
+  700873 bytes), not to the repo path days\day-001\Day1.scen as RUNME.txt
+  instructs. This receipt is for the repo copy at days\day-001\Day1.scen
+  (696993 bytes), which build.lua wrote automatically and which was never
+  touched by the later manual save or subsequent play. The two files
+  represent the same validated pre-play state, serialized by two different
+  code paths (scripted Command_SaveScen vs. the Editor's own Save As
+  Scenario), which accounts for the byte-size difference.
+
+Known non-navigation warning (carried over from 2026-08-18, not re-audited)
+- C:MO logged rejected underwater facility placements while importing the
+  Woody Island / Fiery Cross templates. Not re-checked in this pass. Still
+  tracked in docs/CODING_PLAN_TODO.md Priority 2.
+
+Play state at time of writing
+- The operator began actively running this scenario as the Day 1
+  playthrough shortly after the manual save (C:MO autosaves observed at
+  100s/80s/60s/40s/20s/current intervals starting 2026-09-07 08:44 AM).
+  days\day-001\Day1.scen remains the untouched pre-play baseline;
+  day-001-final.save will be produced by the Finalize Game-Day 1 action at
+  the 24-hour boundary, per days\day-001\build.lua's embedded finalizer.
+
+Prior receipt
+- cmo-validation-20260818.txt (superseded by the fixes above; kept for
+  history, not deleted).
