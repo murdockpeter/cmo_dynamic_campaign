@@ -633,6 +633,18 @@
           118.2
         ],
         [
+          11.0,
+          118.7
+        ],
+        [
+          11.6,
+          119.5
+        ],
+        [
+          11.310439,
+          119.78204
+        ],
+        [
           11.2,
           119.7
         ]
@@ -667,31 +679,25 @@
           118.2
         ],
         [
-          12.50376,
-          118.71218
+          11.0,
+          118.7
         ],
         [
-          11.228865,
-          119.85292
+          11.6,
+          119.5
+        ],
+        [
+          11.310439,
+          119.78204
         ],
         [
           11.2,
           119.7
         ]
       ],
-      "changed": true,
-      "initial_issues": [
-        {
-          "kind": "land-crossing",
-          "point": [
-            11.000252,
-            119.269655
-          ],
-          "clearance_nm": 0.0,
-          "message": "route leg intersects mapped land"
-        }
-      ],
-      "minimum_resolved_clearance_nm": 3.047,
+      "changed": false,
+      "initial_issues": [],
+      "minimum_resolved_clearance_nm": 3.177,
       "offline_status": "pass"
     },
     {

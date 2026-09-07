@@ -16,9 +16,11 @@ and that loop doesn't exist yet. Repo inspection (2026-09-07) confirms:
   `day-001-final.save`, no `aar.json`, no `adjudication.json`.
 - `Day1_playthru1.scen` (2026-08-15) predates the navigation-safety rebuild
   (2026-08-18) — it's a stale playtest, not the authoritative save chain.
-- The "Finalize Game-Day" special action described in
-  [daily-workflow.md](daily-workflow.md) is not implemented anywhere in
-  `days/day-001/build.lua` or elsewhere.
+- **Correction (2026-09-07):** the "Finalize Game-Day" special action
+  *does* exist — `finalizer_lua()` in `tools/generate_day1.py` embeds it into
+  `build.lua`. It was missed on first pass because it's generated Lua inside
+  a Python f-string, not a standalone file. It had a real bug, since fixed
+  (see Priority 1, item 1 below).
 - There is no `campaign/campaign.json`, `campaign/ledger.json`, or
   `campaign/transactions.jsonl` — the persistence layer
   [campaign-model.md](campaign-model.md) specifies is undocumented-but-real
@@ -40,19 +42,49 @@ a speculative one — and it unblocks the campaign this repo exists for.
 This is the critical path. Nothing downstream (modular SDK or otherwise)
 should start before this works end to end at least once.
 
-- [ ] **Finalizer Lua**: implement the "Finalize Game-Day" special action in
-      `days/day-001/build.lua` (or a new `finalize.lua`), per
-      [daily-workflow.md](daily-workflow.md) "What runs inside the scenario":
-      - structured end-of-day report to `LuaHistory_YYYY-MM-DD.txt`
-        (scores, losses/expenditures, surviving GUIDs, position/base/group/
-        mission, damage/fuel/loadout/mount/magazine state, escalation flags)
-      - `ScenEdit_ExportInst` survivor exports for both sides
-      - `Command_SaveScen` final checkpoint
-      - a finalization marker to make accidental double-finalization visible
-      - optional 6/12/18-hour checkpoint saves
-- [ ] **Play Day 1 to completion** using the current validated `Day1.scen`
+- [x] **Finalizer Lua atomicity fix** (done 2026-09-07): the finalizer
+      already existed (`finalizer_lua()` in `tools/generate_day1.py`,
+      embedded into `build.lua`'s `Finalize Game-Day 1` special action) but
+      had a real bug, flagged by a prior session's own audit in
+      [code-deep-dive.html](code-deep-dive.html): the `dc.day001.finalized`
+      marker was set *before* the export/save ran, and the action was
+      `IsRepeatable=false`. A failed export or save still got recorded as
+      complete, with no way to retry. Fixed: the export/save now runs inside
+      `pcall`, the marker is only set on success, failure prints
+      `DCREPORT|ERROR|...` and shows a clear "not marked complete" message,
+      and the action is now `IsRepeatable=true` so a failed run can be
+      retried safely. Regenerated `build.lua`/`preflight.lua`/`validate.lua`
+      and redeployed to the CMO Lua directory.
+      - **Side finding**: regenerating also picked up a legitimate,
+        deterministic navigation update — `build.lua` had never been
+        recommitted since the "Updated land collision detection methods"
+        commit (`1500ca2`, 2026-08-18), so the `TG B-3 America ARG` route in
+        the committed artifacts predated that fix. The regenerated route
+        adds one waypoint and is presumably safer; scope was verified
+        limited to that single route (manifest/unit identities unchanged).
+        **This means the SHA-256 receipt in `cmo-validation-20260818.txt` is
+        now stale** — a fresh build + validate + save pass through CMO's
+        Editor is needed before this is trusted as the Day 1 baseline.
+      - **Still open** (documented gap, not yet done): the finalizer's
+        per-unit report only prints GUID/name/DBID/position/damage/fuel/
+        weapon-state. `daily-workflow.md` and this plan call for base,
+        group, mission, loadout, and magazine contents too. Adding those
+        needs the exact CMO Lua unit-table field names verified against a
+        live CMO session (not guessed) before shipping, since a wrong field
+        name only fails at runtime inside the Editor.
+      - **Still open**: optional 6/12/18-hour checkpoint saves — not
+        implemented; `daily-workflow.md` describes these but no code exists
+        for them yet.
+- [ ] **Rebuild and re-validate `Day1.scen`** through CMO's Editor
+      (`preflight.lua` → `build.lua` → `validate.lua`, per `RUNME.txt`) to
+      pick up the finalizer fix and the corrected `TG B-3 America ARG`
+      route, then record a fresh validation receipt (replacing
+      `cmo-validation-20260818.txt`, whose hash is now stale).
+- [ ] **Play Day 1 to completion** using the freshly rebuilt `Day1.scen`
       (not the stale `Day1_playthru1.scen`), invoke the finalizer, and
-      confirm `day-001-final.save` plus exports/logs land correctly.
+      confirm `day-001-final.save` plus exports/logs land correctly. Also
+      confirm the finalizer is safely re-runnable if a first attempt fails
+      partway (the fix above).
 - [ ] **Extraction tooling** (Python, alongside `tools/generate_day1.py`):
       parse the Lua history log + `.inst` exports into a normalized
       `outcome.json` / `aar.json` per the "Daily artifacts" section of

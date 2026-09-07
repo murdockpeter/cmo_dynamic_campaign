@@ -395,8 +395,8 @@ def generate() -> None:
     finalizer = finalizer_lua(final_save)
     lines.extend([
         "ScenEdit_AddSpecialAction({side='BLUE',ActionNameOrID='Finalize Game-Day 1',"
-        "description='Pause at the 24-hour boundary, then execute this once to save and export campaign state.',"
-        f"IsActive=true,IsRepeatable=false,ScriptText={lua_string(finalizer)}}})",
+        "description='Pause at the 24-hour boundary, then execute this to save and export campaign state. Safe to re-run if a prior attempt failed.',"
+        f"IsActive=true,IsRepeatable=true,ScriptText={lua_string(finalizer)}}})",
         "ScenEdit_SetKeyValue('dc.build.complete','true')",
         f"print('DCBUILD|COMPLETE|tracked={len(manifest)}')",
         f"Command_SaveScen({lua_string(build_save)})",
@@ -490,7 +490,6 @@ def mission_lua(specs: list[dict[str, object]]) -> list[str]:
 def finalizer_lua(final_save: str) -> str:
     return f"""Tool_EmulateNoConsole(true)
 if ScenEdit_GetKeyValue('dc.day001.finalized') == 'true' then ScenEdit_MsgBox('Day 1 was already finalized.',0); return end
-ScenEdit_SetKeyValue('dc.day001.finalized','true')
 local function report(sideName)
   local s=VP_GetSide({{side=sideName}})
   print('DCREPORT|SIDE|'..sideName)
@@ -507,11 +506,19 @@ local function report(sideName)
   end
   ScenEdit_ExportInst(sideName,ids,{{filename='DynamicCampaign/SCS/day001_'..string.lower(sideName)..'_final.inst',name='SCS Day 1 '..sideName..' final'}})
 end
-report('BLUE')
-report('RED')
-Command_SaveScen({lua_string(final_save)})
-print('DCREPORT|FINALIZED|001|'..tostring(ScenEdit_CurrentTime()))
-ScenEdit_MsgBox('Day 1 final save and exports were created. You may now return to the campaign workspace.',0)"""
+local ok,err=pcall(function()
+  report('BLUE')
+  report('RED')
+  Command_SaveScen({lua_string(final_save)})
+end)
+if ok then
+  ScenEdit_SetKeyValue('dc.day001.finalized','true')
+  print('DCREPORT|FINALIZED|001|'..tostring(ScenEdit_CurrentTime()))
+  ScenEdit_MsgBox('Day 1 final save and exports were created. You may now return to the campaign workspace.',0)
+else
+  print('DCREPORT|ERROR|001|'..tostring(err))
+  ScenEdit_MsgBox('Day 1 finalization failed and was NOT marked complete. Review the Lua history for DCREPORT|ERROR, fix the cause, then run Finalize Game-Day 1 again.',0)
+end"""
 
 
 def validation_lua(manifest: list[dict[str, object]], routes: list[dict[str, object]]) -> str:
