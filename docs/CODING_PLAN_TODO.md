@@ -1,8 +1,8 @@
 # CMO Dynamic Campaign — TODO Coding Plan (Next Steps)
 
-Status: Active working plan, superseding session-order in
-[CMO_DYNAMIC_CAMPAIGN_MODULAR_THEORY_CODING_PLAN.md](CMO_DYNAMIC_CAMPAIGN_MODULAR_THEORY_CODING_PLAN.md)
-for what to build *right now*.
+Status: Superseded on 2026-09-07 by
+[MASTER_CODING_PLAN_TODO.md](MASTER_CODING_PLAN_TODO.md). Retained for historical
+context and the detailed record of Day 1 work already completed.
 
 ## Why this document exists
 
@@ -175,6 +175,7 @@ compose them.
 
 ## Immediate next action
 
-Start Priority 1, item 1: implement the Finalize Game-Day Lua in
-`days/day-001/build.lua`. Everything else in this document depends on having
-a real finalized game-day to reconcile from.
+Continue from the current next actions in
+[MASTER_CODING_PLAN_TODO.md](MASTER_CODING_PLAN_TODO.md). The finalizer repair
+described above is already complete; the remaining operator milestone is to
+finish Day 1 and invoke it at the agreed boundary.
